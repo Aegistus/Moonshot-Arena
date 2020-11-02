@@ -47,6 +47,7 @@ public class Booster : MonoBehaviour
     {
         if (onCooldown == false)
         {
+            print("Boosted");
             rb.velocity = boostedVelocity;
             StartCoroutine(ThrusterCooldown());
         }

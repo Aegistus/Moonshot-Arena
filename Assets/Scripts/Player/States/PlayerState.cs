@@ -20,7 +20,7 @@ public abstract class PlayerState : State
     public Func<bool> Ctrl => () => Input.GetKey(KeyCode.LeftControl);
     public Func<bool> OnGround => () => IsGrounded();
     public Func<bool> Rising => () => rb.velocity.y > 0;
-    public Func<bool> Falling => () => rb.velocity.y < 0;
+    public Func<bool> Falling => () => rb.velocity.y < -.1f;
 
     public PlayerState(GameObject gameObject) : base(gameObject)
     {

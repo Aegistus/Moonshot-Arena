@@ -29,13 +29,13 @@ public class Jumping : PlayerState
 
     public override void DuringExecution()
     {
-        if (Input.GetKey(KeyCode.A))
-        {
-            movement.SetVelocity(-transform.right * airMoveSpeed + startingVelocity);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            movement.SetVelocity(transform.right * airMoveSpeed + startingVelocity);
-        }
+        //if (Input.GetKey(KeyCode.A))
+        //{
+        //    movement.SetVelocity(-transform.right * airMoveSpeed + startingVelocity);
+        //}
+        //if (Input.GetKey(KeyCode.D))
+        //{
+        //    movement.SetVelocity(transform.right * airMoveSpeed + startingVelocity);
+        //}
     }
 }

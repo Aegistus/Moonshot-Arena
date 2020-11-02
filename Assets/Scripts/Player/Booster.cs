@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Booster : MonoBehaviour
@@ -10,11 +9,13 @@ public class Booster : MonoBehaviour
     public bool onCooldown = false;
 
     private Rigidbody rb;
+    private Transform camTransform;
     private Vector3 boostedVelocity;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        camTransform = Camera.main.transform;
     }
 
     private void Update()
@@ -24,19 +25,19 @@ public class Booster : MonoBehaviour
             boostedVelocity = Vector3.zero;
             if (Input.GetKey(KeyCode.W))
             {
-                boostedVelocity = transform.forward;
+                boostedVelocity = camTransform.forward;
             }
             else if (Input.GetKey(KeyCode.S))
             {
-                boostedVelocity = -transform.forward;
+                boostedVelocity = -camTransform.forward;
             }
             else if (Input.GetKey(KeyCode.A))
             {
-                boostedVelocity = -transform.right;
+                boostedVelocity = -camTransform.right;
             }
             else if (Input.GetKey(KeyCode.D))
             {
-                boostedVelocity = transform.right;
+                boostedVelocity = camTransform.right;
             }
             boostedVelocity *= thrust;
             Boost(boostedVelocity);
@@ -59,5 +60,4 @@ public class Booster : MonoBehaviour
         yield return new WaitForSeconds(cooldownTime);
         onCooldown = false;
     }
-
 }

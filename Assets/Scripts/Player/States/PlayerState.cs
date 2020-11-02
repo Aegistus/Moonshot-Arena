@@ -32,7 +32,7 @@ public abstract class PlayerState : State
 
     private bool IsGrounded()
     {
-        if (Physics.BoxCast(transform.position, Vector3.one / 20, Vector3.down, transform.rotation, 1f, groundLayer))
+        if (Physics.BoxCast(transform.position, Vector3.one / 10, Vector3.down, transform.rotation, 1f, groundLayer))
         {
             return true;
         }

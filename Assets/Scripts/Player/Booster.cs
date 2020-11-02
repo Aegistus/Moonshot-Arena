@@ -52,7 +52,7 @@ public class Booster : MonoBehaviour
     public void Boost(Vector3 boostedVelocity)
     {
         print("Boosted velocity: " + boostedVelocity);
-        rb.velocity = boostedVelocity;
+        rb.velocity += boostedVelocity;
         StartCoroutine(CameraReset());
         StartCoroutine(ThrusterCooldown());
     }

@@ -45,19 +45,34 @@ public class GrapplingGun : MonoBehaviour
         {
             grapplePoint = hit.point;
             joint = player.gameObject.AddComponent<SpringJoint>();
+            float distanceFromPoint = Vector3.Distance(player.position, grapplePoint);
+            if (hit.rigidbody != null)
+            {
+                joint.connectedBody = hit.rigidbody;
+                //The distance grapple will try to keep from grapple point. 
+                joint.maxDistance = .5f;
+                joint.minDistance = .05f;
+                //Adjust these values to fit your game.
+                joint.damper = 20f;
+                joint.spring = 50f;
+                joint.massScale = 4.5f;
+            }
+            else 
+            {
+                //The distance grapple will try to keep from grapple point. 
+                joint.maxDistance = distanceFromPoint * 0.8f;
+                joint.minDistance = distanceFromPoint * 0.25f;
+
+                //Adjust these values to fit your game.
+                joint.damper = 7f;
+                joint.spring = 20f;
+                joint.massScale = 4.5f;
+            }
             joint.autoConfigureConnectedAnchor = false;
             joint.connectedAnchor = grapplePoint;
 
-            float distanceFromPoint = Vector3.Distance(player.position, grapplePoint);
 
-            //The distance grapple will try to keep from grapple point. 
-            joint.maxDistance = distanceFromPoint * 0.8f;
-            joint.minDistance = distanceFromPoint * 0.25f;
 
-            //Adjust these values to fit your game.
-            joint.spring = 10f;
-            joint.damper = 7f;
-            joint.massScale = 4.5f;
 
             lr.positionCount = 2;
             currentGrapplePosition = gunTip.position;
@@ -81,10 +96,19 @@ public class GrapplingGun : MonoBehaviour
         //If not grappling, don't draw rope
         if (!joint) return;
 
-        currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, grapplePoint, Time.deltaTime * 8f);
+        if (joint.connectedBody == null)
+        {
+            currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, grapplePoint, Time.deltaTime * 8f);
 
-        lr.SetPosition(0, gunTip.position);
-        lr.SetPosition(1, currentGrapplePosition);
+            lr.SetPosition(0, gunTip.position);
+            lr.SetPosition(1, currentGrapplePosition);
+        }
+        else
+        {
+            lr.SetPosition(0, gunTip.position);
+            lr.SetPosition(1, joint.connectedBody.position);
+        }
+
     }
 
     public bool IsGrappling()

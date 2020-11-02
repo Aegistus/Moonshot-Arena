@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Booster : MonoBehaviour
 {
-    public float thrust = 5f;
-    public float cooldownTime = 4f;
+    public float thrust = 10f;
+    public float cooldownTime = 3f;
     [HideInInspector]
     public bool onCooldown = false;
 
@@ -20,38 +20,41 @@ public class Booster : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (onCooldown == false)
         {
-            boostedVelocity = Vector3.zero;
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                boostedVelocity = camTransform.forward;
+                boostedVelocity = Vector3.zero;
+                if (Input.GetKey(KeyCode.W))
+                {
+                    boostedVelocity = camTransform.forward;
+                }
+                else if (Input.GetKey(KeyCode.S))
+                {
+                    boostedVelocity = -camTransform.forward;
+                }
+                else if (Input.GetKey(KeyCode.A))
+                {
+                    boostedVelocity = -camTransform.right;
+                    camTransform.Rotate(new Vector3(camTransform.rotation.x, 0, 10f));
+                }
+                else if (Input.GetKey(KeyCode.D))
+                {
+                    boostedVelocity = camTransform.right;
+                    camTransform.Rotate(new Vector3(camTransform.rotation.x, 0, -10f));
+                }
+                boostedVelocity *= thrust;
+                Boost(boostedVelocity);
             }
-            else if (Input.GetKey(KeyCode.S))
-            {
-                boostedVelocity = -camTransform.forward;
-            }
-            else if (Input.GetKey(KeyCode.A))
-            {
-                boostedVelocity = -camTransform.right;
-            }
-            else if (Input.GetKey(KeyCode.D))
-            {
-                boostedVelocity = camTransform.right;
-            }
-            boostedVelocity *= thrust;
-            Boost(boostedVelocity);
         }
     }
 
     public void Boost(Vector3 boostedVelocity)
     {
-        if (onCooldown == false)
-        {
-            print("Boosted");
-            rb.velocity = boostedVelocity;
-            StartCoroutine(ThrusterCooldown());
-        }
+        print("Boosted velocity: " + boostedVelocity);
+        rb.velocity = boostedVelocity;
+        StartCoroutine(CameraReset());
+        StartCoroutine(ThrusterCooldown());
     }
 
     private IEnumerator ThrusterCooldown()
@@ -59,5 +62,11 @@ public class Booster : MonoBehaviour
         onCooldown = true;
         yield return new WaitForSeconds(cooldownTime);
         onCooldown = false;
+    }
+
+    private IEnumerator CameraReset()
+    {
+        yield return new WaitForSeconds(1f);
+        camTransform.localRotation = Quaternion.Euler(new Vector3(camTransform.localRotation.eulerAngles.x, 0f, 0f));
     }
 }

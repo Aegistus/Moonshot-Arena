@@ -7,7 +7,7 @@ public class Blocking : PlayerState
     public Blocking(GameObject gameObject) : base(gameObject)
     {
         animationNames.Add("Block");
-        transitionsTo.Add(new Transition(typeof(Idling), Not(RightClick)));
+        //transitionsTo.Add(new Transition(typeof(Idling), Not(RightClick)));
     }
 
     public override void AfterExecution()

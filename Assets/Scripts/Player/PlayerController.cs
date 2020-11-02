@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
             {typeof(Walking), new Walking(gameObject) },
             {typeof(Jumping), new Jumping(gameObject) },
             {typeof(Attacking), new Attacking(gameObject) },
-            {typeof(Blocking), new Blocking(gameObject) },
             {typeof(TakingDamage), new TakingDamage(gameObject) },
             {typeof(Falling), new Falling(gameObject) }
         };

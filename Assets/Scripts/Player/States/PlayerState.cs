@@ -15,7 +15,7 @@ public abstract class PlayerState : State
     public Func<bool> MoveKeys => () => Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S);
     public Func<bool> Spacebar => () => Input.GetKeyDown(KeyCode.Space);
     public Func<bool> LeftClick => () => Input.GetMouseButtonDown(0);
-    public Func<bool> RightClick => () => Input.GetMouseButton(1);
+    //public Func<bool> RightClick => () => Input.GetMouseButton(1);
     public Func<bool> Shift => () => Input.GetKey(KeyCode.LeftShift);
     public Func<bool> Ctrl => () => Input.GetKey(KeyCode.LeftControl);
     public Func<bool> OnGround => () => IsGrounded();

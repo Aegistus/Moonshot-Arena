@@ -21,10 +21,8 @@ public class PlayerController : MonoBehaviour
             {typeof(Jumping), new Jumping(gameObject) },
             {typeof(Attacking), new Attacking(gameObject) },
             {typeof(Blocking), new Blocking(gameObject) },
-            //{typeof(Rolling), new Rolling(gameObject) },
             {typeof(TakingDamage), new TakingDamage(gameObject) },
-            {typeof(Falling), new Falling(gameObject) },
-            //{typeof(GrabbingLedge), new GrabbingLedge(gameObject) }
+            {typeof(Falling), new Falling(gameObject) }
         };
         stateMachine.SetStates(states, typeof(Idling));
     }

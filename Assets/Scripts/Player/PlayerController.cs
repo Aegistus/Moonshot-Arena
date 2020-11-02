@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
     public LayerMask groundLayer;
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour
         stateMachine.SetStates(states, typeof(Idling));
     }
 
-    public void SetVelocity(Vector2 velocity)
+    public void SetVelocity(Vector3 velocity)
     {
         this.velocity = velocity;
     }

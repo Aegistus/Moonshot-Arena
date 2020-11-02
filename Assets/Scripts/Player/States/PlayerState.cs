@@ -12,8 +12,7 @@ public abstract class PlayerState : State
     protected List<string> soundNames = new List<string>();
     //protected Animator anim;
 
-    public Func<bool> Forwards => () => Input.GetKey(KeyCode.W);
-    public Func<bool> LeftOrRight => () => Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D);
+    public Func<bool> MoveKeys => () => Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S);
     public Func<bool> Spacebar => () => Input.GetKeyDown(KeyCode.Space);
     public Func<bool> LeftClick => () => Input.GetMouseButtonDown(0);
     public Func<bool> RightClick => () => Input.GetMouseButton(1);

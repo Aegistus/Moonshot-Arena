@@ -9,8 +9,7 @@ public class Idling : PlayerState
     {
         animationNames.Add("Idle");
         transitionsTo.Add(new Transition(typeof(Falling), Falling));
-        transitionsTo.Add(new Transition(typeof(Strafing), LeftOrRight));
-        transitionsTo.Add(new Transition(typeof(Walking), Forwards));
+        transitionsTo.Add(new Transition(typeof(Walking), MoveKeys));
         transitionsTo.Add(new Transition(typeof(Jumping), Spacebar, Not(Falling), Not(Rising)));
         transitionsTo.Add(new Transition(typeof(Attacking), LeftClick));
         transitionsTo.Add(new Transition(typeof(Blocking), RightClick));

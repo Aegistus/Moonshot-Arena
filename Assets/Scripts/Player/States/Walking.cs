@@ -9,10 +9,9 @@ public class Walking : PlayerState
     public Walking(GameObject gameObject) : base(gameObject)
     {
         animationNames.Add("Run");
-        transitionsTo.Add(new Transition(typeof(Idling), Not(LeftOrRight)));
+        transitionsTo.Add(new Transition(typeof(Idling), Not(MoveKeys)));
         transitionsTo.Add(new Transition(typeof(Jumping), Spacebar, Not(Falling)));
         transitionsTo.Add(new Transition(typeof(Attacking), LeftClick));
-        transitionsTo.Add(new Transition(typeof(Rolling), LeftOrRight, Ctrl));
     }
 
     public override void AfterExecution()
@@ -22,18 +21,30 @@ public class Walking : PlayerState
 
     public override void BeforeExecution()
     {
-        Debug.Log("Running");
+        Debug.Log("Walking");
     }
 
+    Vector3 newVelocity;
     public override void DuringExecution()
     {
+        newVelocity = Vector3.zero;
+        if (Input.GetKey(KeyCode.W))
+        {
+            newVelocity += transform.forward;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            newVelocity += -transform.forward;
+        }
         if (Input.GetKey(KeyCode.A))
         {
-            movement.SetVelocity(-transform.right * moveSpeed);
+            newVelocity += -transform.right;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            movement.SetVelocity(transform.right * moveSpeed);
+            newVelocity += transform.right;
         }
+        newVelocity = newVelocity.normalized;
+        movement.SetVelocity(newVelocity * moveSpeed);
     }
 }

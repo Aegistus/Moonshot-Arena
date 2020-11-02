@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         stateMachine.ExecuteState();
-        transform.Translate(velocity * Time.deltaTime);
+        transform.Translate(velocity * Time.deltaTime, Space.World);
     }
 
 }

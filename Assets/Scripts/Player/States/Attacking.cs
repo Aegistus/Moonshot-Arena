@@ -29,7 +29,7 @@ public class Attacking : PlayerState
     {
         Debug.Log("Attacking");
         //anim.Play(animationNames[(int)(Random.value * animationNames.Count)]);
-        AudioManager.instance.StartPlaying(soundNames[(int)(Random.value * soundNames.Count)]);
+        //AudioManager.instance.StartPlaying(soundNames[(int)(Random.value * soundNames.Count)]);
         movement.ModifyVelocity(.5f);
         timer = 0;
     }

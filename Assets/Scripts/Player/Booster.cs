@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class Booster : MonoBehaviour
 {
+    public static event Action<bool> OnCooldownChange;
+
     public float thrust = 10f;
-    public float cooldownTime = 3f;
+    public float cooldownTime = 2f;
     [HideInInspector]
     public bool onCooldown = false;
 
@@ -53,6 +56,7 @@ public class Booster : MonoBehaviour
     {
         print("Boosted velocity: " + boostedVelocity);
         rb.velocity += boostedVelocity;
+        OnCooldownChange?.Invoke(true);
         StartCoroutine(CameraReset());
         StartCoroutine(ThrusterCooldown());
     }
@@ -62,6 +66,7 @@ public class Booster : MonoBehaviour
         onCooldown = true;
         yield return new WaitForSeconds(cooldownTime);
         onCooldown = false;
+        OnCooldownChange?.Invoke(false);
     }
 
     private IEnumerator CameraReset()

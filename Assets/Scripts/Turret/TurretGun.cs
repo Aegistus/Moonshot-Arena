@@ -5,6 +5,7 @@ using UnityEngine;
 public class TurretGun : MonoBehaviour
 {
     public float shotsPerSecond = 1f;
+    public float targetKnockback = 1f;
     public List<Transform> muzzleTips = new List<Transform>();
 
     [HideInInspector]
@@ -34,9 +35,21 @@ public class TurretGun : MonoBehaviour
     {
         while (isShooting)
         {
-            MuzzleFX();
-            ImpactFX();
+            if (Physics.Raycast(muzzleTips[muzzleIndex].position, muzzleTips[muzzleIndex].forward, out rayHit, 1000f))
+            {
+                MuzzleFX();
+                ImpactFX();
+                ShotPhysics();
+            }
             yield return new WaitForSeconds(shotsPerSecond);
+        }
+    }
+
+    void ShotPhysics()
+    {
+        if (rayHit.rigidbody != null)
+        {
+            rayHit.rigidbody.velocity += transform.forward * targetKnockback;
         }
     }
 
@@ -55,9 +68,6 @@ public class TurretGun : MonoBehaviour
 
     private void ImpactFX()
     {
-        if (Physics.Raycast(muzzleTips[muzzleIndex].position, muzzleTips[muzzleIndex].forward, out rayHit, 1000f))
-        {
-            poolManager.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.BulletImpact, rayHit.point, Quaternion.Euler(-90,0,0), 2f);
-        }
+        poolManager.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.BulletImpact, rayHit.point, Quaternion.Euler(-90,0,0), 2f);
     }
 }

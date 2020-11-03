@@ -91,7 +91,6 @@ public class GrapplingGun : MonoBehaviour
     }
 
     private Vector3 currentGrapplePosition;
-
     void DrawRope()
     {
         //If not grappling, don't draw rope
@@ -111,7 +110,6 @@ public class GrapplingGun : MonoBehaviour
             lr.SetPosition(0, gunTip.position);
             lr.SetPosition(1, connectedObject.position);
         }
-
     }
 
     public bool IsGrappling()

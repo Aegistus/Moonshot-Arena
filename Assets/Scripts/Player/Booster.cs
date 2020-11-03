@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Booster : MonoBehaviour
 {
-    public static event Action<bool> OnCooldownChange;
+    public static event Action<int> OnCooldownChange;
 
     public float thrust = 10f;
     public float cooldownTime = 2f;
     [HideInInspector]
-    public bool onCooldown = false;
+    public int numOfCharges = 2;
 
     private Rigidbody rb;
     private Transform camTransform;
@@ -23,7 +23,7 @@ public class Booster : MonoBehaviour
 
     private void Update()
     {
-        if (onCooldown == false)
+        if (numOfCharges > 0)
         {
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
@@ -45,6 +45,9 @@ public class Booster : MonoBehaviour
                 {
                     boostedVelocity = camTransform.right;
                     camTransform.Rotate(new Vector3(camTransform.rotation.x, 0, -10f));
+                } else if (Input.GetKey(KeyCode.Space))
+                {
+                    boostedVelocity = camTransform.up;
                 }
                 boostedVelocity *= thrust;
                 Boost(boostedVelocity);
@@ -56,17 +59,17 @@ public class Booster : MonoBehaviour
     {
         print("Boosted velocity: " + boostedVelocity);
         rb.velocity += boostedVelocity;
-        OnCooldownChange?.Invoke(true);
+        numOfCharges--;
+        OnCooldownChange?.Invoke(numOfCharges);
         StartCoroutine(CameraReset());
         StartCoroutine(ThrusterCooldown());
     }
 
     private IEnumerator ThrusterCooldown()
     {
-        onCooldown = true;
         yield return new WaitForSeconds(cooldownTime);
-        onCooldown = false;
-        OnCooldownChange?.Invoke(false);
+        numOfCharges++;
+        OnCooldownChange?.Invoke(numOfCharges);
     }
 
     private IEnumerator CameraReset()

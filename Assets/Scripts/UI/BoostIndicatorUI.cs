@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class BoostIndicatorUI : MonoBehaviour
 {
-    public GameObject indicator;
+    public List<GameObject> indicators = new List<GameObject>();
 
     private void Start()
     {
         Booster.OnCooldownChange += ChangeIndicator;
     }
 
-    public void ChangeIndicator(bool onCooldown)
+    public void ChangeIndicator(int numOfCharges)
     {
-        if (onCooldown)
+        for (int i = 0; i < indicators.Count; i++)
         {
-            indicator.SetActive(false);
-        }
-        else
-        {
-            indicator.SetActive(true);
+            if (i < numOfCharges)
+            {
+                indicators[i].SetActive(true);
+            }
+            else
+            {
+                indicators[i].SetActive(false);
+            }
         }
     }
 

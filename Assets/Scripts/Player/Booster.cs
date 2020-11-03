@@ -13,12 +13,18 @@ public class Booster : MonoBehaviour
 
     private Rigidbody rb;
     private Transform camTransform;
+    private Camera cam;
     private Vector3 boostedVelocity;
+    private float startingFOV;
+    private float targetFOV;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        camTransform = Camera.main.transform;
+        cam = Camera.main;
+        camTransform = cam.transform;
+        startingFOV = cam.fieldOfView;
+        targetFOV = startingFOV;
     }
 
     private void Update()
@@ -31,10 +37,12 @@ public class Booster : MonoBehaviour
                 if (Input.GetKey(KeyCode.W))
                 {
                     boostedVelocity = camTransform.forward;
+                    targetFOV = startingFOV + 5;
                 }
                 else if (Input.GetKey(KeyCode.S))
                 {
                     boostedVelocity = -camTransform.forward;
+                    targetFOV = startingFOV - 5;
                 }
                 else if (Input.GetKey(KeyCode.A))
                 {
@@ -53,16 +61,20 @@ public class Booster : MonoBehaviour
                 Boost(boostedVelocity);
             }
         }
+        cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFOV, .1f);
     }
 
     public void Boost(Vector3 boostedVelocity)
     {
-        print("Boosted velocity: " + boostedVelocity);
-        rb.velocity += boostedVelocity;
-        numOfCharges--;
-        OnCooldownChange?.Invoke(numOfCharges);
-        StartCoroutine(CameraReset());
-        StartCoroutine(ThrusterCooldown());
+        if (boostedVelocity != Vector3.zero)
+        {
+            print("Boosted velocity: " + boostedVelocity);
+            rb.velocity += boostedVelocity;
+            numOfCharges--;
+            OnCooldownChange?.Invoke(numOfCharges);
+            StartCoroutine(CameraReset());
+            StartCoroutine(ThrusterCooldown());
+        }
     }
 
     private IEnumerator ThrusterCooldown()
@@ -76,5 +88,6 @@ public class Booster : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         camTransform.localRotation = Quaternion.Euler(new Vector3(camTransform.localRotation.eulerAngles.x, 0f, 0f));
+        targetFOV = startingFOV;
     }
 }

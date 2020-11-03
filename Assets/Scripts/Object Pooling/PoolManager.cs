@@ -53,7 +53,7 @@ public class PoolManager : MonoBehaviour
 
     public enum PoolTag
     {
-        BulletImpact, MuzzleFlash
+        BulletImpact, MuzzleFlash, BulletTrail
     }
 
     PoolObject objectFromPool;

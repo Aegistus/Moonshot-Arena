@@ -8049,7 +8049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6dcf63502b736b438f5e4a22d631aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swivelSpeed: 3
+  swivelSpeed: 2
 --- !u!114 &1620216712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8062,7 +8062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a9a43495513a74d9a221681941560d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotsPerSecond: 1
+  shotsPerSecond: 0.2
   muzzleTips:
   - {fileID: 1755666665}
   - {fileID: 1483808231}
@@ -9810,10 +9810,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - tag: 0
-    objectPrefab: {fileID: 1684040417952334, guid: fb90dc50bff9a30449b7379c34077c7d, type: 3}
-    size: 10
+    objectPrefab: {fileID: 1614572127005044, guid: 4a049bbef79ee7845b541e2d0d83b4cc, type: 3}
+    size: 100
   - tag: 1
     objectPrefab: {fileID: 157586, guid: 2574ca206a571a342a7fab69fdfb87aa, type: 3}
+    size: 100
+  - tag: 2
+    objectPrefab: {fileID: 1003485616670832, guid: 2298236a23b5c4349b5f8204068aadf3, type: 3}
     size: 100
 --- !u!4 &1890667970
 Transform:

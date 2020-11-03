@@ -13,7 +13,7 @@ public class GrapplingGun : MonoBehaviour
     private SpringJoint joint;
 
     private Rigidbody connectedObject;
-    public float reelSpeed = 1f;
+    public float reelSpeed = 1.5f;
 
     void Awake()
     {

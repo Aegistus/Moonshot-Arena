@@ -16,7 +16,7 @@ public class TurretViewController : MonoBehaviour
     Quaternion lookRotation;
     private void Update()
     {
-        lookRotation = Quaternion.LookRotation(target.transform.position - transform.position);
+        lookRotation = Quaternion.LookRotation((target.transform.position - transform.position).normalized);
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, swivelSpeed * Time.deltaTime);
     }
 }

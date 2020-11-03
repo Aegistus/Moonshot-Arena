@@ -9,7 +9,9 @@ public class TurretGun : MonoBehaviour
 
     [HideInInspector]
     public bool isShooting = false;
+
     private RaycastHit rayHit;
+    private PoolManager poolManager;
 
     private void Start()
     {
@@ -33,11 +35,11 @@ public class TurretGun : MonoBehaviour
         while (isShooting)
         {
             MuzzleFX();
+            ImpactFX();
             yield return new WaitForSeconds(shotsPerSecond);
         }
     }
 
-    private PoolManager poolManager;
     private int muzzleIndex = 0;
     private void MuzzleFX()
     {
@@ -48,6 +50,14 @@ public class TurretGun : MonoBehaviour
         if (muzzleIndex >= muzzleTips.Count)
         {
             muzzleIndex = 0;
+        }
+    }
+
+    private void ImpactFX()
+    {
+        if (Physics.Raycast(muzzleTips[muzzleIndex].position, muzzleTips[muzzleIndex].forward, out rayHit, 1000f))
+        {
+            poolManager.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.BulletImpact, rayHit.point, Quaternion.Euler(-90,0,0), 2f);
         }
     }
 }

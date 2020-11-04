@@ -12,9 +12,11 @@ public class PlayerController : MonoBehaviour
 
     private float velocityMod = 1f;
     private StateMachine stateMachine;
+    private Rigidbody rb;
 
     private void Awake()
     {
+        rb = GetComponent<Rigidbody>();
         stateMachine = new StateMachine();
         Dictionary<Type, State> states = new Dictionary<Type, State>()
         {
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
     {
         stateMachine.ExecuteState();
         transform.Translate(velocity * velocityMod * Time.deltaTime, Space.World);
+        rb.velocity *= velocityMod;
     }
 
 }

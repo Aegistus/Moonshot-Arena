@@ -6,6 +6,8 @@ public class TurretGun : MonoBehaviour
 {
     public float shotsPerSecond = 1f;
     public float targetKnockback = 1f;
+    public float rotationSpeed = 5f;
+    public Transform coreTransform;
     public List<Transform> muzzleTips = new List<Transform>();
 
     [HideInInspector]
@@ -18,6 +20,14 @@ public class TurretGun : MonoBehaviour
     {
         poolManager = PoolManager.Instance;
         StartShooting();
+    }
+
+    private void LateUpdate()
+    {
+        if (isShooting)
+        {
+            coreTransform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+        }
     }
 
     public void StartShooting()
@@ -56,7 +66,6 @@ public class TurretGun : MonoBehaviour
     private int muzzleIndex = 0;
     private void MuzzleFX()
     {
-        print("Shooting");
         Transform muzzle = muzzleTips[muzzleIndex];
         poolManager.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.MuzzleFlash, muzzle.position, muzzle.rotation, 5f);
         muzzleIndex++;

@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
 
     public Vector3 velocity;
+
+    private float velocityMod = 1f;
     private StateMachine stateMachine;
 
     private void Awake()
@@ -38,13 +40,13 @@ public class PlayerController : MonoBehaviour
 
     public void ModifyVelocity(float percentChange)
     {
-        velocity *= percentChange;
+        velocityMod = percentChange;
     }
 
     private void Update()
     {
         stateMachine.ExecuteState();
-        transform.Translate(velocity * Time.deltaTime, Space.World);
+        transform.Translate(velocity * velocityMod * Time.deltaTime, Space.World);
     }
 
 }

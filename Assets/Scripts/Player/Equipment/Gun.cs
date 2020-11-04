@@ -48,6 +48,10 @@ public class Gun : MonoBehaviour
             Rigidbody rb = rayHit.collider.GetComponent<Rigidbody>();
             if (rb)
             {
+                if (rb.isKinematic)
+                {
+                    rb.isKinematic = false;
+                }
                 rb.velocity += cam.transform.forward * bulletForce;
             }
         }

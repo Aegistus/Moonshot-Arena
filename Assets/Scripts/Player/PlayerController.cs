@@ -31,24 +31,24 @@ public class PlayerController : MonoBehaviour
 
     public void SetVelocity(Vector3 velocity)
     {
-        this.velocity = velocity;
+        rb.velocity = velocity * velocityMod;
     }
 
     public void AddVelocity(Vector3 additional)
     {
-        velocity += additional;
+        rb.velocity += additional * velocityMod;
     }
 
     public void ModifyVelocity(float percentChange)
     {
         velocityMod = percentChange;
+        rb.velocity *= velocityMod;
     }
 
     private void Update()
     {
         stateMachine.ExecuteState();
-        transform.Translate(velocity * velocityMod * Time.deltaTime, Space.World);
-        rb.velocity *= velocityMod;
+        //transform.Translate(velocity * Time.deltaTime, Space.World);
     }
 
 }

@@ -25,10 +25,10 @@ public class Idling : PlayerState
         Debug.Log("Idling");
         //anim.Play(animationNames[0]);
         movement.SetVelocity(Vector3.zero);
-        if (OnGround())
-        {
-            rb.velocity = Vector3.zero;
-        }
+        //if (OnGround())
+        //{
+        //    rb.velocity = Vector3.zero;
+        //}
     }
 
     public override void DuringExecution()

@@ -11,8 +11,8 @@ public class Booster : MonoBehaviour
     [HideInInspector]
     public int numOfCharges = 2;
 
-    private Rigidbody rb;
     private Transform camTransform;
+    private PlayerController player;
     private Camera cam;
     private Vector3 boostedVelocity;
     private float startingFOV;
@@ -20,7 +20,7 @@ public class Booster : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        player = GetComponent<PlayerController>();
         cam = Camera.main;
         camTransform = cam.transform;
         startingFOV = cam.fieldOfView;
@@ -69,7 +69,7 @@ public class Booster : MonoBehaviour
         if (boostedVelocity != Vector3.zero)
         {
             print("Boosted velocity: " + boostedVelocity);
-            rb.velocity += boostedVelocity;
+            player.AddVelocity(boostedVelocity);
             numOfCharges--;
             OnCooldownChange?.Invoke(numOfCharges);
             StartCoroutine(CameraReset());

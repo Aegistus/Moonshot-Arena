@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerShield : MonoBehaviour
+public class PowerShield : MonoBehaviour, IGadget
 {
     public float velocityModifier = .5f;
 
@@ -17,29 +17,26 @@ public class PowerShield : MonoBehaviour
         model.SetActive(false);
     }
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            ActivateShield();
-        }
-        if (Input.GetMouseButtonUp(1))
-        {
-            DeactivateShield();
-        }
-    }
-
-
-    private void ActivateShield()
+    public void StartUse()
     {
         player.ModifyVelocity(velocityModifier);
         model.SetActive(true);
     }
 
-    private void DeactivateShield()
+    public void EndUse()
     {
         player.ModifyVelocity(1);
         model.SetActive(false);
+    }
+
+    public void DisableGadget()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void EnableGadget()
+    {
+        gameObject.SetActive(true);
     }
 
 }

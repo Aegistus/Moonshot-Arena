@@ -7,7 +7,7 @@ public class Falling : PlayerState
     public Falling(GameObject gameObject) : base(gameObject)
     {
         animationNames.Add("Fall");
-        transitionsTo.Add(new Transition(typeof(Idling), Not(Falling)));
+        transitionsTo.Add(new Transition(typeof(Idling), Not(Falling), OnGround));
     }
 
     public override void AfterExecution()

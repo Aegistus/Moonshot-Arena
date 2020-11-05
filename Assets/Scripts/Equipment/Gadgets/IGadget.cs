@@ -2,17 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IGadget : MonoBehaviour
+public interface IGadget
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void EnableGadget();
+    void DisableGadget();
+    void StartUse();
+    void EndUse();
 }

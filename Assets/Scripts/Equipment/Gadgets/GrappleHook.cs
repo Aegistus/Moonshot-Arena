@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
-public class GrapplingGun : MonoBehaviour
+public class GrappleHook : MonoBehaviour, IGadget
 {
     private LineRenderer lr;
     private Vector3 grapplePoint;
     public LayerMask hookableLayer;
-    public Transform gunTip, player;
+    public Transform startPoint, player;
     private float maxDistance = 20f;
     private SpringJoint joint;
 
@@ -18,19 +18,12 @@ public class GrapplingGun : MonoBehaviour
     void Awake()
     {
         lr = GetComponent<LineRenderer>();
+        player = GetComponentInParent<PlayerController>().transform;
     }
 
     private Vector3 currentReelPoint;
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-            StartGrapple();
-        }
-        else if (Input.GetMouseButtonUp(1))
-        {
-            StopGrapple();
-        }
         if (connectedObject)
         {
             currentReelPoint = Vector3.Lerp(connectedObject.position, player.position, Time.deltaTime * reelSpeed);
@@ -47,7 +40,7 @@ public class GrapplingGun : MonoBehaviour
     /// <summary>
     /// Call whenever we want to start a grapple
     /// </summary>
-    void StartGrapple()
+    public void StartUse()
     {
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, maxDistance, hookableLayer))
@@ -76,14 +69,14 @@ public class GrapplingGun : MonoBehaviour
             }
 
             lr.positionCount = 2;
-            currentGrapplePosition = gunTip.position;
+            currentGrapplePosition = startPoint.position;
         }
     }
 
     /// <summary>
     /// Call whenever we want to stop a grapple
     /// </summary>
-    void StopGrapple()
+    public void EndUse()
     {
         lr.positionCount = 0;
         Destroy(joint);
@@ -100,14 +93,14 @@ public class GrapplingGun : MonoBehaviour
         {
             currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, grapplePoint, Time.deltaTime * 8f);
 
-            lr.SetPosition(0, gunTip.position);
+            lr.SetPosition(0, startPoint.position);
             lr.SetPosition(1, currentGrapplePosition);
         }
         else
         {
             currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, grapplePoint, Time.deltaTime * 8f);
 
-            lr.SetPosition(0, gunTip.position);
+            lr.SetPosition(0, startPoint.position);
             lr.SetPosition(1, connectedObject.position);
         }
     }
@@ -120,5 +113,15 @@ public class GrapplingGun : MonoBehaviour
     public Vector3 GetGrapplePoint()
     {
         return grapplePoint;
+    }
+
+    public void DisableGadget()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void EnableGadget()
+    {
+        gameObject.SetActive(true);
     }
 }

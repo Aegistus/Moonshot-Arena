@@ -11,7 +11,6 @@ public class PlayerGadgets : MonoBehaviour
     {
         allGadgets.AddRange(GetComponentsInChildren<IGadget>());
         currentGadget = allGadgets[0];
-        HideAllUnequippedGadgets();
     }
 
     private void Update()
@@ -24,7 +23,7 @@ public class PlayerGadgets : MonoBehaviour
         {
             currentGadget.EndUse();
         }
-        if (Input.mouseScrollDelta.y > 0)
+        if (Input.mouseScrollDelta.y < 0)
         {
             GoToNextGadget();
         }
@@ -39,25 +38,16 @@ public class PlayerGadgets : MonoBehaviour
                 if (i == allGadgets.Count - 1)
                 {
                     currentGadget = allGadgets[0];
+                    break;
                 }
                 else
                 {
                     currentGadget = allGadgets[i + 1];
+                    break;
                 }
             }
         }
-        currentGadget.EnableGadget();
-    }
-
-    public void HideAllUnequippedGadgets()
-    {
-        foreach (var gadget in allGadgets)
-        {
-            if (gadget != currentGadget)
-            {
-                gadget.DisableGadget();
-            }
-        }
+        print("Number of gadgets: " + allGadgets.Count);
     }
 
 }

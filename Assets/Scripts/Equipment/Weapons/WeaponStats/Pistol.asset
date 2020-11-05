@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAmmo: 10
   bulletForce: 20
-  kickBack: 5
+  kickBack: 1
   roundsPerMinute: 60
-  physicsObjectLayer:
+  targetAbleLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 4294967295
+  muzzleFlashTag: 1
+  bulletImpactTag: 0

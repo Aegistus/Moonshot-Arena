@@ -9,5 +9,7 @@ public class WeaponStats : ScriptableObject
     public float bulletForce = 20f;
     public float kickBack = 5f;
     public float roundsPerMinute = 60f;
-    public LayerMask physicsObjectLayer;
+    public LayerMask targetAbleLayers;
+    public PoolManager.PoolTag muzzleFlashTag = PoolManager.PoolTag.MuzzleFlash;
+    public PoolManager.PoolTag bulletImpactTag = PoolManager.PoolTag.BulletImpact;
 }

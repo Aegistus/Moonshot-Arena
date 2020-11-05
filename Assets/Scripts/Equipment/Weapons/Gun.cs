@@ -4,6 +4,9 @@ using UnityEngine;
 
 public abstract class Gun : MonoBehaviour, IWeapon
 {
+    public WeaponStats stats;
+    public Transform gunTip;
+
     [HideInInspector]
     public int currentAmmo;
     [HideInInspector]

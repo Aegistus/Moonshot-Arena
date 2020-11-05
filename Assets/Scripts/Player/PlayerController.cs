@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
             {typeof(Idling), new Idling(gameObject) },
             {typeof(Walking), new Walking(gameObject) },
             {typeof(Jumping), new Jumping(gameObject) },
-            {typeof(Attacking), new Attacking(gameObject) },
             {typeof(TakingDamage), new TakingDamage(gameObject) },
             {typeof(Falling), new Falling(gameObject) }
         };

@@ -4342,11 +4342,12 @@ GameObject:
   - component: {fileID: 469968693}
   - component: {fileID: 469968695}
   - component: {fileID: 469968697}
+  - component: {fileID: 469968699}
   - component: {fileID: 469968698}
   - component: {fileID: 469968692}
   - component: {fileID: 469968696}
   - component: {fileID: 469968694}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -4453,6 +4454,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5038cef02b694184fae838d7e7e59e7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &469968699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469968691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b9bf1098c9d81d4a954d41a869182d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
 --- !u!1 &473478312
 GameObject:
   m_ObjectHideFlags: 0
@@ -7221,7 +7235,7 @@ GameObject:
   - component: {fileID: 682769234}
   - component: {fileID: 682769233}
   - component: {fileID: 682769232}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7516,7 +7530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &751536136
 Transform:
   m_ObjectHideFlags: 0
@@ -7567,7 +7581,7 @@ MonoBehaviour:
   gunTip: {fileID: 203323952}
   currentAmmo: 0
   isReloading: 0
-  resetTime: 0.5
+  resetTime: 0.3
 --- !u!1 &755367496
 GameObject:
   m_ObjectHideFlags: 0
@@ -12033,7 +12047,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1449774440
 Transform:
   m_ObjectHideFlags: 0
@@ -12069,7 +12083,7 @@ MonoBehaviour:
   isReloading: 0
   shotSpread: 100
   pelletCount: 10
-  resetTime: 1
+  resetTime: 0.5
 --- !u!95 &1449774442
 Animator:
   serializedVersion: 3

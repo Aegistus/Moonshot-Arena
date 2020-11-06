@@ -18,6 +18,6 @@ MonoBehaviour:
   roundsPerMinute: 60
   targetAbleLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 768
   muzzleFlashTag: 1
   bulletImpactTag: 0

@@ -6,7 +6,9 @@ public class Shotgun : Gun, IWeapon
 {
     public float shotSpread = 1f;
     public float pelletCount = 5f;
+    public float resetTime = 1f;
 
+    private bool reset = true;
     private Camera cam;
     private Rigidbody playerRB;
     private PoolManager pool;
@@ -20,43 +22,55 @@ public class Shotgun : Gun, IWeapon
         anim = GetComponent<Animator>();
     }
 
-    public override void EndAttack()
+    public override IEnumerator EndAttack()
     {
-
+        yield return null;
     }
 
-    public override void Reload()
+    public override IEnumerator Reload()
     {
-
+        yield return null;
     }
 
     private RaycastHit rayHit;
     private List<Vector3> trajectories = new List<Vector3>();
     public override void StartAttack()
     {
-        trajectories.Clear();
-        for (int i = 0; i < pelletCount; i++)
+        if (reset)
         {
-            trajectories.Add(Input.mousePosition + new Vector3((Random.value * shotSpread) - shotSpread / 2, (Random.value * shotSpread) - shotSpread / 2, 2));
-        }
-        for (int i = 0; i < trajectories.Count; i++)
-        {
-            if (Physics.Raycast(cam.ScreenPointToRay(trajectories[i]), out rayHit, Mathf.Infinity, stats.targetAbleLayers))
+            trajectories.Clear();
+            for (int i = 0; i < pelletCount; i++)
             {
-                Rigidbody rb = rayHit.collider.GetComponent<Rigidbody>();
-                if (rb)
-                {
-                    if (rb.isKinematic)
-                    {
-                        rb.isKinematic = false;
-                    }
-                    rb.velocity += cam.transform.forward * stats.bulletForce;
-                }
-                Debug.DrawRay(cam.ScreenPointToRay(trajectories[i]).origin, cam.ScreenPointToRay(trajectories[i]).direction, Color.red, 100000f);
+                trajectories.Add(Input.mousePosition + new Vector3((Random.value * shotSpread) - shotSpread / 2, (Random.value * shotSpread) - shotSpread / 2, 2));
             }
-            GunFX();
+            for (int i = 0; i < trajectories.Count; i++)
+            {
+                if (Physics.Raycast(cam.ScreenPointToRay(trajectories[i]), out rayHit, Mathf.Infinity, stats.targetAbleLayers))
+                {
+                    Rigidbody rb = rayHit.collider.GetComponent<Rigidbody>();
+                    if (rb)
+                    {
+                        if (rb.isKinematic)
+                        {
+                            rb.isKinematic = false;
+                        }
+                        rb.velocity += cam.transform.forward * stats.bulletForce;
+                    }
+                    Debug.DrawRay(cam.ScreenPointToRay(trajectories[i]).origin, cam.ScreenPointToRay(trajectories[i]).direction, Color.red, 100000f);
+                }
+                GunFX();
+            }
+            playerRB.velocity += -cam.transform.forward * stats.kickBack;
+            anim.Play("Fire");
+            reset = false;
+            StartCoroutine(Reset());
         }
-        playerRB.velocity += -cam.transform.forward * stats.kickBack;
+    }
+
+    private IEnumerator Reset()
+    {
+        yield return new WaitForSeconds(resetTime);
+        reset = true;
     }
 
     private void GunFX()

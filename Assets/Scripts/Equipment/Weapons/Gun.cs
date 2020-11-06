@@ -12,7 +12,7 @@ public abstract class Gun : MonoBehaviour, IWeapon
     [HideInInspector]
     public bool isReloading;
 
-    public abstract void EndAttack();
-    public abstract void Reload();
+    public abstract IEnumerator EndAttack();
+    public abstract IEnumerator Reload();
     public abstract void StartAttack();
 }

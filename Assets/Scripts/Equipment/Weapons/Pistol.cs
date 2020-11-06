@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Pistol : Gun
 {
+    public float resetTime = .5f;
+
+    private bool reset = true;
     private Camera cam;
     private Rigidbody playerRB;
     private PoolManager pool;
@@ -20,20 +23,31 @@ public class Pistol : Gun
     private RaycastHit rayHit;
     public override void StartAttack()
     {
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out rayHit, Mathf.Infinity, stats.targetAbleLayers))
+        if (reset)
         {
-            Rigidbody rb = rayHit.collider.GetComponent<Rigidbody>();
-            if (rb)
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out rayHit, Mathf.Infinity, stats.targetAbleLayers))
             {
-                if (rb.isKinematic)
+                Rigidbody rb = rayHit.collider.GetComponent<Rigidbody>();
+                if (rb)
                 {
-                    rb.isKinematic = false;
+                    if (rb.isKinematic)
+                    {
+                        rb.isKinematic = false;
+                    }
+                    rb.velocity += cam.transform.forward * stats.bulletForce;
                 }
-                rb.velocity += cam.transform.forward * stats.bulletForce;
             }
+            GunFX();
+            playerRB.velocity += -cam.transform.forward * stats.kickBack;
+            reset = false;
+            StartCoroutine(Reset());
         }
-        GunFX();
-        playerRB.velocity += -cam.transform.forward * stats.kickBack;
+    }
+
+    private IEnumerator Reset()
+    {
+        yield return new WaitForSeconds(resetTime);
+        reset = true;
     }
 
     private void GunFX()
@@ -46,13 +60,13 @@ public class Pistol : Gun
         }
     }
 
-    public override void EndAttack()
+    public override IEnumerator EndAttack()
     {
-
+        yield return null;
     }
 
-    public override void Reload()
+    public override IEnumerator Reload()
     {
-        
+        yield return null;
     }
 }

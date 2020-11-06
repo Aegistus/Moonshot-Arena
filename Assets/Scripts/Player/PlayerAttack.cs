@@ -17,11 +17,11 @@ public class PlayerAttack : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
-            currentWeapon.EndAttack();
+            StartCoroutine(currentWeapon.EndAttack());
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
-            currentWeapon.Reload();
+            StartCoroutine(currentWeapon.Reload());
         }
     }
 

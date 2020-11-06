@@ -20,7 +20,7 @@ public class Jumping : PlayerState
     {
         Debug.Log("Jumping");
         //anim.Play(animationNames[0]);
-        rb.velocity = Vector2.up * jumpForce;
+        movement.AddVelocity(Vector2.up * jumpForce);
     }
 
     public override void DuringExecution()

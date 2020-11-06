@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Pistol : Gun
@@ -45,14 +44,11 @@ public class Pistol : Gun
         {
             pool.GetObjectFromPoolWithLifeTime(stats.bulletImpactTag, rayHit.point, Quaternion.Euler(-90, 0, 0), 2f);
         }
-        //transform.Translate(0, 0, -.1f);
-        //transform.rotation = Quaternion.Euler(new Vector3(-30, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z));
     }
 
     public override void EndAttack()
     {
-        //transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z));
-        //transform.Translate(0, 0, .1f);
+
     }
 
     public override void Reload()

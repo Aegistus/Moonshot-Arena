@@ -59,6 +59,7 @@ public class Shotgun : Gun, IWeapon
                     Debug.DrawRay(cam.ScreenPointToRay(trajectories[i]).origin, cam.ScreenPointToRay(trajectories[i]).direction, Color.red, 100000f);
                 }
                 GunFX();
+                BulletTrails();
             }
             playerRB.velocity += -cam.transform.forward * stats.kickBack;
             anim.Play("Fire");
@@ -81,5 +82,10 @@ public class Shotgun : Gun, IWeapon
         {
             pool.GetObjectFromPoolWithLifeTime(stats.bulletImpactTag, rayHit.point, Quaternion.Euler(-90, 0, 0), 2f);
         }
+    }
+
+    private void BulletTrails()
+    {
+        pool.GetObjectFromPoolWithLifeTime(stats.bulletTrailTag, gunTip.position + gunTip.forward, Quaternion.LookRotation(rayHit.point - gunTip.position + gunTip.forward), 4f);
     }
 }

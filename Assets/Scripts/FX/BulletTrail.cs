@@ -10,4 +10,9 @@ public class BulletTrail : PoolObject
     {
         transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        gameObject.SetActive(false);
+    }
 }

@@ -6,9 +6,9 @@ public abstract class Health : MonoBehaviour, IKillable
 {
     [HideInInspector]
     public int currentHealth;
-    public readonly int maxHealth;
+    public int maxHealth;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         currentHealth = maxHealth;
     }

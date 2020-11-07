@@ -8,6 +8,17 @@ public class PlayerHealth : Health
     public static event Action<int> OnPlayerHealthChange;
     public static event Action OnPlayerDeath;
 
+    protected override void Awake()
+    {
+        maxHealth = 100;
+        base.Awake();
+    }
+
+    private void Start()
+    {
+        OnPlayerHealthChange?.Invoke(currentHealth);
+    }
+
     public override void Damage(int damage)
     {
         base.Damage(damage);

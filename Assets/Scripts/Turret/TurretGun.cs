@@ -1,14 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TurretGun : MonoBehaviour
 {
+    public int damage = 1;
     public float shotsPerSecond = 1f;
     public float targetKnockback = 1f;
     public float rotationSpeed = 5f;
     public Transform coreTransform;
     public List<Transform> muzzleTips = new List<Transform>();
+    public LayerMask killableLayer;
 
     [HideInInspector]
     public bool isShooting = false;
@@ -50,8 +53,18 @@ public class TurretGun : MonoBehaviour
                 MuzzleFX();
                 ImpactFX();
                 ShotPhysics();
+                ShotDamage();
             }
             yield return new WaitForSeconds(shotsPerSecond);
+        }
+    }
+
+    private void ShotDamage()
+    {
+        Health health = rayHit.collider.gameObject.GetComponent<Health>();
+        if (health != null)
+        {
+            health.Damage(1);
         }
     }
 

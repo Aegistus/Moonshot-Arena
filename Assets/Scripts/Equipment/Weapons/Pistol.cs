@@ -58,6 +58,7 @@ public class Pistol : Gun
         {
             pool.GetObjectFromPoolWithLifeTime(stats.bulletImpactTag, rayHit.point, Quaternion.Euler(-90, 0, 0), 2f);
         }
+        pool.GetObjectFromPoolWithLifeTime(stats.bulletTrailTag, gunTip.position + gunTip.forward, gunTip.rotation, 10f);
     }
 
     public override IEnumerator EndAttack()

@@ -13,7 +13,7 @@ public class PoolObject : MonoBehaviour
         particles = GetComponent<ParticleSystem>();
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         if (particles)
         {

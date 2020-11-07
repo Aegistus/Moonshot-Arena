@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewWeaponStats", menuName = "Weapon Stats", order = 1)]
 public class WeaponStats : ScriptableObject
 {
+    public float resetTime = .1f;
+    public float reloadTime = 2f;
     public int maxAmmo = 10;
     public float bulletForce = 20f;
     public float kickBack = 5f;

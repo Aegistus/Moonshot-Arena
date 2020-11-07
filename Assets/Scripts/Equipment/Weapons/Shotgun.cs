@@ -14,8 +14,9 @@ public class Shotgun : Gun, IWeapon
     private PoolManager pool;
     private Animator anim;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         cam = Camera.main;
         playerRB = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
         pool = PoolManager.Instance;
@@ -29,14 +30,15 @@ public class Shotgun : Gun, IWeapon
 
     public override IEnumerator Reload()
     {
-        yield return null;
+        yield return new WaitForSeconds(3f);
+        AddAmmo(stats.maxAmmo);
     }
 
     private RaycastHit rayHit;
     private List<Vector3> trajectories = new List<Vector3>();
     public override void StartAttack()
     {
-        if (reset)
+        if (reset && currentAmmo > 0)
         {
             trajectories.Clear();
             for (int i = 0; i < pelletCount; i++)
@@ -64,6 +66,7 @@ public class Shotgun : Gun, IWeapon
             playerRB.velocity += -cam.transform.forward * stats.kickBack;
             anim.Play("Fire");
             reset = false;
+            UseAmmo();
             StartCoroutine(Reset());
         }
     }

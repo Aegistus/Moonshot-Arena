@@ -12,8 +12,9 @@ public class Pistol : Gun
     private PoolManager pool;
     private Animator anim;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         cam = Camera.main;
         playerRB = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
         pool = PoolManager.Instance;
@@ -23,7 +24,7 @@ public class Pistol : Gun
     private RaycastHit rayHit;
     public override void StartAttack()
     {
-        if (reset)
+        if (reset && currentAmmo > 0)
         {
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out rayHit, Mathf.Infinity, stats.targetAbleLayers))
             {
@@ -40,6 +41,7 @@ public class Pistol : Gun
             GunFX();
             playerRB.velocity += -cam.transform.forward * stats.kickBack;
             reset = false;
+            UseAmmo();
             StartCoroutine(Reset());
         }
     }
@@ -68,6 +70,12 @@ public class Pistol : Gun
 
     public override IEnumerator Reload()
     {
-        yield return null;
+        anim.enabled = false;
+        reloading = true;
+        yield return new WaitForSeconds(1f);
+        AddAmmo(stats.maxAmmo);
+        reloading = false;
+        transform.rotation = Quaternion.identity;
+        anim.enabled = true;
     }
 }

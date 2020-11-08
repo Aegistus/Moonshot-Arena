@@ -36,6 +36,7 @@ public class Pistol : Gun
                     rb.velocity += cam.transform.forward * stats.bulletForce;
                 }
             }
+            AudioManager.instance.StartPlayingAtPosition("Gun Shot 01", transform.position);
             GunFX();
             playerRB.velocity += -cam.transform.forward * stats.kickBack;
             reset = false;
@@ -68,7 +69,7 @@ public class Pistol : Gun
 
     public override IEnumerator Reload()
     {
-        if (extraAmmo > 0)
+        if (!reloading && extraAmmo > 0 && loadedAmmo < stats.maxAmmo)
         {
             anim.enabled = false;
             reloading = true;

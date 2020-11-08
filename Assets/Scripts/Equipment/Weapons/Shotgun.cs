@@ -30,8 +30,23 @@ public class Shotgun : Gun, IWeapon
 
     public override IEnumerator Reload()
     {
-        yield return new WaitForSeconds(3f);
-        AddAmmo();
+        if (!reloading && extraAmmo > 0 && loadedAmmo < stats.maxAmmo)
+        {
+            anim.enabled = false;
+            reloading = true;
+            yield return new WaitForSeconds(stats.reloadTime);
+            int ammoToAdd = 1;
+            loadedAmmo += ammoToAdd;
+            extraAmmo -= ammoToAdd;
+            AddAmmo();
+            reloading = false;
+            transform.rotation = Quaternion.identity;
+            anim.enabled = true;
+        }
+        else
+        {
+            print("no more ammo");
+        }
     }
 
     private RaycastHit rayHit;
@@ -60,6 +75,7 @@ public class Shotgun : Gun, IWeapon
                     }
                     Debug.DrawRay(cam.ScreenPointToRay(trajectories[i]).origin, cam.ScreenPointToRay(trajectories[i]).direction, Color.red, 100000f);
                 }
+                AudioManager.instance.StartPlayingAtPosition("Gun Shot 01", transform.position);
                 GunFX();
                 BulletTrails();
             }

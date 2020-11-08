@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d52c3f08778a9f4285a4813c15ff307, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
+  resetTime: 0.1
+  reloadTime: 0.5
   maxAmmo: 4
   bulletForce: 30
   kickBack: 10
@@ -21,3 +23,4 @@ MonoBehaviour:
     m_Bits: 768
   muzzleFlashTag: 1
   bulletImpactTag: 0
+  bulletTrailTag: 2

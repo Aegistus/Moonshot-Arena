@@ -1,30 +1,31 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Gun : MonoBehaviour, IWeapon
 {
-    public static event Action<int> OnAmmoAmountChange;
+    public static event Action<int, int> OnAmmoAmountChange;
     public WeaponStats stats;
     public Transform gunTip;
 
     [HideInInspector]
-    public int currentAmmo;
+    public int loadedAmmo;
+    [HideInInspector]
+    public int extraAmmo = 20;
     [HideInInspector]
     public bool reloading = false;
 
     protected virtual void Start()
     {
-        OnAmmoAmountChange?.Invoke(currentAmmo);
-        currentAmmo = stats.maxAmmo;
+        loadedAmmo = stats.maxAmmo;
+        OnAmmoAmountChange?.Invoke(loadedAmmo, extraAmmo);
     }
 
     protected void Update()
     {
         if (reloading)
         {
-            transform.Rotate(-720 * Time.deltaTime, 0, 0);
+            transform.Rotate(-900 * Time.deltaTime, 0, 0);
         }
     }
 
@@ -34,13 +35,12 @@ public abstract class Gun : MonoBehaviour, IWeapon
 
     public void UseAmmo()
     {
-        currentAmmo--;
-        OnAmmoAmountChange?.Invoke(currentAmmo);
+        loadedAmmo--;
+        OnAmmoAmountChange?.Invoke(loadedAmmo, extraAmmo);
     }
 
-    public void AddAmmo(int amount)
+    public void AddAmmo()
     {
-        currentAmmo = Mathf.Clamp(currentAmmo + amount, 0, stats.maxAmmo);
-        OnAmmoAmountChange?.Invoke(currentAmmo);
+        OnAmmoAmountChange?.Invoke(loadedAmmo, extraAmmo);
     }
 }

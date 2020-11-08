@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Pistol : Gun
 {
-    public float resetTime = .5f;
-
     private bool reset = true;
     private Camera cam;
     private Rigidbody playerRB;
@@ -24,7 +22,7 @@ public class Pistol : Gun
     private RaycastHit rayHit;
     public override void StartAttack()
     {
-        if (reset && currentAmmo > 0)
+        if (reset && loadedAmmo > 0)
         {
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out rayHit, Mathf.Infinity, stats.targetAbleLayers))
             {
@@ -48,7 +46,7 @@ public class Pistol : Gun
 
     private IEnumerator Reset()
     {
-        yield return new WaitForSeconds(resetTime);
+        yield return new WaitForSeconds(stats.resetTime);
         reset = true;
     }
 
@@ -70,12 +68,22 @@ public class Pistol : Gun
 
     public override IEnumerator Reload()
     {
-        anim.enabled = false;
-        reloading = true;
-        yield return new WaitForSeconds(1f);
-        AddAmmo(stats.maxAmmo);
-        reloading = false;
-        transform.rotation = Quaternion.identity;
-        anim.enabled = true;
+        if (extraAmmo > 0)
+        {
+            anim.enabled = false;
+            reloading = true;
+            yield return new WaitForSeconds(stats.reloadTime);
+            int ammoToAdd = extraAmmo > stats.maxAmmo ? stats.maxAmmo - loadedAmmo : extraAmmo;
+            loadedAmmo += ammoToAdd;
+            extraAmmo -= ammoToAdd;
+            AddAmmo();
+            reloading = false;
+            transform.rotation = Quaternion.identity;
+            anim.enabled = true;
+        }
+        else
+        {
+            print("no more ammo");
+        }
     }
 }

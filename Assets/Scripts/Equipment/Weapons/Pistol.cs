@@ -22,7 +22,7 @@ public class Pistol : Gun
     private RaycastHit rayHit;
     public override void StartAttack()
     {
-        if (reset && loadedAmmo > 0)
+        if (reset && !reloading && loadedAmmo > 0)
         {
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out rayHit, Mathf.Infinity, stats.targetAbleLayers))
             {

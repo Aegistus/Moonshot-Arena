@@ -53,7 +53,7 @@ public class Shotgun : Gun, IWeapon
     private List<Vector3> trajectories = new List<Vector3>();
     public override void StartAttack()
     {
-        if (reset && loadedAmmo > 0)
+        if (reset && !reloading && loadedAmmo > 0)
         {
             trajectories.Clear();
             for (int i = 0; i < pelletCount; i++)

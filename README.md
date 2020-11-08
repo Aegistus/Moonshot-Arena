@@ -1,2 +1,2 @@
 # Moonshot-Arena
-First person arena runner in SPAAAAAACCCCE.
+First person arena shooter in SPAAAAAACCCCE.

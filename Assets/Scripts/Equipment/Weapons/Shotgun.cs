@@ -30,14 +30,14 @@ public class Shotgun : Gun, IWeapon
 
     public override IEnumerator Reload()
     {
-        if (!reloading && extraAmmo > 0 && loadedAmmo < stats.maxAmmo)
+        if (!reloading && carriedAmmo > 0 && loadedAmmo < stats.maxAmmo)
         {
             anim.enabled = false;
             reloading = true;
             yield return new WaitForSeconds(stats.reloadTime);
             int ammoToAdd = 1;
             loadedAmmo += ammoToAdd;
-            extraAmmo -= ammoToAdd;
+            carriedAmmo -= ammoToAdd;
             AddAmmo();
             reloading = false;
             transform.rotation = Quaternion.identity;

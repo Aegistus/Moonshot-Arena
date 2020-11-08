@@ -11,14 +11,14 @@ public abstract class Gun : MonoBehaviour, IWeapon
     [HideInInspector]
     public int loadedAmmo;
     [HideInInspector]
-    public int extraAmmo = 20;
+    public int carriedAmmo = 100;
     [HideInInspector]
     public bool reloading = false;
 
     protected virtual void Start()
     {
         loadedAmmo = stats.maxAmmo;
-        OnAmmoAmountChange?.Invoke(loadedAmmo, extraAmmo);
+        OnAmmoAmountChange?.Invoke(loadedAmmo, carriedAmmo);
     }
 
     protected void Update()
@@ -36,11 +36,11 @@ public abstract class Gun : MonoBehaviour, IWeapon
     public void UseAmmo()
     {
         loadedAmmo--;
-        OnAmmoAmountChange?.Invoke(loadedAmmo, extraAmmo);
+        OnAmmoAmountChange?.Invoke(loadedAmmo, carriedAmmo);
     }
 
     public void AddAmmo()
     {
-        OnAmmoAmountChange?.Invoke(loadedAmmo, extraAmmo);
+        OnAmmoAmountChange?.Invoke(loadedAmmo, carriedAmmo);
     }
 }

@@ -54,7 +54,7 @@ public class TurretGun : MonoBehaviour
                 ImpactFX();
                 ShotPhysics();
                 ShotDamage();
-                AudioManager.instance.StartPlayingAtPosition("Gun Shot 01", muzzleTips[muzzleIndex].position);
+                AudioManager.instance.StartPlayingAtPosition("Gun Shot 03", muzzleTips[muzzleIndex].position);
             }
             yield return new WaitForSeconds(shotsPerSecond);
         }

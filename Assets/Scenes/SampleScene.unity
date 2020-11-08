@@ -7933,7 +7933,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &751536136
 Transform:
   m_ObjectHideFlags: 0
@@ -7983,7 +7983,7 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 1df1471c359c6334187da86b30336cbe, type: 2}
   gunTip: {fileID: 203323952}
   loadedAmmo: 0
-  extraAmmo: 20
+  carriedAmmo: 100
   reloading: 0
 --- !u!1 &755367496
 GameObject:
@@ -12514,7 +12514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1449774440
 Transform:
   m_ObjectHideFlags: 0
@@ -12547,7 +12547,7 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 07a7133f42ea14945863998ab1c3a6c5, type: 2}
   gunTip: {fileID: 708652247}
   loadedAmmo: 0
-  extraAmmo: 20
+  carriedAmmo: 100
   reloading: 0
   shotSpread: 150
   pelletCount: 5
@@ -13110,7 +13110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  shotsPerSecond: 0.15
+  shotsPerSecond: 0.1
   targetKnockback: 2
   rotationSpeed: 10
   coreTransform: {fileID: 1335717934}
@@ -15241,6 +15241,26 @@ MonoBehaviour:
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0.57
+    minimunDistance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Gun Shot 02
+    clip: {fileID: 8300000, guid: 4621f15bc619b4a4fb6d3548d596c652, type: 3}
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.57
+    minimunDistance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Gun Shot 03
+    clip: {fileID: 8300000, guid: 061dd272f54e1ed448b9f510c282ca88, type: 3}
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 0.68
+    pitchVariance: 0.6
     minimunDistance: 0
     loop: 0
     mixerGroup: {fileID: 0}

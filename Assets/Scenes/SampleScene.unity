@@ -7933,7 +7933,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &751536136
 Transform:
   m_ObjectHideFlags: 0
@@ -12514,7 +12514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1449774440
 Transform:
   m_ObjectHideFlags: 0
@@ -12549,7 +12549,7 @@ MonoBehaviour:
   loadedAmmo: 0
   carriedAmmo: 100
   reloading: 0
-  shotSpread: 150
+  shotSpread: 100
   pelletCount: 5
   resetTime: 0.5
 --- !u!95 &1449774442
@@ -15257,6 +15257,16 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Gun Shot 03
     clip: {fileID: 8300000, guid: 061dd272f54e1ed448b9f510c282ca88, type: 3}
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 0.68
+    pitchVariance: 0.6
+    minimunDistance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Gun Empty Click
+    clip: {fileID: 8300000, guid: 12ab629955218bb4f9dc55bc78a885f7, type: 3}
     volume: 1
     volumeVariance: 0.1
     pitch: 0.68

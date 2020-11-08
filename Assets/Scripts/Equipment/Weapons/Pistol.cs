@@ -43,6 +43,10 @@ public class Pistol : Gun
             UseAmmo();
             StartCoroutine(Reset());
         }
+        else if (loadedAmmo == 0)
+        {
+            AudioManager.instance.StartPlayingAtPosition("Gun Empty Click", transform.position);
+        }
     }
 
     private IEnumerator Reset()

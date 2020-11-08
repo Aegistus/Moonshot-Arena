@@ -9,6 +9,7 @@ public class Sprinting : PlayerState
     public Sprinting(GameObject gameObject) : base(gameObject)
     {
         animationNames.Add("Run");
+        transitionsTo.Add(new Transition(typeof(Sliding), Ctrl));
         transitionsTo.Add(new Transition(typeof(Walking), Not(Shift)));
         transitionsTo.Add(new Transition(typeof(Idling), Not(MoveKeys), Not(Shift)));
         transitionsTo.Add(new Transition(typeof(Jumping), Spacebar, Not(Falling)));

@@ -11,6 +11,7 @@ public class Walking : PlayerState
         animationNames.Add("Run");
         transitionsTo.Add(new Transition(typeof(Idling), Not(MoveKeys)));
         transitionsTo.Add(new Transition(typeof(Sprinting), Shift));
+        transitionsTo.Add(new Transition(typeof(Sliding), Ctrl));
         transitionsTo.Add(new Transition(typeof(Jumping), Spacebar, Not(Falling)));
         transitionsTo.Add(new Transition(typeof(Falling), Not(OnGround), Falling));
     }

@@ -64,7 +64,7 @@ public class TurretGun : MonoBehaviour
         Health health = rayHit.collider.gameObject.GetComponent<Health>();
         if (health != null)
         {
-            health.Damage(1);
+            health.Damage(damage);
         }
     }
 

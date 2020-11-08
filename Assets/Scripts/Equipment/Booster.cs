@@ -31,7 +31,7 @@ public class Booster : MonoBehaviour
     {
         if (numOfCharges > 0)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.C))
             {
                 boostedVelocity = Vector3.zero;
                 if (Input.GetKey(KeyCode.W))

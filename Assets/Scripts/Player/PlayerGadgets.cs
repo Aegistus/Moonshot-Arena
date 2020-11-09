@@ -23,10 +23,10 @@ public class PlayerGadgets : MonoBehaviour
         {
             currentGadget.EndUse();
         }
-        if (Input.mouseScrollDelta.y < 0)
-        {
-            GoToNextGadget();
-        }
+        //if (Input.mouseScrollDelta.y < 0)
+        //{
+        //    GoToNextGadget();
+        //}
     }
 
     public void GoToNextGadget()

@@ -7,4 +7,6 @@ public interface IWeapon
     void StartAttack();
     IEnumerator EndAttack();
     IEnumerator Reload();
+    void DisableWeapon();
+    void EnableWeapon();
 }

@@ -43,4 +43,20 @@ public abstract class Gun : MonoBehaviour, IWeapon
     {
         OnAmmoAmountChange?.Invoke(loadedAmmo, carriedAmmo);
     }
+
+    public void DisableWeapon()
+    {
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+    }
+
+    public void EnableWeapon()
+    {
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(true);
+        }
+    }
 }

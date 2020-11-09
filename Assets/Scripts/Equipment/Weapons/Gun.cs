@@ -58,5 +58,6 @@ public abstract class Gun : MonoBehaviour, IWeapon
         {
             child.gameObject.SetActive(true);
         }
+        OnAmmoAmountChange?.Invoke(loadedAmmo, carriedAmmo);
     }
 }

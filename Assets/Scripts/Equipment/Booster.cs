@@ -13,55 +13,51 @@ public class Booster : MonoBehaviour
 
     private Transform camTransform;
     private PlayerController player;
-    private Camera cam;
+    private CameraFX camFX;
     private Vector3 boostedVelocity;
-    private float startingFOV;
-    private float targetFOV;
 
     private void Start()
     {
         player = GetComponent<PlayerController>();
-        cam = Camera.main;
-        camTransform = cam.transform;
-        startingFOV = cam.fieldOfView;
-        targetFOV = startingFOV;
+        camTransform = Camera.main.transform;
+        camFX = Camera.main.GetComponentInParent<CameraFX>();
     }
 
     private void Update()
     {
         if (numOfCharges > 0)
         {
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 boostedVelocity = Vector3.zero;
                 if (Input.GetKey(KeyCode.W))
                 {
                     boostedVelocity = camTransform.forward;
-                    targetFOV = startingFOV + 5;
+                    camFX.AddTargetFOV(10);
                 }
                 else if (Input.GetKey(KeyCode.S))
                 {
                     boostedVelocity = -camTransform.forward;
-                    targetFOV = startingFOV - 5;
+                    camFX.AddTargetFOV(-10);
                 }
                 else if (Input.GetKey(KeyCode.A))
                 {
                     boostedVelocity = -camTransform.right;
-                    camTransform.Rotate(new Vector3(camTransform.rotation.x, 0, 10f));
+                    camFX.AddTargetRotation(10f);
                 }
                 else if (Input.GetKey(KeyCode.D))
                 {
                     boostedVelocity = camTransform.right;
-                    camTransform.Rotate(new Vector3(camTransform.rotation.x, 0, -10f));
-                } else if (Input.GetKey(KeyCode.Space))
+                    camFX.AddTargetRotation(-10f);
+                }
+                else if (Input.GetKey(KeyCode.Space))
                 {
                     boostedVelocity = camTransform.up;
                 }
                 boostedVelocity *= thrust;
-                Boost(boostedVelocity);
+                Boost(boostedVelocity); 
             }
         }
-        cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFOV, .1f);
     }
 
     public void Boost(Vector3 boostedVelocity)
@@ -88,6 +84,7 @@ public class Booster : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         camTransform.localRotation = Quaternion.Euler(new Vector3(camTransform.localRotation.eulerAngles.x, 0f, 0f));
-        targetFOV = startingFOV;
+        camFX.ResetFOV();
+        camFX.ResetRotation();
     }
 }

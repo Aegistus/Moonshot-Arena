@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Walking : PlayerState
 {
-    private float moveSpeed = 3f;
+    private float moveSpeed = 5f;
 
     public Walking(GameObject gameObject) : base(gameObject)
     {
         animationNames.Add("Run");
         transitionsTo.Add(new Transition(typeof(Idling), Not(MoveKeys)));
-        transitionsTo.Add(new Transition(typeof(Sprinting), Shift));
         transitionsTo.Add(new Transition(typeof(Sliding), Ctrl));
         transitionsTo.Add(new Transition(typeof(Jumping), Spacebar, Not(Falling)));
         transitionsTo.Add(new Transition(typeof(Falling), Not(OnGround), Falling));

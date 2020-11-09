@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PistolAmmo : ItemDrop
+public class PistolAmmoDrop : ItemDrop
 {
     public int ammo = 20;
 

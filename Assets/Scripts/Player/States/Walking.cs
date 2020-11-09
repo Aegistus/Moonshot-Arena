@@ -28,24 +28,27 @@ public class Walking : PlayerState
     Vector3 newVelocity;
     public override void DuringExecution()
     {
-        newVelocity = Vector3.zero;
-        if (Input.GetKey(KeyCode.W))
+        if (movement.velocity.magnitude < moveSpeed)
         {
-            newVelocity += transform.forward;
+            newVelocity = Vector3.zero;
+            if (Input.GetKey(KeyCode.W))
+            {
+                newVelocity += transform.forward;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                newVelocity += -transform.forward;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                newVelocity += -transform.right;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                newVelocity += transform.right;
+            }
+            newVelocity = newVelocity.normalized;
+            movement.SetVelocity(newVelocity * moveSpeed);
         }
-        if (Input.GetKey(KeyCode.S))
-        {
-            newVelocity += -transform.forward;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            newVelocity += -transform.right;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            newVelocity += transform.right;
-        }
-        newVelocity = newVelocity.normalized;
-        movement.SetVelocity(newVelocity * moveSpeed);
     }
 }

@@ -19,7 +19,7 @@ public class PowerShield : MonoBehaviour, IGadget
 
     public void StartUse()
     {
-        player.ModifyVelocity(velocityModifier);
+        player.SetVelocity(player.velocity.normalized);
         model.SetActive(true);
     }
 

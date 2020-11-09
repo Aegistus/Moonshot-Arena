@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretGun : MonoBehaviour
+public class GunTurret : Turret
 {
     public int damage = 1;
     public float shotsPerSecond = 1f;
@@ -11,7 +11,6 @@ public class TurretGun : MonoBehaviour
     public float rotationSpeed = 5f;
     public Transform coreTransform;
     public List<Transform> muzzleTips = new List<Transform>();
-    public LayerMask killableLayer;
 
     [HideInInspector]
     public bool isShooting = false;
@@ -19,10 +18,10 @@ public class TurretGun : MonoBehaviour
     private RaycastHit rayHit;
     private PoolManager poolManager;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         poolManager = PoolManager.Instance;
-        StartShooting();
     }
 
     private void LateUpdate()
@@ -30,6 +29,14 @@ public class TurretGun : MonoBehaviour
         if (isShooting)
         {
             coreTransform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+        }
+        if (playerSeen && !isShooting)
+        {
+            StartShooting();
+        }
+        else if (!playerSeen && isShooting)
+        {
+            StopShooting();
         }
     }
 

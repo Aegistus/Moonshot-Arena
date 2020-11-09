@@ -38,7 +38,7 @@ public class Shotgun : Gun, IWeapon
             int ammoToAdd = 1;
             loadedAmmo += ammoToAdd;
             carriedAmmo -= ammoToAdd;
-            AddAmmo();
+            LoadAmmo();
             reloading = false;
             transform.rotation = Quaternion.identity;
             anim.enabled = true;

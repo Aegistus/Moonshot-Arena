@@ -81,7 +81,7 @@ public class Pistol : Gun
             int ammoToAdd = carriedAmmo > stats.maxAmmo ? stats.maxAmmo - loadedAmmo : carriedAmmo;
             loadedAmmo += ammoToAdd;
             carriedAmmo -= ammoToAdd;
-            AddAmmo();
+            LoadAmmo();
             reloading = false;
             transform.rotation = Quaternion.identity;
             anim.enabled = true;

@@ -15,6 +15,8 @@ public abstract class Gun : MonoBehaviour, IWeapon
     [HideInInspector]
     public bool reloading = false;
 
+    private bool currentWeapon = true;
+
     protected virtual void Start()
     {
         loadedAmmo = stats.maxAmmo;
@@ -39,9 +41,18 @@ public abstract class Gun : MonoBehaviour, IWeapon
         OnAmmoAmountChange?.Invoke(loadedAmmo, carriedAmmo);
     }
 
-    public void AddAmmo()
+    public void LoadAmmo()
     {
         OnAmmoAmountChange?.Invoke(loadedAmmo, carriedAmmo);
+    }
+
+    public void AddAmmoToSupply(int ammoAmount)
+    {
+        carriedAmmo += ammoAmount;
+        if (currentWeapon)
+        {
+            OnAmmoAmountChange?.Invoke(loadedAmmo, carriedAmmo);
+        }
     }
 
     public void DisableWeapon()
@@ -50,6 +61,7 @@ public abstract class Gun : MonoBehaviour, IWeapon
         {
             child.gameObject.SetActive(false);
         }
+        currentWeapon = false;
     }
 
     public void EnableWeapon()
@@ -59,5 +71,6 @@ public abstract class Gun : MonoBehaviour, IWeapon
             child.gameObject.SetActive(true);
         }
         OnAmmoAmountChange?.Invoke(loadedAmmo, carriedAmmo);
+        currentWeapon = true;
     }
 }

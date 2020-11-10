@@ -11,7 +11,7 @@ public class Patrolling : DroneState
 
     public Patrolling(GameObject gameObject) : base(gameObject)
     {
-
+        transitionsTo.Add(new Transition(typeof(Chasing), PlayerIsInLOS));
     }
 
     public override void AfterExecution()
@@ -21,6 +21,7 @@ public class Patrolling : DroneState
 
     public override void BeforeExecution()
     {
+        Debug.Log("Patrolling");
         timer = maxTimer;
         currentPatrolPoint = PatrolPointManager.current.GetRandomPointCloseToArea(transform.position, patrolRadius);
         drone.SetDestination(currentPatrolPoint.position);

@@ -18,6 +18,9 @@ public class Drone : MonoBehaviour
         Dictionary<Type, State> states = new Dictionary<Type, State>()
         {
             { typeof(Patrolling), new Patrolling(gameObject) },
+            { typeof(Chasing), new Chasing(gameObject) },
+            { typeof(Searching), new Searching(gameObject) },
+            { typeof(Strafing), new Strafing(gameObject) },
         };
         stateMachine.SetStates(states, typeof(Patrolling));
     }
@@ -38,5 +41,10 @@ public class Drone : MonoBehaviour
     public void SetDestination(Vector3 destination)
     {
         navAgent.SetDestination(destination);
+    }
+
+    public void NavAgentSetActive(bool active)
+    {
+        navAgent.enabled = active;
     }
 }

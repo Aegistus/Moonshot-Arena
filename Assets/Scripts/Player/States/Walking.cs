@@ -22,7 +22,7 @@ public class Walking : PlayerState
 
     public override void BeforeExecution()
     {
-        Debug.Log("Walking");
+
     }
 
     Vector3 newVelocity;

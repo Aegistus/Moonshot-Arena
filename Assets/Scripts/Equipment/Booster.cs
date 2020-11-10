@@ -64,7 +64,6 @@ public class Booster : MonoBehaviour
     {
         if (boostedVelocity != Vector3.zero)
         {
-            print("Boosted velocity: " + boostedVelocity);
             player.AddVelocity(boostedVelocity);
             numOfCharges--;
             OnCooldownChange?.Invoke(numOfCharges);

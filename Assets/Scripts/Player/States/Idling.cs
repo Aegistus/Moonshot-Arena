@@ -22,7 +22,6 @@ public class Idling : PlayerState
 
     public override void BeforeExecution()
     {
-        Debug.Log("Idling");
         //anim.Play(animationNames[0]);
         movement.SetVelocity(Vector3.zero);
         //if (OnGround())

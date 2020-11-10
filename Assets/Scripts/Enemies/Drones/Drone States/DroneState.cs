@@ -15,7 +15,7 @@ public abstract class DroneState : State
     protected DroneState(GameObject gameObject) : base(gameObject)
     {
         drone = gameObject.GetComponent<Drone>();
-        scanner = gameObject.GetComponent<FieldOfView>();
+        scanner = gameObject.GetComponentInChildren<FieldOfView>();
         attack = gameObject.GetComponent<DroneAttack>();
         droneModel = gameObject.transform.GetChild(0);
     }

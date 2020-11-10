@@ -38,10 +38,11 @@ public class Strafing : DroneState
             }
             else
             {
-                //drone.SetDestination(new Vector3(transform.position.x + (Random.value * 2) - 1, transform.position.y, transform.position.z));
+                drone.SetDestination(new Vector3(transform.position.x + (Random.value * 6) - 3, transform.position.y, transform.position.z));
                 timer = maxTimer;
             }
         }
+        attack.ChargeAttack();
         startRotation = droneModel.rotation;
         droneModel.LookAt(scanner.visibleTargets[0].position);
         targetRotation = droneModel.rotation;

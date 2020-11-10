@@ -24,12 +24,13 @@ public class Chasing : DroneState
     {
         Debug.Log("Chasing");
         target = scanner.visibleTargets[0];
-        //attack.ChargeAttack();
     }
 
     public override void DuringExecution()
     {
         drone.SetDestination(target.transform.position);
+
+        attack.ChargeAttack();
 
         startRotation = droneModel.rotation;
         droneModel.LookAt(target.position);

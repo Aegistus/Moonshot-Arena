@@ -9646,7 +9646,6 @@ GameObject:
   - component: {fileID: 826067647}
   - component: {fileID: 826067648}
   - component: {fileID: 826067651}
-  - component: {fileID: 826067650}
   - component: {fileID: 826067649}
   m_Layer: 0
   m_Name: Drone
@@ -9695,7 +9694,7 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 0
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -9704,27 +9703,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &826067650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826067646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 671336332dd003c4e97608296d33d310, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewRadius: 40
-  viewAngle: 140
-  targetMask:
-    serializedVersion: 2
-    m_Bits: 2048
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 256
-  visibleTargets: []
 --- !u!114 &826067651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9732,7 +9710,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826067646}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d797117e9ea67e24f9299c9704a83432, type: 3}
   m_Name: 
@@ -10884,6 +10862,7 @@ GameObject:
   - component: {fileID: 1069902333}
   - component: {fileID: 1069902332}
   - component: {fileID: 1069902331}
+  - component: {fileID: 1069902334}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -10968,6 +10947,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069902329}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1069902334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069902329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671336332dd003c4e97608296d33d310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRadius: 40
+  viewAngle: 300
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 256
+  visibleTargets: []
 --- !u!1 &1110461332
 GameObject:
   m_ObjectHideFlags: 0
@@ -16248,7 +16248,7 @@ MonoBehaviour:
     objectPrefab: {fileID: 6428645978257085481, guid: 06013bdf33d57c34f9ff90f7f942e317, type: 3}
     size: 50
   - tag: 3
-    objectPrefab: {fileID: 874244544889619525, guid: 0728f683564eb00408dbd34352577569, type: 3}
+    objectPrefab: {fileID: 483918908983999528, guid: 2111d2eee3769bf45925d85467473212, type: 3}
     size: 30
 --- !u!4 &1890667970
 Transform:

@@ -91,4 +91,23 @@ public class PoolManager : MonoBehaviour
         }
         return null;
     }
+
+    public GameObject GetObjectFromPoolWithLifeTime(PoolTag tag, Vector3 position, Quaternion rotation, Vector3 scale, float lifeTime)
+    {
+        for (int i = 0; i < pools.Count; i++)
+        {
+            if (pools[i].tag == tag)
+            {
+                objectFromPool = pools[i].GetNextInQueue();
+                objectFromPool.lifeTime = lifeTime;
+                objectFromPool.transform.position = position;
+                objectFromPool.transform.rotation = rotation;
+                objectFromPool.transform.localScale = scale;
+                objectFromPool.gameObject.SetActive(true);
+                pools[i].PlaceInQueue(objectFromPool);
+                return objectFromPool.gameObject;
+            }
+        }
+        return null;
+    }
 }

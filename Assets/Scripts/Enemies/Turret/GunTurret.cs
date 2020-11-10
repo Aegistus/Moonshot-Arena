@@ -58,7 +58,7 @@ public class GunTurret : Turret
             if (Physics.Raycast(muzzleTips[muzzleIndex].position, muzzleTips[muzzleIndex].forward, out rayHit, 1000f))
             {
                 MuzzleFX();
-                ImpactFX();
+                //ImpactFX();
                 ShotPhysics();
                 ShotDamage();
                 AudioManager.instance.StartPlayingAtPosition("Gun Shot 03", muzzleTips[muzzleIndex].position);
@@ -97,8 +97,8 @@ public class GunTurret : Turret
         }
     }
 
-    private void ImpactFX()
-    {
-        poolManager.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.BulletImpact, rayHit.point, Quaternion.Euler(-90,0,0), 2f);
-    }
+    //private void ImpactFX()
+    //{
+    //    poolManager.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.BulletImpact, rayHit.point, Quaternion.Euler(-90,0,0), 2f);
+    //}
 }

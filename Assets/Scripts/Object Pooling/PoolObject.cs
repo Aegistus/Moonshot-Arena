@@ -7,10 +7,12 @@ public class PoolObject : MonoBehaviour
     public float lifeTime;
 
     private ParticleSystem particles;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         particles = GetComponent<ParticleSystem>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     protected virtual void OnEnable()
@@ -18,6 +20,10 @@ public class PoolObject : MonoBehaviour
         if (particles)
         {
             particles.Play();
+        }
+        if (audioSource)
+        {
+            audioSource.Play();
         }
         StartCoroutine(EndLifeTime());
     }

@@ -25526,7 +25526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1620216710
 Transform:
   m_ObjectHideFlags: 0
@@ -25569,7 +25569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  shotInterval: 1
+  shotInterval: 0.1
   targetKnockback: 2
   rotationSpeed: 10
   coreTransform: {fileID: 1335717934}
@@ -28065,6 +28065,16 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: Bullet Impact
+    clip: {fileID: 8300000, guid: 85c728e8f1cefa144a29a67443dbd95b, type: 3}
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 0.68
+    pitchVariance: 0.11
+    minimunDistance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
 --- !u!4 &1860930697
 Transform:
   m_ObjectHideFlags: 0
@@ -28449,7 +28459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - tag: 0
-    objectPrefab: {fileID: 1614572127005044, guid: 4a049bbef79ee7845b541e2d0d83b4cc, type: 3}
+    objectPrefab: {fileID: 4370267165730831159, guid: 6b1685837650547489dfbb6c89e34beb, type: 3}
     size: 50
   - tag: 1
     objectPrefab: {fileID: 3478407443868827652, guid: 8326161e58271b844abf34e5f7e921a9, type: 3}

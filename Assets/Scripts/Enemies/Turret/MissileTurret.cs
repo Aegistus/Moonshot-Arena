@@ -57,8 +57,8 @@ public class MissileTurret : Turret
         {
             if (Physics.Raycast(missileSilos[siloIndex].position, missileSilos[siloIndex].forward, out rayHit, 1000f))
             {
-                BackBlastFX();
                 SpawnMissile();
+                BackBlastFX();
                 AudioManager.instance.StartPlayingAtPosition("Gun Shot 03", missileSilos[siloIndex].position);
             }
             yield return new WaitForSeconds(shotInterval);
@@ -68,14 +68,14 @@ public class MissileTurret : Turret
     private void SpawnMissile()
     {
         Transform silo = missileSilos[siloIndex];
-        Missile missile = Instantiate(missilePrefab, silo.position + silo.forward * 2, silo.rotation, silo).GetComponent<Missile>();
+        Missile missile = Instantiate(missilePrefab, silo.position + transform.forward, transform.rotation, silo).GetComponent<Missile>();
         missile.target = player;
     }
 
     private void BackBlastFX()
     {
         Transform silo = missileSilos[siloIndex];
-        poolManager.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.MuzzleFlash, silo.position, Quaternion.Inverse(silo.rotation), 5f);
+        poolManager.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.BackBlast, silo.position, transform.rotation, 5f);
         siloIndex++;
         if (siloIndex >= missileSilos.Count)
         {

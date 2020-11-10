@@ -8,11 +8,6 @@ public class Missile : MonoBehaviour
     public float speed = 1f;
     public float turnSpeed = 1f;
 
-    private void Start()
-    {
-        transform.parent = null;
-    }
-
     private void Update()
     {
         if (target != null)

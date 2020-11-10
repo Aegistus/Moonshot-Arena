@@ -6,7 +6,7 @@ using UnityEngine;
 public class GunTurret : Turret
 {
     public int damage = 1;
-    public float shotsPerSecond = 1f;
+    public float shotInterval = 1f;
     public float targetKnockback = 1f;
     public float rotationSpeed = 5f;
     public Transform coreTransform;
@@ -63,7 +63,7 @@ public class GunTurret : Turret
                 ShotDamage();
                 AudioManager.instance.StartPlayingAtPosition("Gun Shot 03", muzzleTips[muzzleIndex].position);
             }
-            yield return new WaitForSeconds(shotsPerSecond);
+            yield return new WaitForSeconds(shotInterval);
         }
     }
 

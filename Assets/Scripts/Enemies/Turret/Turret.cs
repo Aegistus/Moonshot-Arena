@@ -6,7 +6,7 @@ public class Turret : MonoBehaviour
 {
     protected bool playerSeen = false;
 
-    private Transform player;
+    protected Transform player;
 
     protected virtual void Start()
     {

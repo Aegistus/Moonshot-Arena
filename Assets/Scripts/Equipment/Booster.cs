@@ -56,6 +56,10 @@ public class Booster : MonoBehaviour
                 }
                 boostedVelocity *= thrust;
                 Boost(boostedVelocity); 
+                if (boostedVelocity.magnitude > 0)
+                {
+                    AudioManager.instance.StartPlaying("Rocket Boost");
+                }
             }
         }
     }

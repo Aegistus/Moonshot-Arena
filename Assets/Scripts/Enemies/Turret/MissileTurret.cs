@@ -59,7 +59,7 @@ public class MissileTurret : Turret
             {
                 SpawnMissile();
                 BackBlastFX();
-                AudioManager.instance.StartPlayingAtPosition("Gun Shot 03", missileSilos[siloIndex].position);
+                AudioManager.instance.StartPlayingAtPosition("Rocket Shoot", missileSilos[siloIndex].position);
             }
             yield return new WaitForSeconds(shotInterval);
         }

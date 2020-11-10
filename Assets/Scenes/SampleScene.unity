@@ -25526,7 +25526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1620216710
 Transform:
   m_ObjectHideFlags: 0
@@ -28057,7 +28057,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Rocket Boost
     clip: {fileID: 8300000, guid: 7ef21a695671f3348890c1bbfd9b3ead, type: 3}
-    volume: 1
+    volume: 0.3
     volumeVariance: 0.1
     pitch: 0.68
     pitchVariance: 0.11
@@ -28067,6 +28067,16 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Bullet Impact
     clip: {fileID: 8300000, guid: 85c728e8f1cefa144a29a67443dbd95b, type: 3}
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.11
+    minimunDistance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Rocket Shoot
+    clip: {fileID: 8300000, guid: 8f8feea422de1ef4ab47026de1d4df8d, type: 3}
     volume: 1
     volumeVariance: 0.1
     pitch: 0.68
@@ -29280,8 +29290,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2065696750}
-  - component: {fileID: 2065696752}
   - component: {fileID: 2065696751}
+  - component: {fileID: 2065696752}
   m_Layer: 10
   m_Name: Grapple Hook
   m_TagString: Untagged

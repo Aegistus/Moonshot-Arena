@@ -35,25 +35,26 @@ public class Booster : MonoBehaviour
                     boostedVelocity = camTransform.forward;
                     camFX.AddTargetFOV(10);
                 }
-                else if (Input.GetKey(KeyCode.S))
+                if (Input.GetKey(KeyCode.S))
                 {
                     boostedVelocity = -camTransform.forward;
                     camFX.AddTargetFOV(-10);
                 }
-                else if (Input.GetKey(KeyCode.A))
+                if (Input.GetKey(KeyCode.A))
                 {
                     boostedVelocity = -camTransform.right;
                     camFX.AddTargetRotation(10f);
                 }
-                else if (Input.GetKey(KeyCode.D))
+                if (Input.GetKey(KeyCode.D))
                 {
                     boostedVelocity = camTransform.right;
                     camFX.AddTargetRotation(-10f);
                 }
-                else if (Input.GetKey(KeyCode.Space))
+                if (Input.GetKey(KeyCode.Space))
                 {
                     boostedVelocity = camTransform.up;
                 }
+                boostedVelocity = boostedVelocity.normalized;
                 boostedVelocity *= thrust;
                 Boost(boostedVelocity); 
                 if (boostedVelocity.magnitude > 0)

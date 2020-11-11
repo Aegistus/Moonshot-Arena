@@ -10,18 +10,16 @@ public class CameraFX : MonoBehaviour
     private Camera cam;
 
     private float targetFOV;
-    private float targetXRotation;
+    private float targetZRotation = 0;
 
     private float startingFOV;
-    private float startingXRotation;
+    private float startingZRotation;
 
     private void Start()
     {
         cam = GetComponent<Camera>();
         startingFOV = cam.fieldOfView;
-        startingXRotation = cam.transform.rotation.eulerAngles.x;
         targetFOV = startingFOV;
-        targetXRotation = startingXRotation;
     }
 
     private void Update()
@@ -30,10 +28,7 @@ public class CameraFX : MonoBehaviour
         {
             cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFOV, fovLerpSpeed * Time.deltaTime);
         }
-        //if (cam.transform.rotation.eulerAngles.x != targetXRotation)
-        //{
-        //    cam.transform.Rotate(new Vector3(Mathf.LerpUnclamped(cam.transform.eulerAngles.x, targetXRotation, rotationLerpSpeed * Time.deltaTime), 0, 0));
-        //}
+        cam.transform.rotation = Quaternion.Euler(cam.transform.eulerAngles.x, cam.transform.eulerAngles.y, targetZRotation);
     }
 
     public void AddTargetFOV(float target)
@@ -48,11 +43,16 @@ public class CameraFX : MonoBehaviour
 
     public void AddTargetRotation(float rotation)
     {
-        targetXRotation += rotation;
+        targetZRotation += rotation;
+    }
+
+    public void SetTargetRotation(float rotation)
+    {
+        targetZRotation = rotation;
     }
 
     public void ResetRotation()
     {
-        targetXRotation = startingXRotation;
+        targetZRotation = 0;
     }
 }

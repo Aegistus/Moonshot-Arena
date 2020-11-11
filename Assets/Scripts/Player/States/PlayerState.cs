@@ -19,6 +19,7 @@ public abstract class PlayerState : State
     public Func<bool> Shift => () => Input.GetKey(KeyCode.LeftShift);
     public Func<bool> Ctrl => () => Input.GetKey(KeyCode.LeftControl);
     public Func<bool> OnGround => () => IsGrounded();
+    public Func<bool> NextToWall => () => IsNextToWall();
     public Func<bool> Rising => () => rb.velocity.y > 0;
     public Func<bool> Falling => () => rb.velocity.y < -.1f;
 
@@ -38,4 +39,18 @@ public abstract class PlayerState : State
         }
         return false;
     }
+
+    private bool IsNextToWall()
+    {
+        if (Physics.Raycast(new Ray(transform.position, transform.right), 1f, groundLayer))
+        {
+            return true;
+        }
+        if (Physics.Raycast(new Ray(transform.position, -transform.right), 1f, groundLayer))
+        {
+            return true;
+        }
+        return false;
+    }
+
 }

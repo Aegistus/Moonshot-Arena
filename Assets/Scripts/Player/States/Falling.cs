@@ -9,6 +9,7 @@ public class Falling : PlayerState
         animationNames.Add("Fall");
         transitionsTo.Add(new Transition(typeof(Sliding), OnGround, Ctrl));
         transitionsTo.Add(new Transition(typeof(Idling), Not(Falling), OnGround));
+        transitionsTo.Add(new Transition(typeof(WallJumping), Spacebar, NextToWall));
     }
 
     public override void AfterExecution()

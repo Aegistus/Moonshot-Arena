@@ -11,8 +11,8 @@ public class Walking : PlayerState
         animationNames.Add("Run");
         transitionsTo.Add(new Transition(typeof(Idling), Not(MoveKeys)));
         transitionsTo.Add(new Transition(typeof(Sliding), Ctrl));
-        transitionsTo.Add(new Transition(typeof(Jumping), Spacebar, Not(Falling)));
-        transitionsTo.Add(new Transition(typeof(Falling), Not(OnGround), Falling));
+        transitionsTo.Add(new Transition(typeof(Jumping), Spacebar, OnGround));
+        transitionsTo.Add(new Transition(typeof(Falling), Not(OnGround)));
     }
 
     public override void AfterExecution()
@@ -28,7 +28,7 @@ public class Walking : PlayerState
     Vector3 newVelocity;
     public override void DuringExecution()
     {
-        if (movement.velocity.magnitude < moveSpeed)
+        if (movement.Velocity.magnitude < moveSpeed)
         {
             newVelocity = Vector3.zero;
             if (Input.GetKey(KeyCode.W))

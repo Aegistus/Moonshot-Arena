@@ -18,7 +18,6 @@ public class GrabbingLedge : PlayerState
     public override void BeforeExecution()
     {
         Debug.Log("Grabbing Ledge");
-        movement.velocity = Vector3.zero;
         rb.velocity = Vector2.zero;
         //rb.gravityScale = 0;
         transform.Translate(Vector3.up * .85f);

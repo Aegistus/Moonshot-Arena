@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public LayerMask groundLayer;
 
-    public Vector3 velocity;
+    public Vector3 Velocity => rb.velocity;
 
     private float velocityMod = 1f;
     private StateMachine stateMachine;

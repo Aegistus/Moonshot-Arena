@@ -3,6 +3,8 @@
 public class Jumping : PlayerState
 {
     private float jumpForce = 4.85f;
+    private float airMoveSpeed = 1f;
+    Vector3 startingVelocity;
 
     public Jumping(GameObject gameObject) : base(gameObject)
     {
@@ -25,13 +27,6 @@ public class Jumping : PlayerState
 
     public override void DuringExecution()
     {
-        //if (Input.GetKey(KeyCode.A))
-        //{
-        //    movement.SetVelocity(-transform.right * airMoveSpeed + startingVelocity);
-        //}
-        //if (Input.GetKey(KeyCode.D))
-        //{
-        //    movement.SetVelocity(transform.right * airMoveSpeed + startingVelocity);
-        //}
+
     }
 }

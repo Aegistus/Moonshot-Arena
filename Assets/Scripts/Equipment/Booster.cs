@@ -27,36 +27,46 @@ public class Booster : MonoBehaviour
     {
         if (numOfCharges > 0)
         {
+            boostedVelocity = Vector3.zero;
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                boostedVelocity = Vector3.zero;
                 if (Input.GetKey(KeyCode.W))
                 {
-                    boostedVelocity = camTransform.forward;
+                    boostedVelocity += camTransform.forward;
                     camFX.AddTargetFOV(10);
                 }
                 if (Input.GetKey(KeyCode.S))
                 {
-                    boostedVelocity = -camTransform.forward;
+                    boostedVelocity += -camTransform.forward;
                     camFX.AddTargetFOV(-10);
                 }
                 if (Input.GetKey(KeyCode.A))
                 {
-                    boostedVelocity = -camTransform.right;
+                    boostedVelocity += -camTransform.right;
                     camFX.AddTargetRotation(10f);
                 }
                 if (Input.GetKey(KeyCode.D))
                 {
-                    boostedVelocity = camTransform.right;
+                    boostedVelocity += camTransform.right;
                     camFX.AddTargetRotation(-10f);
                 }
-                if (Input.GetKey(KeyCode.Space))
+            }
+            if (player.CurrentState.GetType() == typeof(Falling) || player.CurrentState.GetType() == typeof(Jumping))
+            {
+                if (Input.GetKeyDown(KeyCode.LeftControl))
                 {
-                    boostedVelocity = camTransform.up;
+                    boostedVelocity += -camTransform.up;
+                    if (Input.GetKey(KeyCode.W))
+                    {
+                        boostedVelocity += camTransform.forward;
+                    }
                 }
+            }
+            if (boostedVelocity != Vector3.zero)
+            {
                 boostedVelocity = boostedVelocity.normalized;
                 boostedVelocity *= thrust;
-                Boost(boostedVelocity); 
+                Boost(boostedVelocity);
                 if (boostedVelocity.magnitude > 0)
                 {
                     AudioManager.instance.StartPlaying("Rocket Boost");

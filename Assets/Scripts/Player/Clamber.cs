@@ -29,7 +29,6 @@ public class Clamber : MonoBehaviour
     {
         if (Physics.Raycast(new Ray(hipLevel.position, hipLevel.forward), scanDistance, groundLayer))
         {
-            print("hipLevel Obstructed");
             if (!Physics.Raycast(new Ray(eyeLevel.position, eyeLevel.forward), scanDistance, groundLayer))
             {
                 movement.AddVelocity(transform.forward * 1f);

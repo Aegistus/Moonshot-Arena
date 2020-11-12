@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 
-public class Laser : MonoBehaviour, IWeapon
+public class Laser : Weapon
 {
     private LineRenderer line;
     private bool firingLaser = false;
@@ -26,7 +26,7 @@ public class Laser : MonoBehaviour, IWeapon
         }
     }
 
-    public IEnumerator EndAttack()
+    public override IEnumerator EndAttack()
     {
         yield return new WaitForSeconds(5f);
         firingLaser = false;
@@ -34,14 +34,14 @@ public class Laser : MonoBehaviour, IWeapon
         StartCoroutine(Reload());
     }
 
-    public IEnumerator Reload()
+    public override IEnumerator Reload()
     {
         reloading = true;
         yield return new WaitForSeconds(4f);
         reloading = false;
     }
 
-    public void StartAttack()
+    public override void StartAttack()
     {
         if (firingLaser == false && reloading == false)
         {
@@ -53,12 +53,12 @@ public class Laser : MonoBehaviour, IWeapon
         }
     }
 
-    public void DisableWeapon()
+    public override void DisableWeapon()
     {
 
     }
 
-    public void EnableWeapon()
+    public override void EnableWeapon()
     {
 
     }

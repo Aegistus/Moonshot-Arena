@@ -2,10 +2,9 @@
 using System.Collections;
 using UnityEngine;
 
-public abstract class Gun : MonoBehaviour, IWeapon
+public abstract class Gun : Weapon
 {
     public static event Action<int, int> OnAmmoAmountChange;
-    public WeaponStats stats;
     public Transform gunTip;
 
     [HideInInspector]
@@ -31,10 +30,6 @@ public abstract class Gun : MonoBehaviour, IWeapon
         }
     }
 
-    public abstract IEnumerator EndAttack();
-    public abstract IEnumerator Reload();
-    public abstract void StartAttack();
-
     public void UseAmmo()
     {
         loadedAmmo--;
@@ -55,7 +50,7 @@ public abstract class Gun : MonoBehaviour, IWeapon
         }
     }
 
-    public void DisableWeapon()
+    public override void DisableWeapon()
     {
         foreach (Transform child in transform)
         {
@@ -64,7 +59,7 @@ public abstract class Gun : MonoBehaviour, IWeapon
         currentWeapon = false;
     }
 
-    public void EnableWeapon()
+    public override void EnableWeapon()
     {
         foreach (Transform child in transform)
         {

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d52c3f08778a9f4285a4813c15ff307, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
+  droppedWeaponPrefab: {fileID: 3510698919886977055, guid: 49b737ca4d1e45d4a9952ab5778732f8, type: 3}
   resetTime: 0.1
   reloadTime: 0.5
   maxAmmo: 4

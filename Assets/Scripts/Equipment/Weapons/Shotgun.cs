@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shotgun : Gun, IWeapon
+public class Shotgun : Gun
 {
     public float shotSpread = 1f;
     public float pelletCount = 5f;

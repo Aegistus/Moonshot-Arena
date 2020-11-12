@@ -6,11 +6,11 @@ public class DroneAttack : MonoBehaviour
 {
     public GameObject weaponObject;
 
-    private IWeapon weapon;
+    private Weapon weapon;
 
     private void Start()
     {
-        weapon = weaponObject.GetComponent<IWeapon>();
+        weapon = weaponObject.GetComponent<Weapon>();
     }
 
     public void ChargeAttack()

@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewWeaponStats", menuName = "Weapon Stats", order = 1)]
 public class WeaponStats : ScriptableObject
 {
+    public GameObject droppedWeaponPrefab;
     public float resetTime = .1f;
     public float reloadTime = 2f;
     public int maxAmmo = 10;

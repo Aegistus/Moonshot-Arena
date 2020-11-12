@@ -21,6 +21,7 @@ public class StateMachine
         {
             anyStateTransitions.AddRange(newStateList[i].anyStateTransitions);
         }
+        CurrentState = availableStates[defaultState];
     }
 
     /// <summary> Adds to the available number of states that can be used by this StateMachine. </summary>

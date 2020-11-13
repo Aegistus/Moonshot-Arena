@@ -56,6 +56,11 @@ public class Booster : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.LeftControl))
                 {
                     boostedVelocity += -camTransform.up;
+                    if (Input.GetKey(KeyCode.W))
+                    {
+                        boostedVelocity += camTransform.forward;
+                        camFX.AddTargetFOV(10);
+                    }
                 }
                 if (boostedVelocity != Vector3.zero)
                 {

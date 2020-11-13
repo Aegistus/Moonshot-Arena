@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sliding : PlayerState
 {
-    private float moveSpeed = 7f;
+    private float initialBoost = 5f;
     private Transform camTransform;
     private float slideDuck = .5f;
 
@@ -27,6 +27,7 @@ public class Sliding : PlayerState
     {
         Debug.Log("Sliding");
         camTransform.Translate(0, -slideDuck, 0, Space.Self);
+        movement.AddVelocity(transform.forward * initialBoost);
     }
 
     public override void DuringExecution()

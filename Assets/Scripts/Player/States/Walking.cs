@@ -23,7 +23,7 @@ public class Walking : PlayerState
 
     public override void BeforeExecution()
     {
-
+        movement.SetVelocity(Vector3.zero);
     }
 
     Vector3 newVelocity;

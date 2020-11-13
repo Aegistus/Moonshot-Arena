@@ -6326,13 +6326,13 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!43 &658083555
+--- !u!43 &655306998
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15932
+  m_Name: pb_Mesh-72476
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13492,26 +13492,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 734755017, guid: 68288155c3b9a56488514879256ef602, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 734755017, guid: 68288155c3b9a56488514879256ef602, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.42
-      objectReference: {fileID: 0}
-    - target: {fileID: 6497964142007650247, guid: 68288155c3b9a56488514879256ef602, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6497964142007650247, guid: 68288155c3b9a56488514879256ef602, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6497964142007650248, guid: 68288155c3b9a56488514879256ef602, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6497964142272391418, guid: 68288155c3b9a56488514879256ef602, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.57
@@ -13563,15 +13543,15 @@ PrefabInstance:
     - target: {fileID: 6497964143443454812, guid: 68288155c3b9a56488514879256ef602, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 658083555}
+      objectReference: {fileID: 655306998}
     - target: {fileID: 6497964143443454814, guid: 68288155c3b9a56488514879256ef602, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 658083555}
+      objectReference: {fileID: 655306998}
     - target: {fileID: 6497964143443454815, guid: 68288155c3b9a56488514879256ef602, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 658083555}
+      objectReference: {fileID: 655306998}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68288155c3b9a56488514879256ef602, type: 3}
 --- !u!1001 &7045109183066580883

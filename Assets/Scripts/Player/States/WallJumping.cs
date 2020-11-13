@@ -5,7 +5,7 @@ using UnityEngine;
 public class WallJumping : PlayerState
 {
     Vector3 direction;
-    float jumpBoost = 2.85f;
+    float jumpBoost = 4f;
 
     public WallJumping(GameObject gameObject) : base(gameObject)
     {

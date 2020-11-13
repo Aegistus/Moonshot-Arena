@@ -17,7 +17,7 @@ public class Sprinting : PlayerState
 
     public override void AfterExecution()
     {
-        movement.SetVelocity(Vector3.zero);
+        
     }
 
     public override void BeforeExecution()

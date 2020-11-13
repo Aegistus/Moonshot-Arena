@@ -27,7 +27,7 @@ public class Booster : MonoBehaviour
     {
         if (numOfCharges > 0)
         {
-            if (player.CurrentState.GetType() == typeof(Falling) || player.CurrentState.GetType() == typeof(Jumping))
+            if (player.CurrentState.GetType() == typeof(Falling) || player.CurrentState.GetType() == typeof(Jumping) || player.CurrentState.GetType() == typeof(WallJumping))
             {
                 boostedVelocity = Vector3.zero;
                 if (Input.GetKeyDown(KeyCode.LeftShift))

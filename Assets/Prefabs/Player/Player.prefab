@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734755016}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.23, y: -0.161, z: 0.544}
+  m_LocalPosition: {x: 0.42, y: -0.21, z: 0.544}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6497964142007650247}
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eyeLevel: {fileID: 6497964143450573830}
   hipLevel: {fileID: 6497964142493330033}
-  scanDistance: 0.4
+  scanDistance: 0.75
   resetTime: 0.5
   groundLayer:
     serializedVersion: 2

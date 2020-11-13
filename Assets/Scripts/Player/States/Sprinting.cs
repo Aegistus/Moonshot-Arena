@@ -5,6 +5,7 @@ using UnityEngine;
 public class Sprinting : PlayerState
 {
     private float moveSpeed = 7f;
+    private CameraFX camFX;
 
     public Sprinting(GameObject gameObject) : base(gameObject)
     {
@@ -13,16 +14,20 @@ public class Sprinting : PlayerState
         transitionsTo.Add(new Transition(typeof(Idling), Not(MoveKeys), Not(Shift)));
         transitionsTo.Add(new Transition(typeof(Jumping), Spacebar, Not(Falling)));
         transitionsTo.Add(new Transition(typeof(Falling), Not(OnGround), Falling));
+        camFX = gameObject.GetComponentInChildren<CameraFX>();
     }
 
     public override void AfterExecution()
     {
-        
+        camFX.BounceHead(false);
+        camFX.ResetFOV();
     }
 
     public override void BeforeExecution()
     {
         Debug.Log("Sprinting");
+        camFX.BounceHead(true);
+        camFX.AddTargetFOV(10f);
     }
 
     Vector3 newVelocity;

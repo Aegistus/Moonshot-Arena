@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 989690757392227223}
   - component: {fileID: 989690757392227222}
   - component: {fileID: 989690757392227225}
+  - component: {fileID: 9069971432446603657}
   m_Layer: 9
   m_Name: MG Turret
   m_TagString: Untagged
@@ -100,6 +101,20 @@ MonoBehaviour:
   - {fileID: 989690758687768467}
   - {fileID: 989690759214410089}
   isShooting: 0
+--- !u!114 &9069971432446603657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989690757392227220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce13555213d65754889443792ce31259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 50
 --- !u!1 &989690757677195324
 GameObject:
   m_ObjectHideFlags: 0

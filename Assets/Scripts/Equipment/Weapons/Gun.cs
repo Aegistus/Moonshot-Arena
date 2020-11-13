@@ -38,6 +38,23 @@ public abstract class Gun : Weapon
         OnAmmoAmountChange?.Invoke(loadedAmmo, carriedAmmo);
     }
 
+    public void DoDamage(GameObject hitObject)
+    {
+        Health toDamage = hitObject.GetComponent<Health>();
+        if (toDamage != null)
+        {
+            toDamage.Damage(stats.damage);
+        }
+        else
+        {
+            toDamage = hitObject.GetComponentInParent<Health>();
+            if (toDamage != null)
+            {
+                toDamage.Damage(stats.damage);
+            }
+        }
+    }
+
     public void UseAmmo()
     {
         loadedAmmo--;

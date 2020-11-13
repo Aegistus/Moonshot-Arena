@@ -28,7 +28,6 @@ public class Turret : MonoBehaviour
                     if (rayHit.transform.CompareTag("Player"))
                     {
                         playerSeen = true;
-                        print("Player seen");
                     }
                     else
                     {

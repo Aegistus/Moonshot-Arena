@@ -34,6 +34,6 @@ public class PlayerHealth : Health
     public override void Kill()
     {
         OnPlayerDeath?.Invoke();
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }

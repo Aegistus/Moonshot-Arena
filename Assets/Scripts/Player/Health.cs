@@ -16,6 +16,10 @@ public abstract class Health : MonoBehaviour, IKillable
     public virtual void Damage(int damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHealth);
+        if (currentHealth <= 0)
+        {
+            Kill();
+        }
     }
 
     public virtual void Heal(int healing)

@@ -29,12 +29,9 @@ public class Pistol : Gun
                 Rigidbody rb = rayHit.collider.GetComponent<Rigidbody>();
                 if (rb)
                 {
-                    if (rb.isKinematic)
-                    {
-                        rb.isKinematic = false;
-                    }
                     rb.velocity += cam.transform.forward * stats.bulletForce;
                 }
+                DoDamage(rayHit.collider.gameObject);
             }
             AudioManager.instance.StartPlayingAtPosition("Gun Shot 01", transform.position);
             GunFX();

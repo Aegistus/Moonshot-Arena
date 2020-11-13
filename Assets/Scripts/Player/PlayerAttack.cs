@@ -25,6 +25,11 @@ public class PlayerAttack : MonoBehaviour
         {
             carriedWeapons[i].DisableWeapon();
         }
+        if (currentWeapon.GetType() == typeof(Gun))
+        {
+            Gun gun = (Gun)currentWeapon;
+            gun.CheckAmmoAmount();
+        }
     }
 
     private void Update()

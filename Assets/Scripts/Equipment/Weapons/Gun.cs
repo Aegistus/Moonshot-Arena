@@ -19,7 +19,10 @@ public abstract class Gun : Weapon
     protected virtual void Start()
     {
         loadedAmmo = stats.maxAmmo;
-        OnAmmoAmountChange?.Invoke(loadedAmmo, carriedAmmo);
+        if (currentWeapon)
+        {
+            OnAmmoAmountChange?.Invoke(loadedAmmo, carriedAmmo);
+        }
     }
 
     protected void Update()
@@ -28,6 +31,11 @@ public abstract class Gun : Weapon
         {
             transform.Rotate(-900 * Time.deltaTime, 0, 0);
         }
+    }
+
+    public void CheckAmmoAmount()
+    {
+        OnAmmoAmountChange?.Invoke(loadedAmmo, carriedAmmo);
     }
 
     public void UseAmmo()

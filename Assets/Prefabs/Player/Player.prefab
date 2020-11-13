@@ -211,7 +211,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fovLerpSpeed: 3
   rotationLerpSpeed: 3
-  bounceSpeed: 5
+  bounceSpeed: 15
+  bounceHeightRange: 0.05
 --- !u!1 &6497964141946221697
 GameObject:
   m_ObjectHideFlags: 0

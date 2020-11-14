@@ -9,9 +9,9 @@ public class Idling : PlayerState
     public Idling(GameObject gameObject) : base(gameObject)
     {
         animationNames.Add("Idle");
-        transitionsTo.Add(new Transition(typeof(Falling), Falling));
         transitionsTo.Add(new Transition(typeof(Walking), MoveKeys));
         transitionsTo.Add(new Transition(typeof(Jumping), Spacebar, Not(Falling), Not(Rising)));
+        transitionsTo.Add(new Transition(typeof(Falling), Not(OnGround)));
 
         //transitionsTo.Add(new Transition(typeof(TakingDamage), () => Input.GetKeyDown(KeyCode.Q)));
     }
@@ -24,7 +24,10 @@ public class Idling : PlayerState
     public override void BeforeExecution()
     {
         //anim.Play(animationNames[0]);
-        movement.SetVelocity(Vector3.zero);
+        if (movement.Velocity.magnitude < 10)
+        {
+            movement.SetVelocity(Vector3.zero);
+        }
         //if (OnGround())
         //{
         //    rb.velocity = Vector3.zero;

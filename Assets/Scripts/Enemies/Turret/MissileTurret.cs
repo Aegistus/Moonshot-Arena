@@ -14,9 +14,10 @@ public class MissileTurret : Turret
     [HideInInspector]
     public bool isShooting = false;
 
-    private RaycastHit rayHit;
     private PoolManager poolManager;
     private int siloIndex = 0;
+
+    private Coroutine activeFiring;
 
     protected override void Start()
     {
@@ -43,19 +44,24 @@ public class MissileTurret : Turret
     public void StartShooting()
     {
         isShooting = true;
-        StartCoroutine(Shoot());
+        if (activeFiring != null)
+        {
+            StopCoroutine(activeFiring);
+        }
+        activeFiring = StartCoroutine(Shoot());
     }
 
     public void StopShooting()
     {
         isShooting = false;
+        StopCoroutine(activeFiring);
     }
 
     private IEnumerator Shoot()
     {
         while (isShooting)
         {
-            if (Physics.Raycast(missileSilos[siloIndex].position, missileSilos[siloIndex].forward, out rayHit, 1000f))
+            if (Physics.Raycast(missileSilos[siloIndex].position, missileSilos[siloIndex].forward, 1000f))
             {
                 SpawnMissile();
                 BackBlastFX();

@@ -8,12 +8,16 @@ public class Missile : MonoBehaviour
     public float speed = 1f;
     public float turnSpeed = 1f;
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (target != null)
         {
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
             AdjustDirection();
+        }
+        else
+        {
+            Explode();
         }
     }
 

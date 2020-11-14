@@ -12,6 +12,12 @@ public class Turret : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(CheckLineOfSight());
+        RespawnManager.OnPlayerRespawn += RetargetNewPlayer;
+    }
+
+    private void RetargetNewPlayer(GameObject obj)
+    {
+        player = obj.transform;
     }
 
     RaycastHit rayHit;
@@ -39,6 +45,10 @@ public class Turret : MonoBehaviour
                 {
                     playerSeen = false;
                 }
+            }
+            else
+            {
+                playerSeen = false;
             }
             yield return new WaitForSeconds(.5f);
         }

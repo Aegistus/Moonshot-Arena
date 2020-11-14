@@ -14,15 +14,17 @@ public class Explosion : MonoBehaviour, IEffect
     public void StartEffect()
     {
         sphereHits = Physics.SphereCastAll(transform.position, radius, Vector3.one, radius, collisionLayers);
-        print(sphereHits.Length);
         foreach (var hit in sphereHits)
         {
             health = hit.collider.GetComponentInParent<Health>();
             if (health != null)
             {
-                health.Damage(damage);
+                health.Damage((int)(damage / Vector3.Distance(transform.position, hit.point)));
             }
-            hit.rigidbody.AddExplosionForce(force, transform.position, radius);
+            if (hit.rigidbody != null)
+            {
+                hit.rigidbody.AddExplosionForce(force, transform.position, radius);
+            }
         }
     }
 }

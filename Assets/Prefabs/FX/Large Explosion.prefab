@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370954441356028487}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 3.94, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1372705174830206727}
@@ -51,8 +51,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2560
   radius: 5
-  force: 3000
-  damage: 20
+  force: 1000
+  damage: 40
 --- !u!198 &1279905523891083919
 ParticleSystem:
   m_ObjectHideFlags: 0

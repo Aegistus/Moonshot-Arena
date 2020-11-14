@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHealth : Health
 {
     private PoolManager pool;
+
     private void Start()
     {
         pool = PoolManager.Instance;

@@ -51,6 +51,7 @@ public abstract class Gun : Weapon
             if (toDamage != null)
             {
                 toDamage.Damage(stats.damage);
+                print("damaging");
             }
         }
     }

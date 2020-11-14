@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 7555866422732921323}
   - component: {fileID: 7555866422732921320}
   - component: {fileID: 7555866422732921321}
-  m_Layer: 0
+  - component: {fileID: 1110871264768497833}
+  m_Layer: 9
   m_Name: Arm Connector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,9 +312,25 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!54 &1110871264768497833
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7555866422732921319}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7555866422754370472
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +344,7 @@ GameObject:
   - component: {fileID: 7555866422754370476}
   - component: {fileID: 7555866422754370477}
   - component: {fileID: 7555866422754370474}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Propellor(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1882,7 +1899,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &7555866422921206278
@@ -1900,7 +1917,7 @@ GameObject:
   - component: {fileID: 7555866422921206280}
   - component: {fileID: 7555866422921206284}
   - component: {fileID: 7555866422921206287}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Laser Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2197,7 +2214,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!114 &7555866422921206284
@@ -2322,7 +2339,7 @@ GameObject:
   - component: {fileID: 7555866422954157201}
   - component: {fileID: 7555866422954157198}
   - component: {fileID: 7555866422954157199}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5318,7 +5335,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &7555866423111453698
@@ -5334,7 +5351,7 @@ GameObject:
   - component: {fileID: 7555866423111453702}
   - component: {fileID: 7555866423111453703}
   - component: {fileID: 7555866423111453700}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Propellor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6889,7 +6906,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &7555866423496912598
@@ -6905,7 +6922,8 @@ GameObject:
   - component: {fileID: 7555866423496912602}
   - component: {fileID: 7555866423496912603}
   - component: {fileID: 7555866423496912600}
-  m_Layer: 0
+  - component: {fileID: 8750503278621008111}
+  m_Layer: 9
   m_Name: Arm Connector (1)(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7203,9 +7221,25 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!54 &8750503278621008111
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7555866423496912598}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7555866423555632453
 GameObject:
   m_ObjectHideFlags: 0
@@ -7220,7 +7254,8 @@ GameObject:
   - component: {fileID: 7555866423555632454}
   - component: {fileID: 7555866423555632455}
   - component: {fileID: 7555866423555632459}
-  m_Layer: 0
+  - component: {fileID: 9078368210587187391}
+  m_Layer: 9
   m_Name: Drone Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8720,7 +8755,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!114 &7555866423555632459
@@ -8744,6 +8779,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   visibleTargets: []
+--- !u!54 &9078368210587187391
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7555866423555632453}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7555866424313925022
 GameObject:
   m_ObjectHideFlags: 0
@@ -8757,7 +8808,8 @@ GameObject:
   - component: {fileID: 7555866424313925026}
   - component: {fileID: 7555866424313925027}
   - component: {fileID: 7555866424313925024}
-  m_Layer: 0
+  - component: {fileID: 617222495996550092}
+  m_Layer: 9
   m_Name: Turret Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9055,9 +9107,25 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!54 &617222495996550092
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7555866424313925022}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7555866424545335551
 GameObject:
   m_ObjectHideFlags: 0
@@ -9071,7 +9139,7 @@ GameObject:
   - component: {fileID: 7555866424545335426}
   - component: {fileID: 1291681357605252773}
   - component: {fileID: 7555866424545335424}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9151,6 +9219,6 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 0.85
-  m_BaseOffset: 0
+  m_BaseOffset: 5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

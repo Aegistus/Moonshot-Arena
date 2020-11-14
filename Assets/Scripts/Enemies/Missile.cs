@@ -30,7 +30,7 @@ public class Missile : MonoBehaviour
 
     public void Explode()
     {
-        PoolManager.Instance.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.Explosion, transform.position, Quaternion.identity, 4f);
+        PoolManager.Instance.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.MediumExplosion, transform.position, Quaternion.identity, 4f);
         Destroy(gameObject);
     }
 

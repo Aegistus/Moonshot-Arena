@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : Health
+public class ExplosiveBarrelHealth : Health
 {
     private PoolManager pool;
 
@@ -13,7 +13,7 @@ public class EnemyHealth : Health
 
     public override void Kill()
     {
-        pool.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.MediumExplosion, transform.position, Quaternion.identity, 3f);
-        gameObject.SetActive(false);
+        pool.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.LargeExplosion, transform.position, transform.rotation, 3f);
+        Destroy(gameObject);
     }
 }

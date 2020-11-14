@@ -14,7 +14,7 @@ public class PlayerAttack : MonoBehaviour
 
     private bool wantsToSwap = false;
     private float holdTimer = 0f;
-    private float maxHoldTimer = 1f;
+    private float maxHoldTimer = .5f;
 
     private void Start()
     {

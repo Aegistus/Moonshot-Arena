@@ -5899,17 +5899,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!114 &1019358917 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1019358917, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
-  m_PrefabInstance: {fileID: 1600768891488862242}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ba50b27e42e9747a65660c1d30f309, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1089332123
 GameObject:
   m_ObjectHideFlags: 0
@@ -10350,34 +10339,6 @@ PrefabInstance:
       propertyPath: levelCamera
       value: 
       objectReference: {fileID: 1089332125}
-    - target: {fileID: 1742673449, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1742673449, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1742673449, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1742673449, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1019358917}
-    - target: {fileID: 1742673449, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: RespawnManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1742673449, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RespawnPlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 1742673449, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1600768891724473700, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
       propertyPath: m_Name
       value: Canvas

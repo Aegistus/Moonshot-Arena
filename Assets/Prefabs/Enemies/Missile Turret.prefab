@@ -9292,13 +9292,14 @@ GameObject:
   - component: {fileID: 7045109183530963927}
   - component: {fileID: 7045109183530963920}
   - component: {fileID: 7045109183530963921}
+  - component: {fileID: 2424813444308486995}
   m_Layer: 9
   m_Name: Missile Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7045109183530963927
 Transform:
   m_ObjectHideFlags: 0
@@ -9351,6 +9352,20 @@ MonoBehaviour:
   - {fileID: 7045109183608038749}
   - {fileID: 7045109182356806244}
   isShooting: 0
+--- !u!114 &2424813444308486995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7045109183530963922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce13555213d65754889443792ce31259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 150
 --- !u!1 &7045109183591181757
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretHealth : Health
+public class EnemyHealth : Health
 {
     private PoolManager pool;
     private void Start()

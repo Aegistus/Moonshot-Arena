@@ -11,12 +11,21 @@ public class TurretViewController : MonoBehaviour
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        RespawnManager.OnPlayerRespawn += RetargetNewPlayer;
+    }
+
+    private void RetargetNewPlayer(GameObject obj)
+    {
+        target = obj.transform;
     }
 
     Quaternion lookRotation;
     private void Update()
     {
-        lookRotation = Quaternion.LookRotation((target.transform.position - transform.position).normalized);
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, swivelSpeed * Time.deltaTime);
+        if (target != null)
+        {
+            lookRotation = Quaternion.LookRotation((target.transform.position - transform.position).normalized);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, swivelSpeed * Time.deltaTime);
+        }
     }
 }

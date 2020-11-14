@@ -2212,6 +2212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f1cfcab986fef04e9bb69f6b6d5d12f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 0}
 --- !u!120 &7555866422921206287
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -9068,6 +9069,7 @@ GameObject:
   - component: {fileID: 7555866424545335550}
   - component: {fileID: 7555866424545335425}
   - component: {fileID: 7555866424545335426}
+  - component: {fileID: 1291681357605252773}
   - component: {fileID: 7555866424545335424}
   m_Layer: 0
   m_Name: Drone
@@ -9116,6 +9118,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponObject: {fileID: 7555866422921206278}
+--- !u!114 &1291681357605252773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7555866424545335551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce13555213d65754889443792ce31259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 20
 --- !u!195 &7555866424545335424
 NavMeshAgent:
   m_ObjectHideFlags: 0

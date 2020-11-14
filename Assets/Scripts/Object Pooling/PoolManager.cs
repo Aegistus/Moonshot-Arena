@@ -23,7 +23,7 @@ public class PoolManager : MonoBehaviour
         {
             for (int i = 0; i < pool.size; i++)
             {
-                obj = Instantiate(pool.objectPrefab, poolParent.transform);
+                obj = Instantiate(pool.objectPrefab, Vector3.one * 1000, Quaternion.identity, poolParent.transform);
                 PoolObject poolObj = obj.AddComponent<PoolObject>();
                 poolObj.lifeTime = 10f;
                 obj.SetActive(false);

@@ -8,24 +8,38 @@ public class PoolObject : MonoBehaviour
 
     private ParticleSystem particles;
     private AudioSource audioSource;
+    private IEffect effect;
+    private bool justSpawned = true;
 
     private void Awake()
     {
         particles = GetComponent<ParticleSystem>();
         audioSource = GetComponent<AudioSource>();
+        effect = GetComponent<IEffect>();
     }
 
     protected virtual void OnEnable()
     {
-        if (particles)
+        if (!justSpawned)
         {
-            particles.Play();
+            if (particles)
+            {
+                particles.Play();
+            }
+            if (audioSource)
+            {
+                audioSource.Play();
+            }
+            if (effect != null)
+            {
+                effect.StartEffect();
+            }
+            StartCoroutine(EndLifeTime());
         }
-        if (audioSource)
+        else
         {
-            audioSource.Play();
+            justSpawned = false;
         }
-        StartCoroutine(EndLifeTime());
     }
 
     private IEnumerator EndLifeTime()
@@ -33,5 +47,4 @@ public class PoolObject : MonoBehaviour
         yield return new WaitForSeconds(lifeTime);
         gameObject.SetActive(false);
     }
-
 }

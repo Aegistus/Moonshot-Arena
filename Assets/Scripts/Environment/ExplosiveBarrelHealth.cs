@@ -13,6 +13,7 @@ public class ExplosiveBarrelHealth : Health
 
     public override void Kill()
     {
+        print("Destroying barrel");
         pool.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.LargeExplosion, transform.position, transform.rotation, 3f);
         Destroy(gameObject);
     }

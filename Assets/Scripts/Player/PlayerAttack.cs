@@ -6,8 +6,10 @@ using System.Linq;
 public class PlayerAttack : MonoBehaviour
 {
     public Transform handLocation;
+    public int maxNumberOfWeapons = 3;
+    [HideInInspector]
     public Weapon currentWeapon;
-    public List<GameObject> weapons;
+    [HideInInspector]
     public List<Weapon> carriedWeapons = new List<Weapon>();
 
     private bool wantsToSwap = false;
@@ -16,9 +18,13 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
-        foreach (var weapon in weapons)
+        foreach (Transform child in handLocation.transform)
         {
-            carriedWeapons.Add(weapon.GetComponent<Weapon>());
+            Weapon weapon = child.GetComponent<Weapon>();
+            if (weapon != null)
+            {
+                carriedWeapons.Add(weapon);
+            }
         }
         currentWeapon = carriedWeapons[0];
         for (int i = 1; i < carriedWeapons.Count; i++)
@@ -109,13 +115,17 @@ public class PlayerAttack : MonoBehaviour
         {
             wantsToSwap = false;
             holdTimer = maxHoldTimer;
-            carriedWeapons.Remove(currentWeapon);
-            Instantiate(currentWeapon.stats.droppedWeaponPrefab, weaponPickup.position, Quaternion.identity);
-            Destroy(currentWeapon.gameObject);
+
+            if (carriedWeapons.Count == maxNumberOfWeapons)
+            {
+                carriedWeapons.Remove(currentWeapon);
+                Instantiate(currentWeapon.stats.droppedWeaponPrefab, weaponPickup.position, Quaternion.identity);
+                Destroy(currentWeapon.gameObject);
+            }
 
             Weapon newWeapon = Instantiate(newWeaponPrefab, handLocation.position, handLocation.rotation, handLocation).GetComponent<Weapon>();
             carriedWeapons.Add(newWeapon);
-            currentWeapon = newWeapon;
+            SwitchToWeapon(carriedWeapons.IndexOf(newWeapon));
 
             Destroy(weaponPickup.gameObject);
         }

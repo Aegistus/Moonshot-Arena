@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Patrolling : DroneState
 {
-    private Transform currentPatrolPoint;
-    private float patrolRadius = 30f;
+    private Vector3 currentPatrolPoint;
     private float timer;
     private float maxTimer = 3f;
 
@@ -23,8 +22,8 @@ public class Patrolling : DroneState
     {
         Debug.Log("Patrolling");
         timer = maxTimer;
-        currentPatrolPoint = PatrolPointManager.current.GetRandomPointCloseToArea(transform.position, patrolRadius);
-        drone.SetDestination(currentPatrolPoint.position);
+        GetNewPatrolPoint();
+        drone.SetDestination(currentPatrolPoint);
     }
 
     public override void DuringExecution()
@@ -37,10 +36,15 @@ public class Patrolling : DroneState
             } 
             else
             {
-                currentPatrolPoint = PatrolPointManager.current.GetRandomPointCloseToArea(transform.position, patrolRadius);
-                drone.SetDestination(currentPatrolPoint.position);
+                GetNewPatrolPoint();
+                drone.SetDestination(currentPatrolPoint);
                 timer = maxTimer;
             }
         }
+    }
+
+    private void GetNewPatrolPoint()
+    {
+        currentPatrolPoint = new Vector3((Random.value * 10) - 5, (Random.value * 10) - 5, (Random.value * 10) - 5);
     }
 }

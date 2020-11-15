@@ -7,7 +7,7 @@ public class Chasing : DroneState
     Transform target;
     private Quaternion startRotation;
     private Quaternion targetRotation;
-    float swivelSpeed = .1f;
+    float swivelSpeed = 1f;
 
     public Chasing(GameObject gameObject) : base(gameObject)
     {

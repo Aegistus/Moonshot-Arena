@@ -23,10 +23,17 @@ public class FieldOfView : MonoBehaviour
 
     private void Update()
     {
-        if (visibleTargets.Count > 0)
+		if (visibleTargets.Count > 0)
         {
-			LastSeenLocation = visibleTargets[0].position;
-        }
+			if (visibleTargets[0] != null)
+			{
+				LastSeenLocation = visibleTargets[0].position;
+			}
+			else
+			{
+				visibleTargets.Remove(visibleTargets[0]);
+			}
+		}
     }
 
 

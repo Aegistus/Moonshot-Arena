@@ -106,7 +106,7 @@ MonoBehaviour:
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: Rocket Shoot
-    clip: {fileID: 8300000, guid: 8f8feea422de1ef4ab47026de1d4df8d, type: 3}
+    clip: {fileID: 8300000, guid: 281e15cc92254794eaf05caf4d044b76, type: 3}
     volume: 1
     volumeVariance: 0.1
     pitch: 0.68

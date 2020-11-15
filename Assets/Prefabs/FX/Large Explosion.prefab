@@ -52,7 +52,7 @@ MonoBehaviour:
     m_Bits: 2560
   radius: 5
   force: 1000
-  damage: 40
+  damage: 20
 --- !u!198 &1279905523891083919
 ParticleSystem:
   m_ObjectHideFlags: 0

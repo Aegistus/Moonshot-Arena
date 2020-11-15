@@ -6161,7 +6161,7 @@ Light:
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 2.7
   m_Range: 30
-  m_SpotAngle: 28
+  m_SpotAngle: 10
   m_InnerSpotAngle: 3
   m_CookieSize: 10
   m_Shadows:
@@ -6191,7 +6191,7 @@ Light:
       e33: 1
     m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
-  m_DrawHalo: 1
+  m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
   m_CullingMask:
@@ -9309,7 +9309,7 @@ Transform:
   m_GameObject: {fileID: 7045109183530963922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.03, y: 5.4, z: -3.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 7045109183713422664}
   - {fileID: 7045109183929910066}
@@ -11004,7 +11004,7 @@ SpringJoint:
   m_ConnectedBody: {fileID: 7045109183713422671}
   m_Anchor: {x: 0, y: 0.5000001, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 2.44, y: 0.03999996, z: 0.4000001}
+  m_ConnectedAnchor: {x: 2.4399986, y: 0.03999901, z: 0.40000153}
   serializedVersion: 2
   m_Spring: 10
   m_Damper: 0.2

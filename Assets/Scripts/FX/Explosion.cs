@@ -9,29 +9,23 @@ public class Explosion : MonoBehaviour, IEffect
     public float force = 5f;
     public int damage = 20;
 
-    private AudioManager audioManager;
-    private void Awake()
-    {
-        audioManager = AudioManager.instance;
-    }
-
     Health health;
     RaycastHit[] sphereHits;
     public void StartEffect()
     {
+        AudioManager.instance.StartPlayingAtPosition("Explosion", transform.position);
         sphereHits = Physics.SphereCastAll(transform.position, radius, Vector3.one, radius, collisionLayers);
         foreach (var hit in sphereHits)
         {
             health = hit.collider.GetComponentInParent<Health>();
             if (health != null)
             {
-                health.Damage((int)(damage / Vector3.Distance(transform.position, hit.point)));
+                health.Damage(damage);
             }
             if (hit.rigidbody != null)
             {
                 hit.rigidbody.AddExplosionForce(force, transform.position, radius);
             }
         }
-        audioManager.StartPlayingAtPosition("Explosion", transform.position);
     }
 }

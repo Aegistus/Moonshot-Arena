@@ -8,10 +8,12 @@ public class Laser : Weapon
     private LineRenderer line;
     private bool firingLaser = false;
     private bool reloading = false;
+    private AudioSource audioSource;
 
     public void Start()
     {
         line = GetComponent<LineRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     RaycastHit rayHit;
@@ -31,6 +33,7 @@ public class Laser : Weapon
         yield return new WaitForSeconds(5f);
         firingLaser = false;
         line.enabled = false;
+        audioSource.Stop();
         StartCoroutine(Reload());
     }
 
@@ -48,6 +51,8 @@ public class Laser : Weapon
             firingLaser = true;
             line.enabled = true;
             GameObject spark = PoolManager.Instance.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.ChargingLaser, transform.position, transform.rotation, Vector3.one * .01f, 5f);
+            AudioManager.instance.StartPlayingAtPosition("Laser Start", transform.position);
+            audioSource.Play();
             spark.transform.parent = transform;
             StartCoroutine(EndAttack());
         }

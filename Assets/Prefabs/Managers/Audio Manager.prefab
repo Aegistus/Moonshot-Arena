@@ -125,3 +125,13 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: Laser Start
+    clip: {fileID: 8300000, guid: 2bc55f03ddfeeee4bbd43e34dcf3a1aa, type: 3}
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 0.68
+    pitchVariance: 0.11
+    minimunDistance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}

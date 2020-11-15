@@ -45,6 +45,6 @@ public class Clamber : MonoBehaviour
         yield return new WaitForSeconds(resetTime);
         capsuleCollider.enabled = true;
         sphereCollider.enabled = false;
-        movement.AddVelocity(-transform.up * 1f);
+        //movement.AddVelocity(-transform.up * 1f);
     }
 }

@@ -115,3 +115,13 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: Explosion
+    clip: {fileID: 8300000, guid: 215ad9f4d448c5d4fb6bbe193f2083a0, type: 3}
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 0.68
+    pitchVariance: 0.11
+    minimunDistance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}

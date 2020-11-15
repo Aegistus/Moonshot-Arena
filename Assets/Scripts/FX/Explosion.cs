@@ -9,6 +9,12 @@ public class Explosion : MonoBehaviour, IEffect
     public float force = 5f;
     public int damage = 20;
 
+    private AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = AudioManager.instance;
+    }
+
     Health health;
     RaycastHit[] sphereHits;
     public void StartEffect()
@@ -26,5 +32,6 @@ public class Explosion : MonoBehaviour, IEffect
                 hit.rigidbody.AddExplosionForce(force, transform.position, radius);
             }
         }
+        audioManager.StartPlayingAtPosition("Explosion", transform.position);
     }
 }

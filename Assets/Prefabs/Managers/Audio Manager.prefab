@@ -116,7 +116,7 @@ MonoBehaviour:
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: Explosion
-    clip: {fileID: 8300000, guid: 215ad9f4d448c5d4fb6bbe193f2083a0, type: 3}
+    clip: {fileID: 8300000, guid: f01c623f724825e44a923d1ae50256f2, type: 3}
     volume: 1
     volumeVariance: 0.1
     pitch: 0.68

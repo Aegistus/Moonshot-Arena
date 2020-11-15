@@ -29,6 +29,10 @@ public class GrappleHook : MonoBehaviour, IGadget
             currentReelPoint = Vector3.Lerp(connectedObject.position, player.position, Time.deltaTime * reelSpeed);
             connectedObject.MovePosition(currentReelPoint);
         }
+        if (!Input.GetMouseButton(1) && joint != null)
+        {
+            Destroy(joint);
+        }
     }
 
     //Called after Update

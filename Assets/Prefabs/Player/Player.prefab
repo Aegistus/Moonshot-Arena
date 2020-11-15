@@ -364,9 +364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handLocation: {fileID: 734755017}
+  maxNumberOfWeapons: 3
   currentWeapon: {fileID: 0}
-  weapons:
-  - {fileID: 6497964142007650248}
   carriedWeapons: []
 --- !u!114 &6497964142272391412
 MonoBehaviour:
@@ -408,7 +407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
 --- !u!114 &6497964142272391415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,11 +742,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b26e6d5e05c334b40bc0f918e2729850, type: 3}
---- !u!1 &6497964142007650248 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1221643726282414775, guid: b26e6d5e05c334b40bc0f918e2729850, type: 3}
-  m_PrefabInstance: {fileID: 5393414091940453759}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6497964142007650247 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1221643726282414776, guid: b26e6d5e05c334b40bc0f918e2729850, type: 3}

@@ -6,6 +6,8 @@ using System;
 
 public class SurvivalTimer : MonoBehaviour
 {
+    public static SurvivalTimer instance;
+
     public static event Action OnTimerFinish;
 
     public TextMeshProUGUI timerText;
@@ -13,6 +15,18 @@ public class SurvivalTimer : MonoBehaviour
     public float timeLeft;
 
     private bool lastFrameBeforeZero = true;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
 
     private void Start()
     {
@@ -25,13 +39,18 @@ public class SurvivalTimer : MonoBehaviour
         lastFrameBeforeZero = true;
     }
 
+    public void AddTime(int additionalSeconds)
+    {
+        timeLeft += additionalSeconds;
+    }
+
     private void Update()
     {
         if (timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
             timerText.text = ConvertToMinutesAndSeconds(timeLeft);
-        } 
+        }
         else if (lastFrameBeforeZero)
         {
             OnTimerFinish?.Invoke();

@@ -135,3 +135,23 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: Grapple Hit
+    clip: {fileID: 8300000, guid: 4c10322c7c0edc345ab510badb46345c, type: 3}
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 0.68
+    pitchVariance: 0.11
+    minimunDistance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Grapple Reel
+    clip: {fileID: 8300000, guid: cef3a7763592cfa4888a1e5feb87f8ba, type: 3}
+    volume: 0.51
+    volumeVariance: 0.1
+    pitch: 0.68
+    pitchVariance: 0.11
+    minimunDistance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}

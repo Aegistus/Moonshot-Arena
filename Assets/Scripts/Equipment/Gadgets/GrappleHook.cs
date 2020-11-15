@@ -51,6 +51,7 @@ public class GrappleHook : MonoBehaviour, IGadget
             {
                 connectedObject = hit.rigidbody;
                 currentReelPoint = hit.point;
+                AudioManager.instance.StartPlayingAtPosition("Grapple Hit", transform.position);
             }
             else 
             {
@@ -66,6 +67,7 @@ public class GrappleHook : MonoBehaviour, IGadget
 
                 joint.autoConfigureConnectedAnchor = false;
                 joint.connectedAnchor = grapplePoint;
+                AudioManager.instance.StartPlayingAtPosition("Grapple Hit", transform.position);
             }
 
             lr.positionCount = 2;
@@ -78,6 +80,10 @@ public class GrappleHook : MonoBehaviour, IGadget
     /// </summary>
     public void EndUse()
     {
+        if (joint != null || connectedObject != null)
+        {
+            AudioManager.instance.StartPlaying("Grapple Reel");
+        }
         lr.positionCount = 0;
         Destroy(joint);
         connectedObject = null;

@@ -19,6 +19,11 @@ public class SMG : Gun
         anim = GetComponent<Animator>();
     }
 
+    protected override void Update()
+    {
+        
+    }
+
     public override IEnumerator EndAttack()
     {
         firing = false;
@@ -30,7 +35,7 @@ public class SMG : Gun
     {
         if (!reloading && carriedAmmo > 0 && loadedAmmo < stats.maxAmmo)
         {
-            anim.enabled = false;
+            anim.Play("Reload");
             reloading = true;
             yield return new WaitForSeconds(stats.reloadTime);
             int ammoToAdd = carriedAmmo > stats.maxAmmo - loadedAmmo ? stats.maxAmmo - loadedAmmo : carriedAmmo;
@@ -39,7 +44,6 @@ public class SMG : Gun
             LoadAmmo();
             reloading = false;
             transform.localRotation = Quaternion.identity;
-            anim.enabled = true;
         }
         else
         {
@@ -89,10 +93,10 @@ public class SMG : Gun
     {
         //anim.Play("Fire");
         pool.GetObjectFromPoolWithLifeTime(stats.muzzleFlashTag, gunTip.position, gunTip.rotation, 2f);
-        if (rayHit.point != null)
-        {
-            pool.GetObjectFromPoolWithLifeTime(stats.bulletImpactTag, rayHit.point, Quaternion.Euler(-90, 0, 0), 2f);
-        }
+        //if (rayHit.point != null)
+        //{
+        //    pool.GetObjectFromPoolWithLifeTime(stats.bulletImpactTag, rayHit.point, Quaternion.Euler(-90, 0, 0), 2f);
+        //}
         pool.GetObjectFromPoolWithLifeTime(stats.bulletTrailTag, gunTip.position + gunTip.forward, gunTip.rotation, 4f);
     }
 

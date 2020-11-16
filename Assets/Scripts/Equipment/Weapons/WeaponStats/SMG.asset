@@ -15,7 +15,7 @@ MonoBehaviour:
   droppedWeaponPrefab: {fileID: 0}
   damage: 5
   resetTime: 0.1
-  reloadTime: 5
+  reloadTime: 2.5
   maxAmmo: 40
   bulletForce: 10
   kickBack: 2

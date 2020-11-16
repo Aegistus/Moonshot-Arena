@@ -25,7 +25,7 @@ public abstract class Gun : Weapon
         }
     }
 
-    protected void Update()
+    protected virtual void Update()
     {
         if (reloading)
         {

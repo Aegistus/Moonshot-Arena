@@ -26,6 +26,7 @@ public class SMG : Gun
 
     public override IEnumerator EndAttack()
     {
+        anim.Play("Idle");
         firing = false;
         StopCoroutine(Shoot());
         yield return null;

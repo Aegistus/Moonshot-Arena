@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PistolAmmoDrop : ItemDrop
 {
-    public int ammo = 20;
+    public int ammo = 40;
 
     public override void GiveItem(Collider player)
     {
@@ -13,7 +13,6 @@ public class PistolAmmoDrop : ItemDrop
         if (pistol != null && pistol.GetType() == typeof(Pistol))
         {
             pistol.AddAmmoToSupply(ammo);
-            Destroy(gameObject);
         }
     }
 }

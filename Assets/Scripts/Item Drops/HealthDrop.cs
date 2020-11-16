@@ -12,7 +12,6 @@ public class HealthDrop : ItemDrop
         if (health != null)
         {
             health.Heal(healingAmount);
-            Destroy(gameObject);
         }
     }
 }

@@ -12,7 +12,6 @@ public class ShotgunAmmoDrop : ItemDrop
         if (shotgun != null && shotgun.GetType() == typeof(Shotgun))
         {
             shotgun.AddAmmoToSupply(ammo);
-            Destroy(gameObject);
         }
     }
 }

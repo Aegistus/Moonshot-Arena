@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea6820235f1aa3d4fb720cff4d54613c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  respawnTime: 60
   ammo: 10
 --- !u!114 &-1665179267996482685
 MonoBehaviour:

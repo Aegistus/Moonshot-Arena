@@ -6,7 +6,7 @@ using System.Linq;
 public class PlayerAttack : MonoBehaviour
 {
     public Transform handLocation;
-    public int maxNumberOfWeapons = 3;
+    public int maxNumberOfWeapons = 2;
     [HideInInspector]
     public Weapon currentWeapon;
     [HideInInspector]

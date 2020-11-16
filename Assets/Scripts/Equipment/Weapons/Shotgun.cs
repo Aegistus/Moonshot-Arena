@@ -64,15 +64,16 @@ public class Shotgun : Gun
             {
                 if (Physics.Raycast(cam.ScreenPointToRay(trajectories[i]), out rayHit, Mathf.Infinity, stats.targetAbleLayers))
                 {
-                    Rigidbody rb = rayHit.collider.GetComponent<Rigidbody>();
-                    if (rb)
-                    {
-                        if (rb.isKinematic)
-                        {
-                            rb.isKinematic = false;
-                        }
-                        rb.velocity += cam.transform.forward * stats.bulletForce;
-                    }
+                    //Rigidbody rb = rayHit.collider.GetComponent<Rigidbody>();
+                    //if (rb)
+                    //{
+                    //    if (rb.isKinematic)
+                    //    {
+                    //        rb.isKinematic = false;
+                    //    }
+                    //    rb.velocity += cam.transform.forward * stats.bulletForce;
+                    //}
+                    DoDamage(rayHit.collider.gameObject);
                     Debug.DrawRay(cam.ScreenPointToRay(trajectories[i]).origin, cam.ScreenPointToRay(trajectories[i]).direction, Color.red, 100000f);
                 }
                 AudioManager.instance.StartPlayingAtPosition("Gun Shot 01", transform.position);

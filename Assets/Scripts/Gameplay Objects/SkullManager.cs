@@ -45,12 +45,15 @@ public class SkullManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(skullSpawnInterval);
-            GameObject nextSpawn = skullSpawnPoints[(int)(Random.value * skullSpawnPoints.Count)];
-            if (nextSpawn != null)
+            if (skullSpawnPoints.Count > 0)
             {
-                Skull newSkull = Instantiate(skullPrefab, nextSpawn.transform.position, nextSpawn.transform.rotation).GetComponent<Skull>();
-                inUseSpawnPoints.Add(newSkull, nextSpawn);
-                skullSpawnPoints.Remove(nextSpawn);
+                GameObject nextSpawn = skullSpawnPoints[(int)(Random.value * skullSpawnPoints.Count)];
+                if (nextSpawn != null)
+                {
+                    Skull newSkull = Instantiate(skullPrefab, nextSpawn.transform.position, nextSpawn.transform.rotation).GetComponent<Skull>();
+                    inUseSpawnPoints.Add(newSkull, nextSpawn);
+                    skullSpawnPoints.Remove(nextSpawn);
+                }
             }
         }
     }

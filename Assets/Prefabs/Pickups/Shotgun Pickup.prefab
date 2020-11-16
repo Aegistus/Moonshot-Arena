@@ -28934,6 +28934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 4188259415795255686, guid: 536695b3822152149a35ab1fc6ff717f, type: 3}
+  weaponName: Shotgun
 --- !u!114 &8913170690597078267
 MonoBehaviour:
   m_ObjectHideFlags: 0

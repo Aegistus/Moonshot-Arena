@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 4826656114261890666, guid: c5ef186c6c4d8304dbdf74ed85782e53, type: 3}
+  weaponName: SMG
 --- !u!114 &2678899456438410895
 MonoBehaviour:
   m_ObjectHideFlags: 0

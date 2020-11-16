@@ -28933,6 +28933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 1221643726282414775, guid: b26e6d5e05c334b40bc0f918e2729850, type: 3}
+  weaponName: Pistol
 --- !u!114 &905756842971736731
 MonoBehaviour:
   m_ObjectHideFlags: 0

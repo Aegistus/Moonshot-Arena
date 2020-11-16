@@ -13,8 +13,9 @@ public class PlayerAttack : MonoBehaviour
     public List<Weapon> carriedWeapons = new List<Weapon>();
 
     private bool wantsToSwap = false;
+    private bool swapping = false;
     private float holdTimer = 0f;
-    private float maxHoldTimer = .5f;
+    private float maxHoldTimer = .3f;
 
     private void Start()
     {
@@ -75,8 +76,9 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             holdTimer = maxHoldTimer;
+            swapping = true;
         }
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.E) && swapping)
         {
             if (holdTimer > 0)
             {
@@ -85,12 +87,14 @@ public class PlayerAttack : MonoBehaviour
             else
             {
                 wantsToSwap = true;
+                swapping = false;
                 holdTimer = 0;
             }
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
             wantsToSwap = false;
+            swapping = false;
         }
     }
 

@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skullPrefab: {fileID: 940384061151590071, guid: c89f250aceb0c084792dc9f1c818207a, type: 3}
-  skullSpawnInterval: 30
+  skullSpawnInterval: 10

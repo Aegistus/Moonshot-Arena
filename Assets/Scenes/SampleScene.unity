@@ -13797,10 +13797,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 298561061801505248, guid: 5f7693be3b1ad684399aadaf1fc27df0, type: 3}
-      propertyPath: skullSpawnInterval
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 298561061801505249, guid: 5f7693be3b1ad684399aadaf1fc27df0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.9944835

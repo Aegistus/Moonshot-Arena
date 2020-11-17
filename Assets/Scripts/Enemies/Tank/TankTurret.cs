@@ -103,7 +103,7 @@ public class TankTurret : Turret
     {
         Transform muzzle = muzzleTips[muzzleIndex];
         poolManager.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.MuzzleFlash, muzzle.position, muzzle.rotation, 5f);
-        poolManager.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.BulletTrail, muzzle.position, muzzle.rotation, 3f);
+        poolManager.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.TankShellTrail, muzzle.position, muzzle.rotation, 3f);
         muzzleIndex++;
         if (muzzleIndex >= muzzleTips.Count)
         {

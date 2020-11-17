@@ -118,7 +118,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Explosion
     clip: {fileID: 8300000, guid: f01c623f724825e44a923d1ae50256f2, type: 3}
-    volume: 0.51
+    volume: 1
     volumeVariance: 0.1
     pitch: 0.68
     pitchVariance: 0.11
@@ -168,7 +168,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Footstep
     clip: {fileID: 8300000, guid: 9a53c4ca772b91e4393322e722175b90, type: 3}
-    volume: 0.48
+    volume: 0.62
     volumeVariance: 0.1
     pitch: 0.68
     pitchVariance: 0.53

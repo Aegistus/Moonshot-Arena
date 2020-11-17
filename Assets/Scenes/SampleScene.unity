@@ -16910,42 +16910,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pool Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 7060475820583737519, guid: 9e1abdb33c9715549b9cc95ca549bad5, type: 3}
-      propertyPath: pools.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7060475820583737519, guid: 9e1abdb33c9715549b9cc95ca549bad5, type: 3}
-      propertyPath: pools.Array.data[3].tag
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7060475820583737519, guid: 9e1abdb33c9715549b9cc95ca549bad5, type: 3}
-      propertyPath: pools.Array.data[4].tag
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7060475820583737519, guid: 9e1abdb33c9715549b9cc95ca549bad5, type: 3}
-      propertyPath: pools.Array.data[5].tag
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7060475820583737519, guid: 9e1abdb33c9715549b9cc95ca549bad5, type: 3}
-      propertyPath: pools.Array.data[6].tag
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7060475820583737519, guid: 9e1abdb33c9715549b9cc95ca549bad5, type: 3}
-      propertyPath: pools.Array.data[7].tag
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7060475820583737519, guid: 9e1abdb33c9715549b9cc95ca549bad5, type: 3}
-      propertyPath: pools.Array.data[7].objectPrefab
-      value: 
-      objectReference: {fileID: 1370954441356028487, guid: e358b1f04d9b85e41be52f58a6a828f2, type: 3}
-    - target: {fileID: 7060475820583737519, guid: 9e1abdb33c9715549b9cc95ca549bad5, type: 3}
-      propertyPath: pools.Array.data[7].size
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7060475820583737519, guid: 9e1abdb33c9715549b9cc95ca549bad5, type: 3}
-      propertyPath: pools.Array.data[6].objectPrefab
-      value: 
-      objectReference: {fileID: 6428645978257085481, guid: 30c9c6b5119eb934386ceff628d2d57e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e1abdb33c9715549b9cc95ca549bad5, type: 3}
 --- !u!1001 &7555866423725101633

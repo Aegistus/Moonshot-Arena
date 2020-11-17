@@ -49,19 +49,22 @@ MonoBehaviour:
     size: 50
   - tag: 1
     objectPrefab: {fileID: 3478407443868827652, guid: 8326161e58271b844abf34e5f7e921a9, type: 3}
-    size: 50
+    size: 100
   - tag: 2
     objectPrefab: {fileID: 6428645978257085481, guid: 06013bdf33d57c34f9ff90f7f942e317, type: 3}
     size: 50
-  - tag: 3
+  - tag: 4
     objectPrefab: {fileID: 483918908983999528, guid: 2111d2eee3769bf45925d85467473212, type: 3}
     size: 30
-  - tag: 4
+  - tag: 5
     objectPrefab: {fileID: 6225784630635247553, guid: f884785966252ea4e918507ca7ab5c04, type: 3}
-    size: 30
-  - tag: 6
+    size: 20
+  - tag: 7
     objectPrefab: {fileID: 1938979120316268, guid: 018c6bb3f1d37b34fbba9163f8f42430, type: 3}
     size: 20
-  - tag: 5
+  - tag: 3
+    objectPrefab: {fileID: 6428645978257085481, guid: 30c9c6b5119eb934386ceff628d2d57e, type: 3}
+    size: 20
+  - tag: 6
     objectPrefab: {fileID: 1370954441356028487, guid: e358b1f04d9b85e41be52f58a6a828f2, type: 3}
     size: 20

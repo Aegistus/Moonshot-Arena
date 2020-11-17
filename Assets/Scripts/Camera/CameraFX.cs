@@ -29,6 +29,7 @@ public class CameraFX : MonoBehaviour
         startingHeight = transform.localPosition.y;
     }
 
+    bool hitBottom = false;
     private void Update()
     {
         if (cam.fieldOfView != targetFOV)
@@ -41,6 +42,16 @@ public class CameraFX : MonoBehaviour
             float camY = Mathf.Clamp(cam.transform.localPosition.y + Mathf.Sin(bounceTimer * bounceSpeed) * bounceHeightRange, startingHeight - bounceHeightRange, startingHeight + bounceHeightRange);
             cam.transform.localPosition = new Vector3(cam.transform.localPosition.x, camY, cam.transform.localPosition.z);
             bounceTimer += Time.deltaTime;
+            if (camY <= startingHeight - bounceHeightRange + .01f && !hitBottom)
+            {
+                AudioManager.instance.StartPlayingAtPosition("Footstep", transform.position);
+                print("Footstep");
+                hitBottom = true;
+            }
+            if (camY >= startingHeight + bounceHeightRange - .01f && hitBottom)
+            {
+                hitBottom = false;
+            }
         }
     }
 

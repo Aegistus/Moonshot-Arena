@@ -75,7 +75,7 @@ public class TankTurret : Turret
                 //ImpactFX();
                 ShotPhysics();
                 ShotDamage();
-                AudioManager.instance.StartPlayingAtPosition("Gun Shot 03", muzzleTips[muzzleIndex].position);
+                AudioManager.instance.StartPlayingAtPosition("Tank Shot", muzzleTips[muzzleIndex].position);
             }
             yield return new WaitForSeconds(shotInterval);
         }

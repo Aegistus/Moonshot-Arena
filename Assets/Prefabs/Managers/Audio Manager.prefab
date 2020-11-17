@@ -155,3 +155,23 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: Tank Shot
+    clip: {fileID: 8300000, guid: bb2e2714f962491428dcb0b38598b251, type: 3}
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 0.68
+    pitchVariance: 0.11
+    minimunDistance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Footstep
+    clip: {fileID: 8300000, guid: 9a53c4ca772b91e4393322e722175b90, type: 3}
+    volume: 0.48
+    volumeVariance: 0.1
+    pitch: 0.68
+    pitchVariance: 0.92
+    minimunDistance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}

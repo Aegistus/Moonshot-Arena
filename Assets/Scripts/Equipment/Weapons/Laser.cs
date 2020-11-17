@@ -5,10 +5,16 @@ using UnityEngine;
 
 public class Laser : Weapon
 {
+    public int damage = 1;
+    public float damagePerSecond = .5f;
+
     private LineRenderer line;
     private bool firingLaser = false;
     private bool reloading = false;
+    private bool damaging = false;
     private AudioSource audioSource;
+
+    private Coroutine damageCoroutine;
 
     public void Start()
     {
@@ -25,7 +31,28 @@ public class Laser : Weapon
             line.positionCount = 2;
             line.SetPosition(0, transform.position);
             line.SetPosition(1, rayHit.point);
+            if (rayHit.collider.CompareTag("Player") && !damaging)
+            {
+                damageCoroutine = StartCoroutine(DoDamage(rayHit.collider.gameObject));
+                damaging = true;
+            }
+            else if (damageCoroutine != null && damaging)
+            {
+                StopCoroutine(damageCoroutine);
+                damaging = false;
+            }
         }
+    }
+
+    private IEnumerator DoDamage(GameObject toDamage)
+    {
+        while (firingLaser)
+        {
+            Health playerHealth = toDamage.GetComponent<Health>();
+            playerHealth.Damage(damage);
+            yield return new WaitForSeconds(damagePerSecond);
+        }
+        damaging = false;
     }
 
     public override IEnumerator EndAttack()

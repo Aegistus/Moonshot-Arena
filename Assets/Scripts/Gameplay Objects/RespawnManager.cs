@@ -34,6 +34,7 @@ public class RespawnManager : MonoBehaviour
         int randIndex = (int)UnityEngine.Random.value * respawnPoints.Count;
         levelCamera.gameObject.SetActive(false);
         respawnUI.SetActive(false);
-        OnPlayerRespawn?.Invoke(Instantiate(playerPrefab, respawnPoints[randIndex].transform.position, respawnPoints[randIndex].transform.rotation));
+        GameObject player = Instantiate(playerPrefab, respawnPoints[randIndex].transform.position, respawnPoints[randIndex].transform.rotation);
+        OnPlayerRespawn?.Invoke(player);
     }
 }

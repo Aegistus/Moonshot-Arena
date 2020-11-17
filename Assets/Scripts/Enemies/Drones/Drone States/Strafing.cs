@@ -44,7 +44,10 @@ public class Strafing : DroneState
         }
         attack.ChargeAttack();
         startRotation = droneModel.rotation;
-        droneModel.LookAt(scanner.visibleTargets[0].position);
+        if (scanner.visibleTargets[0] != null)
+        {
+            droneModel.LookAt(scanner.visibleTargets[0].position);
+        }
         targetRotation = droneModel.rotation;
         droneModel.rotation = startRotation;
         droneModel.rotation = Quaternion.Slerp(startRotation, targetRotation, swivelSpeed * Time.deltaTime);

@@ -19,6 +19,7 @@ public class Searching : DroneState
 
     public override void BeforeExecution()
     {
+        Debug.Log("Searching");
         target = scanner.LastSeenLocation;
         drone.SetDestination(target);
     }

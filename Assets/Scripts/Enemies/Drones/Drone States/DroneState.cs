@@ -22,6 +22,6 @@ public abstract class DroneState : State
 
     public Func<bool> PlayerIsInLOS => () => scanner.visibleTargets.Count > 0;
     public Func<bool> AtDestination => () => drone.AtDestination;
-    public Func<bool> InsideAttackRadius => () => Vector3.Distance(transform.position, scanner.visibleTargets[0].position) < minAttackRadius;
+    public Func<bool> InsideAttackRadius => () => scanner.visibleTargets[0] != null && Vector3.Distance(transform.position, scanner.visibleTargets[0].position) < minAttackRadius;
     public Func<bool> OutsideAttackRadius => () => scanner.visibleTargets[0] != null && Vector3.Distance(transform.position, scanner.visibleTargets[0].position) > maxAttackRadius;
 }

@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba3bc6f5854e1548801e7239ff26918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numOfPositionalSources: 100
   mixerGroup: {fileID: 0}
   sounds:
   - name: Gun Shot 01
@@ -117,7 +118,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Explosion
     clip: {fileID: 8300000, guid: f01c623f724825e44a923d1ae50256f2, type: 3}
-    volume: 1
+    volume: 0.51
     volumeVariance: 0.1
     pitch: 0.68
     pitchVariance: 0.11
@@ -170,7 +171,7 @@ MonoBehaviour:
     volume: 0.48
     volumeVariance: 0.1
     pitch: 0.68
-    pitchVariance: 0.92
+    pitchVariance: 0.53
     minimunDistance: 0
     loop: 0
     mixerGroup: {fileID: 0}

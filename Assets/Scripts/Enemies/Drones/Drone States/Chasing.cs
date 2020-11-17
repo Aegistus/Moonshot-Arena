@@ -28,7 +28,7 @@ public class Chasing : DroneState
 
     public override void DuringExecution()
     {
-        drone.SetDestination(target.transform.position);
+        drone.SetDestination(target.position);
 
         attack.ChargeAttack();
 

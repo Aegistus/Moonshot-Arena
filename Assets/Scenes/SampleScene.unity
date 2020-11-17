@@ -866,7 +866,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-741374
+  m_Name: pb_Mesh-200292
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1900,7 +1900,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-741360
+  m_Name: pb_Mesh-200278
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2487,7 +2487,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-741376
+  m_Name: pb_Mesh-200294
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7855,7 +7855,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-741392
+  m_Name: pb_Mesh-200310
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10410,7 +10410,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-741372
+  m_Name: pb_Mesh-200290
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11931,7 +11931,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-741408
+  m_Name: pb_Mesh-200326
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16014,8 +16014,62 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1303521233}
+    - target: {fileID: 7103928571567139859, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
+      propertyPath: turretBase
+      value: 
+      objectReference: {fileID: 6389508899318038501}
+    - target: {fileID: 7103928571567139859, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
+      propertyPath: barrels
+      value: 
+      objectReference: {fileID: 6391548141067558909}
+    - target: {fileID: 7103928571567139859, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
+      propertyPath: DrawDebugArcs
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103928571567139859, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
+      propertyPath: MaxElevation
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103928571567139859, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
+      propertyPath: MaxDepression
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092696651995539996, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
+      propertyPath: DrawDebugArcs
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092696651995539996, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
+      propertyPath: DrawDebugRay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092696651995539996, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
+      propertyPath: MaxDepression
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092696651995539996, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
+      propertyPath: MaxElevation
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092696651995539996, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
+      propertyPath: turretBase
+      value: 
+      objectReference: {fileID: 794393815044489387}
+    - target: {fileID: 8092696651995539996, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
+      propertyPath: barrels
+      value: 
+      objectReference: {fileID: 794393815044489388}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
+--- !u!4 &794393815044489387 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7341426969067263340, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
+  m_PrefabInstance: {fileID: 794393815044489386}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &794393815044489388 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6741843925344918882, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
+  m_PrefabInstance: {fileID: 794393815044489386}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &841048759052363249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16637,6 +16691,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bf113fd3c49b3e45abfee623a8b55f2, type: 3}
+--- !u!4 &6389508899318038501 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6028728404884520783, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
+  m_PrefabInstance: {fileID: 794393815044489386}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6391548141067558909 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6031753513424215895, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
+  m_PrefabInstance: {fileID: 794393815044489386}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6497964142339297231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17124,6 +17188,10 @@ PrefabInstance:
     - target: {fileID: 7914015479848245186, guid: 0af6dda9cddf7ed40aa47db7cf4b6bc3, type: 3}
       propertyPath: m_Name
       value: Drone Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 7914015479848245186, guid: 0af6dda9cddf7ed40aa47db7cf4b6bc3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7914015479848245213, guid: 0af6dda9cddf7ed40aa47db7cf4b6bc3, type: 3}
       propertyPath: m_LocalPosition.x

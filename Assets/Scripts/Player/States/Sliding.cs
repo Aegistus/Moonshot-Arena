@@ -28,6 +28,7 @@ public class Sliding : PlayerState
         Debug.Log("Sliding");
         camTransform.Translate(0, -slideDuck, 0, Space.Self);
         movement.AddVelocity(transform.forward * initialBoost);
+        AudioManager.instance.StartPlaying("Slide");
     }
 
     public override void DuringExecution()

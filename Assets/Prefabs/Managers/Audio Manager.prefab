@@ -170,7 +170,17 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 9a53c4ca772b91e4393322e722175b90, type: 3}
     volume: 0.62
     volumeVariance: 0.1
-    pitch: 0.68
+    pitch: 1
+    pitchVariance: 0.53
+    minimunDistance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Slide
+    clip: {fileID: 8300000, guid: 0390fd82f8337724cbc6458e304cdacd, type: 3}
+    volume: 0.62
+    volumeVariance: 0.1
+    pitch: 1
     pitchVariance: 0.53
     minimunDistance: 0
     loop: 0

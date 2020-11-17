@@ -212,7 +212,7 @@ MonoBehaviour:
   fovLerpSpeed: 3
   rotationLerpSpeed: 3
   bounceSpeed: 15
-  bounceHeightRange: 0.05
+  bounceHeightRange: 0.07
 --- !u!1 &6497964141946221697
 GameObject:
   m_ObjectHideFlags: 0

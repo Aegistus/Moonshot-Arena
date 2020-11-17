@@ -36,4 +36,10 @@ public class WeaponPickup : MonoBehaviour
             OnPlayerLeaveWeaponSwap?.Invoke();
         }
     }
+
+    public void DestroyPickup()
+    {
+        OnPlayerLeaveWeaponSwap?.Invoke();
+        Destroy(gameObject);
+    }
 }

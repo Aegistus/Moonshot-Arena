@@ -16473,18 +16473,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 707572605936086389, guid: 5296cf768feec504ab31a1aea3ed779b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3018519085660743795, guid: 5296cf768feec504ab31a1aea3ed779b, type: 3}
-      propertyPath: damage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3018519085660743795, guid: 5296cf768feec504ab31a1aea3ed779b, type: 3}
-      propertyPath: damageInterval
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 3018519085660743796, guid: 5296cf768feec504ab31a1aea3ed779b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.337647
@@ -16533,10 +16521,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket Booster Trap
       objectReference: {fileID: 0}
-    - target: {fileID: 3018519085738626705, guid: 5296cf768feec504ab31a1aea3ed779b, type: 3}
-      propertyPath: CollisionModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3018519086991500777, guid: 5296cf768feec504ab31a1aea3ed779b, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -16549,10 +16533,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1982812375}
-    - target: {fileID: 7470774298129380125, guid: 5296cf768feec504ab31a1aea3ed779b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5296cf768feec504ab31a1aea3ed779b, type: 3}
 --- !u!1001 &3506515917274120181

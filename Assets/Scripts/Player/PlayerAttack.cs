@@ -131,7 +131,7 @@ public class PlayerAttack : MonoBehaviour
             carriedWeapons.Add(newWeapon);
             SwitchToWeapon(carriedWeapons.IndexOf(newWeapon));
 
-            Destroy(weaponPickup.gameObject);
+            weaponPickup.GetComponent<WeaponPickup>().DestroyPickup();
         }
     }
 }

@@ -47,7 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35abaed959e808b459bd435c5d9b1e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireFX: []
+  damage: 1
+  damageInterval: 0.1
   activeInterval: 5
   resetInterval: 4
   startingDelay: 1
@@ -59,7 +60,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3018519085660743797}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 9.23
   m_Height: 19.79
@@ -73,7 +74,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3018519085660743797}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 3.08
   m_Height: 22.18
@@ -88,7 +89,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3018519085720370167}
-  - component: {fileID: 4509265917259975306}
   - component: {fileID: 3018519085738626705}
   - component: {fileID: 3018519085738558223}
   m_Layer: 0
@@ -112,18 +112,6 @@ Transform:
   m_Father: {fileID: 3018519086567155006}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!114 &4509265917259975306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3018519085720593035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64ad650e432d4c44b852b82d0b22d995, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!198 &3018519085738626705
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -3706,7 +3694,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 3
     type: 1
     collisionMode: 0

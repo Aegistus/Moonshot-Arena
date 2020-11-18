@@ -22,7 +22,13 @@ public class ConstructionManager : MonoBehaviour
         {
             blueprints.Add(bp.GetComponent<BlueprintEnemy>());
         }
-        BlueprintEnemy.FinishedBlueprint += RemoveFinishedBlueprint;
+        BlueprintEnemy.OnFinishedBlueprint += RemoveFinishedBlueprint;
+        BlueprintSpawner.OnNewBlueprintSpawned += AddNewBlueprint;
+    }
+
+    private void AddNewBlueprint(BlueprintEnemy obj)
+    {
+        blueprints.Add(obj);
     }
 
     private void RemoveFinishedBlueprint(BlueprintEnemy obj)

@@ -5,7 +5,7 @@ using System;
 
 public class BlueprintEnemy : MonoBehaviour
 {
-    public static event Action<BlueprintEnemy> FinishedBlueprint;
+    public static event Action<BlueprintEnemy> OnFinishedBlueprint;
 
     public GameObject finishedPrefab;
     public Material blueprintMat;
@@ -46,7 +46,7 @@ public class BlueprintEnemy : MonoBehaviour
     public void FinishConstruction()
     {
         Instantiate(finishedPrefab, transform.position, transform.rotation);
-        FinishedBlueprint?.Invoke(this);
+        OnFinishedBlueprint?.Invoke(this);
         Destroy(gameObject);
     }
 }

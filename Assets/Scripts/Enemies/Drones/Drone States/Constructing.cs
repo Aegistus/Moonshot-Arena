@@ -23,6 +23,7 @@ public class Constructing : DroneState
     public override void AfterExecution()
     {
         laser.EmergencyStop();
+        drone.NavAgentSetActive(true);
     }
 
     public override void BeforeExecution()
@@ -42,7 +43,7 @@ public class Constructing : DroneState
         {
             if (timer == 0)
             {
-                drone.SetDestination(transform.position);
+                drone.NavAgentSetActive(false);
             }
             if (timer < addProgressInterval)
             {
@@ -58,6 +59,6 @@ public class Constructing : DroneState
                 laser.StartConstruct();
             }
         }
-        transform.LookAt(targetBlueprint.transform.position);
+        droneModel.LookAt(targetBlueprint.transform.position);
     }
 }

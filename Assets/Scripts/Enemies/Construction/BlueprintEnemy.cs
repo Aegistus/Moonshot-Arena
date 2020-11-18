@@ -9,6 +9,7 @@ public class BlueprintEnemy : MonoBehaviour
 
     public GameObject finishedPrefab;
     public Material blueprintMat;
+    public float workToBuild = 100;
 
     private float percentDone = 0;
     private List<MeshRenderer> meshRends = new List<MeshRenderer>();
@@ -36,7 +37,7 @@ public class BlueprintEnemy : MonoBehaviour
             color.a = percentDone / 1000;
             mesh.material.color = color;
         }
-        if (percentDone >= 100)
+        if (percentDone >= workToBuild)
         {
             FinishConstruction();
         }

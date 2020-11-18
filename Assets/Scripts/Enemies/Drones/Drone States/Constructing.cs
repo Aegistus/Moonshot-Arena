@@ -52,7 +52,7 @@ public class Constructing : DroneState
             {
                 if (targetBlueprint != null)
                 {
-                    targetBlueprint.AddWork(1);
+                    targetBlueprint.AddWork(10);
                 }
                 timer = 0;
                 laser.StartConstruct();

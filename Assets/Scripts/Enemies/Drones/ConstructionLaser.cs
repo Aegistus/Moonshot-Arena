@@ -57,7 +57,7 @@ public class ConstructionLaser : MonoBehaviour
         {
             firingLaser = true;
             line.enabled = true;
-            GameObject spark = PoolManager.Instance.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.ChargingLaser, transform.position, transform.rotation, Vector3.one * .01f, 5f);
+            GameObject spark = PoolManager.Instance.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.ConstructionLaser, transform.position, transform.rotation, Vector3.one * .01f, 5f);
             AudioManager.instance.StartPlayingAtPosition("Laser Start", transform.position);
             audioSource.Play();
             spark.transform.parent = transform;

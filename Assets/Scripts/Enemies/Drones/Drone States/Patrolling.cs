@@ -11,6 +11,7 @@ public class Patrolling : DroneState
     public Patrolling(GameObject gameObject) : base(gameObject)
     {
         transitionsTo.Add(new Transition(typeof(Chasing), PlayerIsInLOS));
+        transitionsTo.Add(new Transition(typeof(Constructing), ConstructionAvailable));
     }
 
     public override void AfterExecution()

@@ -21,6 +21,7 @@ public class Drone : MonoBehaviour
             { typeof(Chasing), new Chasing(gameObject) },
             { typeof(Searching), new Searching(gameObject) },
             { typeof(Strafing), new Strafing(gameObject) },
+            { typeof(Constructing), new Constructing(gameObject) },
         };
         stateMachine.SetStates(states, typeof(Patrolling));
     }

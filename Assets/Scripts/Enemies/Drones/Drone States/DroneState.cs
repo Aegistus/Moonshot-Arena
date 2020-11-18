@@ -11,6 +11,7 @@ public abstract class DroneState : State
     protected Transform droneModel;
     protected float maxAttackRadius = 15f;
     protected float minAttackRadius = 10f;
+    protected ConstructionManager construction;
 
     protected DroneState(GameObject gameObject) : base(gameObject)
     {
@@ -18,10 +19,12 @@ public abstract class DroneState : State
         scanner = gameObject.GetComponentInChildren<FieldOfView>();
         attack = gameObject.GetComponent<DroneAttack>();
         droneModel = gameObject.transform.GetChild(0);
+        construction = ConstructionManager.instance;
     }
 
     public Func<bool> PlayerIsInLOS => () => scanner.visibleTargets.Count > 0;
     public Func<bool> AtDestination => () => drone.AtDestination;
     public Func<bool> InsideAttackRadius => () => scanner.visibleTargets[0] != null && Vector3.Distance(transform.position, scanner.visibleTargets[0].position) < minAttackRadius;
     public Func<bool> OutsideAttackRadius => () => scanner.visibleTargets[0] != null && Vector3.Distance(transform.position, scanner.visibleTargets[0].position) > maxAttackRadius;
+    public Func<bool> ConstructionAvailable => () => construction.blueprints.Count > 0;
 }

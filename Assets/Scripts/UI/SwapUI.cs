@@ -21,7 +21,7 @@ public class SwapUI : MonoBehaviour
 
     private void ShowWeaponSwapMessage(string obj)
     {
-        swapText.text = "Swap For " + obj;
+        swapText.text = "Hold 'E' to swap for " + obj;
         swapText.gameObject.SetActive(true);
     }
 

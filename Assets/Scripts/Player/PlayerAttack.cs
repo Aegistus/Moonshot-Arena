@@ -111,6 +111,7 @@ public class PlayerAttack : MonoBehaviour
         currentWeapon.DisableWeapon();
         currentWeapon = carriedWeapons[index];
         currentWeapon.EnableWeapon();
+        AudioManager.instance.StartPlaying("Weapon Switch");
     }
 
     public void SwapWeapon(GameObject newWeaponPrefab, Transform weaponPickup)

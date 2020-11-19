@@ -216,3 +216,23 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: Weapon Switch
+    clip: {fileID: 8300000, guid: 8ad8e1b7041dd394aa92aad52c8636e5, type: 3}
+    volume: 0.45
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.11
+    minimunDistance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Jump Pad Boost
+    clip: {fileID: 8300000, guid: cc6699269b4c1d44ea1e860518b9bb73, type: 3}
+    volume: 0.45
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.11
+    minimunDistance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}

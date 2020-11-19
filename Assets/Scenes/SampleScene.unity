@@ -16757,18 +16757,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1026373717040462700, guid: 68288155c3b9a56488514879256ef602, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6497964141648880312, guid: 68288155c3b9a56488514879256ef602, type: 3}
-      propertyPath: horizontalBounceRange
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 6497964141648880312, guid: 68288155c3b9a56488514879256ef602, type: 3}
-      propertyPath: bounceHeightRange
-      value: 0.02
-      objectReference: {fileID: 0}
     - target: {fileID: 6497964142272391418, guid: 68288155c3b9a56488514879256ef602, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.2

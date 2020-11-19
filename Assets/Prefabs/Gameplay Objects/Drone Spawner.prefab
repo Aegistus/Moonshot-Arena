@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 7555866424545335551, guid: 62082d452a557934c9c88cea8b0437e5, type: 3}
   spawnPoint: {fileID: 7914015480761365149}
-  respawnTime: 30
+  respawnTime: 60
 --- !u!1 &7914015479886664660
 GameObject:
   m_ObjectHideFlags: 0

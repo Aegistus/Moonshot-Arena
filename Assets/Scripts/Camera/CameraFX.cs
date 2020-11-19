@@ -8,6 +8,7 @@ public class CameraFX : MonoBehaviour
     public float rotationLerpSpeed = 1f;
     public float bounceSpeed = 3f;
     public float bounceHeightRange = .1f;
+    public float horizontalBounceRange = .05f;
 
     private Camera cam;
 
@@ -15,10 +16,10 @@ public class CameraFX : MonoBehaviour
     private float targetZRotation = 0;
 
     private float startingFOV;
-    private float startingZRotation;
 
     private bool isBouncing = false;
-    private float startingHeight;
+    private float startingY;
+    private float startingX;
     private float bounceTimer = 0;
 
     private void Start()
@@ -26,7 +27,8 @@ public class CameraFX : MonoBehaviour
         cam = GetComponent<Camera>();
         startingFOV = cam.fieldOfView;
         targetFOV = startingFOV;
-        startingHeight = transform.localPosition.y;
+        startingY = transform.localPosition.y;
+        startingX = transform.localPosition.x;
     }
 
     bool hitBottom = false;
@@ -39,16 +41,17 @@ public class CameraFX : MonoBehaviour
         cam.transform.rotation = Quaternion.Euler(cam.transform.eulerAngles.x, cam.transform.eulerAngles.y, targetZRotation);
         if (isBouncing)
         {
-            float camY = Mathf.Clamp(cam.transform.localPosition.y + Mathf.Sin(bounceTimer * bounceSpeed) * bounceHeightRange, startingHeight - bounceHeightRange, startingHeight + bounceHeightRange);
-            cam.transform.localPosition = new Vector3(cam.transform.localPosition.x, camY, cam.transform.localPosition.z);
+            float camY = cam.transform.localPosition.y + Mathf.Sin(bounceTimer * bounceSpeed) * bounceHeightRange;
+            float camX = cam.transform.localPosition.x + Mathf.Sin(bounceTimer * bounceSpeed) * horizontalBounceRange * .5f;
+            cam.transform.localPosition = new Vector3(camX, camY, cam.transform.localPosition.z);
             bounceTimer += Time.deltaTime;
-            if (camY <= startingHeight - bounceHeightRange + .01f && !hitBottom)
+            if (camY <= startingY - bounceHeightRange + .01f && !hitBottom)
             {
                 AudioManager.instance.StartPlayingAtPosition("Footstep", transform.position);
                 print("Footstep");
                 hitBottom = true;
             }
-            if (camY >= startingHeight + bounceHeightRange - .01f && hitBottom)
+            if (camY >= startingY + bounceHeightRange - (bounceHeightRange / 5) && hitBottom)
             {
                 hitBottom = false;
             }
@@ -61,7 +64,7 @@ public class CameraFX : MonoBehaviour
         bounceTimer = 0;
         if (!isBouncing)
         {
-            cam.transform.localPosition = new Vector3(cam.transform.localPosition.x, startingHeight, cam.transform.localPosition.z);
+            cam.transform.localPosition = new Vector3(startingX, startingY, cam.transform.localPosition.z);
         }
     }
 

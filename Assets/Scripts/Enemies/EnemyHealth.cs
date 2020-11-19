@@ -13,8 +13,8 @@ public class EnemyHealth : Health
 
     public override void Damage(int damage)
     {
-        base.Damage(damage);
         pool.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.Electricity, transform.position, Quaternion.Euler(Random.value * 360, Random.value * 360, Random.value * 360), .5f);
+        base.Damage(damage);
     }
 
     public override void Kill()

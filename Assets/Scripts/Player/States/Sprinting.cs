@@ -12,7 +12,7 @@ public class Sprinting : PlayerState
         animationNames.Add("Run");
         transitionsTo.Add(new Transition(typeof(Walking), Not(Shift)));
         transitionsTo.Add(new Transition(typeof(Idling), Not(MoveKeys), Not(Shift)));
-        transitionsTo.Add(new Transition(typeof(Jumping), Spacebar, Not(Falling)));
+        transitionsTo.Add(new Transition(typeof(Jumping), Spacebar, OnGround));
         transitionsTo.Add(new Transition(typeof(Falling), Not(OnGround)));
         camFX = gameObject.GetComponentInChildren<CameraFX>();
     }

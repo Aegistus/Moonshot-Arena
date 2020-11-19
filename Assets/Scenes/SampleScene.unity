@@ -16007,7 +16007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 794393814834384671, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 794393814910611808, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
       propertyPath: m_Mesh
@@ -16254,7 +16254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989690757392227220, guid: c1930874952f32d4caa660e24194321b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 989690757392227223, guid: c1930874952f32d4caa660e24194321b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16947,7 +16947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7045109183530963922, guid: 4d0c70b412e2ef74380b833f96ab8b39, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7045109183530963927, guid: 4d0c70b412e2ef74380b833f96ab8b39, type: 3}
       propertyPath: m_LocalPosition.x

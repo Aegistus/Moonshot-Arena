@@ -7,8 +7,8 @@ public abstract class ItemDrop : MonoBehaviour
 {
     public float respawnTime = 60f;
 
-    private bool spawned = true;
-    private List<GameObject> children = new List<GameObject>();
+    protected bool spawned = true;
+    protected List<GameObject> children = new List<GameObject>();
 
     protected void Start()
     {
@@ -18,7 +18,7 @@ public abstract class ItemDrop : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && spawned)
         {
@@ -32,7 +32,7 @@ public abstract class ItemDrop : MonoBehaviour
         }
     }
 
-    private IEnumerator RespawnItem()
+    protected IEnumerator RespawnItem()
     {
         yield return new WaitForSeconds(respawnTime);
         spawned = true;

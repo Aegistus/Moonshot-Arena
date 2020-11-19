@@ -29,6 +29,8 @@ public class SMG : Gun
         anim.Play("Idle");
         firing = false;
         StopCoroutine(Shoot());
+        AudioManager.instance.StopPlaying("Machine Gun Fire");
+        AudioManager.instance.StartPlaying("Machine Gun Stop");
         yield return null;
     }
 
@@ -59,6 +61,7 @@ public class SMG : Gun
         {
             firing = true;
             StartCoroutine(Shoot());
+            AudioManager.instance.StartPlaying("Machine Gun Fire");
         }
         else if (loadedAmmo == 0)
         {
@@ -80,7 +83,6 @@ public class SMG : Gun
                 }
                 DoDamage(rayHit.collider.gameObject);
             }
-            AudioManager.instance.StartPlayingAtPosition("Gun Shot 01", transform.position);
             GunFX();
             playerRB.velocity += -cam.transform.forward * stats.kickBack;
             firing = true;

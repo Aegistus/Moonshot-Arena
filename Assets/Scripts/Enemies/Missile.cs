@@ -8,17 +8,28 @@ public class Missile : MonoBehaviour
     public float speed = 1f;
     public float turnSpeed = 1f;
 
-    private void FixedUpdate()
+    private ParticleSystem smoke;
+
+    private void Awake()
+    {
+        smoke = GetComponentInChildren<ParticleSystem>();
+    }
+
+    private void Update()
     {
         if (target != null)
         {
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
-            AdjustDirection();
+            transform.position = transform.position + (transform.forward * speed * Time.deltaTime);
         }
         else
         {
             Explode();
         }
+    }
+
+    private void FixedUpdate()
+    {
+        AdjustDirection();
     }
 
     Quaternion startRotation;
@@ -38,7 +49,7 @@ public class Missile : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
         Explode();
     }

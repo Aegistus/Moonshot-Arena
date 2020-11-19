@@ -866,7 +866,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-200292
+  m_Name: pb_Mesh-216118
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1562,7 +1562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7555866424545335551, guid: 62082d452a557934c9c88cea8b0437e5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62082d452a557934c9c88cea8b0437e5, type: 3}
@@ -1572,7 +1572,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-200278
+  m_Name: pb_Mesh-216104
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2380,7 +2380,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-200294
+  m_Name: pb_Mesh-216120
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7912,7 +7912,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-200310
+  m_Name: pb_Mesh-216136
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9300,6 +9300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7555866424545335551, guid: 62082d452a557934c9c88cea8b0437e5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62082d452a557934c9c88cea8b0437e5, type: 3}
 --- !u!1 &1089332123
@@ -10463,7 +10467,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-200290
+  m_Name: pb_Mesh-216116
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12506,7 +12510,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-200326
+  m_Name: pb_Mesh-216150
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16001,6 +16005,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank
       objectReference: {fileID: 0}
+    - target: {fileID: 794393814834384671, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 794393814910611808, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -16097,10 +16105,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1303521233}
-    - target: {fileID: 3413778832246999812, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 50
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
 --- !u!1001 &841048759052363249
@@ -16943,7 +16947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7045109183530963922, guid: 4d0c70b412e2ef74380b833f96ab8b39, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7045109183530963927, guid: 4d0c70b412e2ef74380b833f96ab8b39, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17234,6 +17238,10 @@ PrefabInstance:
     - target: {fileID: 7555866424545335551, guid: 62082d452a557934c9c88cea8b0437e5, type: 3}
       propertyPath: m_Name
       value: Drone
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555866424545335551, guid: 62082d452a557934c9c88cea8b0437e5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62082d452a557934c9c88cea8b0437e5, type: 3}

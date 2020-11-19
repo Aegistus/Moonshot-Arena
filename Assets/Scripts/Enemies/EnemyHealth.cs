@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealth : Health
 {
-    private PoolManager pool;
+    protected PoolManager pool;
 
     private void Start()
     {
@@ -14,6 +14,6 @@ public class EnemyHealth : Health
     public override void Kill()
     {
         pool.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.MediumExplosion, transform.position, Quaternion.identity, 3f);
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }

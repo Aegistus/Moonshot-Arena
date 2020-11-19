@@ -30,4 +30,9 @@ public class TankController : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
     }
+
+    private void OnDestroy()
+    {
+        RespawnManager.OnPlayerRespawn -= RetargetPlayer;
+    }
 }

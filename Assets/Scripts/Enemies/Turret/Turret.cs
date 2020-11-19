@@ -10,7 +10,7 @@ public class Turret : MonoBehaviour
 
     protected virtual void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
         StartCoroutine(CheckLineOfSight());
         RespawnManager.OnPlayerRespawn += RetargetNewPlayer;
     }

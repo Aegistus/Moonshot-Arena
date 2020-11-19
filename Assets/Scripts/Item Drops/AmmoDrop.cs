@@ -22,5 +22,6 @@ public class AmmoDrop : ItemDrop
                 weapon.AddAmmoToSupply(24);
             }
         }
+        AudioManager.instance.StartPlaying("Pickup Ammo");
     }
 }

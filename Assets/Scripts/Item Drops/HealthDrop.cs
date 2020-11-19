@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthDrop : ItemDrop
 {
-    public int healingAmount = 40;
+    public int healingAmount = 50;
 
     protected override void OnTriggerEnter(Collider other)
     {
@@ -24,6 +24,7 @@ public class HealthDrop : ItemDrop
             {
                 child.SetActive(false);
                 spawned = false;
+                AudioManager.instance.StartPlaying("Heal");
                 StartCoroutine(RespawnItem());
             }
         }

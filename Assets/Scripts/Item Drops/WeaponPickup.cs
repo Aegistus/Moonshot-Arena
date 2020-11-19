@@ -40,6 +40,7 @@ public class WeaponPickup : MonoBehaviour
     public void DestroyPickup()
     {
         OnPlayerLeaveWeaponSwap?.Invoke();
+        AudioManager.instance.StartPlaying("Pickup Ammo");
         Destroy(gameObject);
     }
 }

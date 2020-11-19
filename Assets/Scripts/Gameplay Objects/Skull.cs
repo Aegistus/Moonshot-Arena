@@ -16,6 +16,7 @@ public class Skull : MonoBehaviour
         {
             OnSkullCollected?.Invoke(this);
             SurvivalTimer.instance.AddTime(additionalSeconds);
+            AudioManager.instance.StartPlaying("Pickup Skull");
             Destroy(gameObject);
         }
     }

@@ -27,16 +27,19 @@ public class SMG : Gun
     public override IEnumerator EndAttack()
     {
         anim.Play("Idle");
+        if (firing == true)
+        {
+            AudioManager.instance.StopPlaying("Machine Gun Fire");
+            AudioManager.instance.StartPlaying("Machine Gun Stop");
+        }
         firing = false;
         StopCoroutine(Shoot());
-        AudioManager.instance.StopPlaying("Machine Gun Fire");
-        AudioManager.instance.StartPlaying("Machine Gun Stop");
         yield return null;
     }
 
     public override IEnumerator Reload()
     {
-        if (!reloading && carriedAmmo > 0 && loadedAmmo < stats.maxAmmo)
+        if (!reloading && carriedAmmo > 0 && loadedAmmo < stats.maxAmmo && !firing)
         {
             anim.Play("Reload");
             reloading = true;

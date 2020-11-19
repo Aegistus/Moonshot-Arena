@@ -64,7 +64,10 @@ public class FireTrap : MonoBehaviour
         {
             foreach (Health entity in enteredEntities)
             {
-                entity.Damage(damage);
+                if (entity != null)
+                {
+                    entity.Damage(damage);
+                }
             }
             yield return new WaitForSeconds(damageInterval);
         }

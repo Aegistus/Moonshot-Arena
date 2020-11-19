@@ -3,40 +3,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerShield : MonoBehaviour, IGadget
+public class PowerShield : MonoBehaviour
 {
-    public float velocityModifier = .5f;
+    public float shieldTimeLength = 10f;
+    public GameObject shieldPrefab;
 
-    private PlayerController player;
-    private GameObject model;
+    private GameObject currentShield;
 
-    private void Start()
+    private void Update()
     {
-        player = GetComponentInParent<PlayerController>();
-        model = transform.GetChild(0).gameObject;
-        model.SetActive(false);
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            StartUse();
+            StartCoroutine(EndUse());
+        }
     }
 
     public void StartUse()
     {
-        player.SetVelocity(player.Velocity.normalized * 2);
-        model.SetActive(true);
+        if (currentShield == null)
+        {
+            currentShield = Instantiate(shieldPrefab, transform.position + transform.forward, Quaternion.identity);
+        }
     }
 
-    public void EndUse()
+    public IEnumerator EndUse()
     {
-        player.ModifyVelocity(1);
-        model.SetActive(false);
+        yield return new WaitForSeconds(shieldTimeLength);
+        if (currentShield != null)
+        {
+            Health health = currentShield.GetComponent<Health>();
+            health.Kill();
+            currentShield = null;
+        }
     }
-
-    public void DisableGadget()
-    {
-        gameObject.SetActive(false);
-    }
-
-    public void EnableGadget()
-    {
-        gameObject.SetActive(true);
-    }
-
 }

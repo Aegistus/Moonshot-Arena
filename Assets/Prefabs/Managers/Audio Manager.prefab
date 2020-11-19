@@ -188,7 +188,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Heal
     clip: {fileID: 8300000, guid: d969622a0d3401e44afa43f7e7eb5d3e, type: 3}
-    volume: 0.62
+    volume: 0.41
     volumeVariance: 0.1
     pitch: 0.5
     pitchVariance: 0.11
@@ -238,7 +238,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Machine Gun Fire
     clip: {fileID: 8300000, guid: 6125d35f895b58a459324455209cc482, type: 3}
-    volume: 0.45
+    volume: 0.31
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0.11
@@ -248,7 +248,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Machine Gun Stop
     clip: {fileID: 8300000, guid: 0df699291629cf442b18748c3a0c6714, type: 3}
-    volume: 0.45
+    volume: 0.33
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0.11

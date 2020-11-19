@@ -11,6 +11,12 @@ public class EnemyHealth : Health
         pool = PoolManager.Instance;
     }
 
+    public override void Damage(int damage)
+    {
+        base.Damage(damage);
+        pool.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.Electricity, transform.position, Quaternion.Euler(Random.value * 360, Random.value * 360, Random.value * 360), .5f);
+    }
+
     public override void Kill()
     {
         pool.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.MediumExplosion, transform.position, Quaternion.identity, 3f);

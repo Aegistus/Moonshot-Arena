@@ -1562,7 +1562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7555866424545335551, guid: 62082d452a557934c9c88cea8b0437e5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62082d452a557934c9c88cea8b0437e5, type: 3}
@@ -9302,7 +9302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7555866424545335551, guid: 62082d452a557934c9c88cea8b0437e5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62082d452a557934c9c88cea8b0437e5, type: 3}
@@ -14387,7 +14387,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-199392
+  m_Name: pb_Mesh-215228
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15043,7 +15043,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-199378
+  m_Name: pb_Mesh-215214
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16007,7 +16007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 794393814834384671, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 794393814910611808, guid: 6cc37c2d904c34d4e8f8d638920a381e, type: 3}
       propertyPath: m_Mesh
@@ -16254,7 +16254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989690757392227220, guid: c1930874952f32d4caa660e24194321b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 989690757392227223, guid: c1930874952f32d4caa660e24194321b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17241,7 +17241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7555866424545335551, guid: 62082d452a557934c9c88cea8b0437e5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62082d452a557934c9c88cea8b0437e5, type: 3}

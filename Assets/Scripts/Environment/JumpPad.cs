@@ -7,7 +7,7 @@ public class JumpPad : MonoBehaviour
 {
     public float force = 100f;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         Rigidbody rb = other.GetComponent<Rigidbody>();
         if (rb != null)

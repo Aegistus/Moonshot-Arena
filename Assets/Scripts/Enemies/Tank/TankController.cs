@@ -5,12 +5,20 @@ using UnityEngine.AI;
 
 public class TankController : MonoBehaviour
 {
+    public LayerMask groundLayer;
+
     private NavMeshAgent navAgent;
     private Transform target;
 
     private void Start()
     {
+        RaycastHit rayHit;
+        if (Physics.Raycast(transform.position, -transform.up, out rayHit, 20f, groundLayer))
+        {
+            transform.position = rayHit.point;
+        }
         navAgent = GetComponent<NavMeshAgent>();
+        navAgent.enabled = true;
         RetargetPlayer(GameObject.FindGameObjectWithTag("Player"));
         StartCoroutine(HuntPlayer());
         RespawnManager.OnPlayerRespawn += RetargetPlayer;
@@ -22,10 +30,16 @@ public class TankController : MonoBehaviour
         StartCoroutine(HuntPlayer());
     }
 
+    private NavMeshHit meshHit;
     private IEnumerator HuntPlayer()
     {
         while (target != null)
         {
+            if (!navAgent.isOnNavMesh)
+            {
+                navAgent.FindClosestEdge(out meshHit);
+                transform.position = meshHit.position;
+            }
             navAgent.SetDestination(target.position);
             yield return new WaitForSeconds(1);
         }

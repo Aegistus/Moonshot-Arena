@@ -31,7 +31,7 @@ public class Laser : Weapon
             line.positionCount = 2;
             line.SetPosition(0, transform.position);
             line.SetPosition(1, rayHit.point);
-            if (rayHit.collider.CompareTag("Player") && !damaging)
+            if (rayHit.collider != null && rayHit.collider.CompareTag("Player") && !damaging)
             {
                 damageCoroutine = StartCoroutine(DoDamage(rayHit.collider.gameObject));
                 damaging = true;

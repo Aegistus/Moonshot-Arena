@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     public void SetVelocity(Vector3 velocity)
     {
-        rb.velocity = velocity * velocityMod;
+        rb.velocity = new Vector3(velocity.x * velocityMod, rb.velocity.y, velocity.z * velocityMod);
     }
 
     public void AddVelocity(Vector3 additional)

@@ -36,11 +36,14 @@ public class Missile : MonoBehaviour
     Quaternion targetRotation;
     private void AdjustDirection()
     {
-        startRotation = transform.rotation;
-        transform.LookAt(target.position);
-        targetRotation = transform.rotation;
-        transform.rotation = startRotation;
-        transform.rotation = Quaternion.Slerp(startRotation, targetRotation, turnSpeed * Time.deltaTime);
+        if (target != null)
+        {
+            startRotation = transform.rotation;
+            transform.LookAt(target.position);
+            targetRotation = transform.rotation;
+            transform.rotation = startRotation;
+            transform.rotation = Quaternion.Slerp(startRotation, targetRotation, turnSpeed * Time.deltaTime);
+        }
     }
 
     public void Explode()

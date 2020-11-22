@@ -37,7 +37,6 @@ public class TankController : MonoBehaviour
         {
             if (!navAgent.isOnNavMesh)
             {
-                navAgent.FindClosestEdge(out meshHit);
                 transform.position = meshHit.position;
             }
             navAgent.SetDestination(target.position);

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Chasing : DroneState
 {
@@ -9,9 +10,12 @@ public class Chasing : DroneState
     private Quaternion targetRotation;
     float swivelSpeed = 1f;
 
+    public Func<bool> TargetIsNull => () => target == null;
+
     public Chasing(GameObject gameObject) : base(gameObject)
     {
         transitionsTo.Add(new Transition(typeof(Patrolling), Not(PlayerIsInLOS)));
+        transitionsTo.Add(new Transition(typeof(Patrolling), TargetIsNull));
         transitionsTo.Add(new Transition(typeof(Strafing), PlayerIsInLOS, InsideAttackRadius));
     }
 
@@ -28,14 +32,17 @@ public class Chasing : DroneState
 
     public override void DuringExecution()
     {
-        drone.SetDestination(target.position);
+        if (target != null)
+        {
+            drone.SetDestination(target.position);
 
-        attack.ChargeAttack();
+            attack.ChargeAttack();
 
-        startRotation = droneModel.rotation;
-        droneModel.LookAt(target.position);
-        targetRotation = droneModel.rotation;
-        droneModel.rotation = startRotation;
-        droneModel.rotation = Quaternion.Slerp(startRotation, targetRotation, swivelSpeed * Time.deltaTime);
+            startRotation = droneModel.rotation;
+            droneModel.LookAt(target.position);
+            targetRotation = droneModel.rotation;
+            droneModel.rotation = startRotation;
+            droneModel.rotation = Quaternion.Slerp(startRotation, targetRotation, swivelSpeed * Time.deltaTime);
+        }
     }
 }

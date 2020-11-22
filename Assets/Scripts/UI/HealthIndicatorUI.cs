@@ -69,4 +69,9 @@ public class HealthIndicatorUI : MonoBehaviour
             healingIndicator.SetActive(false);
         }
     }
+
+    private void OnDestroy()
+    {
+        PlayerHealth.OnPlayerHealthChange -= ShowUIWhenHealthChange;
+    }
 }

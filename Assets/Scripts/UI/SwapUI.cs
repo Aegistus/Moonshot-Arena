@@ -25,5 +25,10 @@ public class SwapUI : MonoBehaviour
         swapText.gameObject.SetActive(true);
     }
 
-   
+    private void OnDestroy()
+    {
+        WeaponPickup.OnPlayerHasSwapOption -= ShowWeaponSwapMessage;
+        WeaponPickup.OnPlayerLeaveWeaponSwap -= HideWeaponSwapMessage;
+    }
+
 }

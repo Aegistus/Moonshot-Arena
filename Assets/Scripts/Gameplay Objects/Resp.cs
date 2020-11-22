@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class RespawnManager : MonoBehaviour
+public class Resp : MonoBehaviour
 {
     public static event Action<GameObject> OnPlayerRespawn;
 

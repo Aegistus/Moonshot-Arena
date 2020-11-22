@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Skull Spawn
   - Blueprint
+  - Level Camera
   layers:
   - Default
   - TransparentFX

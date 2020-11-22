@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Laser : Weapon
 {
+    public ParticleSystem laserBurst;
     public int damage = 1;
     public float damagePerSecond = .5f;
 
@@ -20,6 +21,7 @@ public class Laser : Weapon
     {
         line = GetComponent<LineRenderer>();
         audioSource = GetComponent<AudioSource>();
+        laserBurst.Stop();
     }
 
     RaycastHit rayHit;
@@ -61,6 +63,7 @@ public class Laser : Weapon
         firingLaser = false;
         line.enabled = false;
         audioSource.Stop();
+        laserBurst.Stop();
         StartCoroutine(Reload());
     }
 
@@ -77,10 +80,9 @@ public class Laser : Weapon
         {
             firingLaser = true;
             line.enabled = true;
-            GameObject spark = PoolManager.Instance.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.ChargingLaser, transform.position, transform.rotation, Vector3.one * .01f, 5f);
             AudioManager.instance.StartPlayingAtPosition("Laser Start", transform.position);
             audioSource.Play();
-            spark.transform.parent = transform;
+            laserBurst.Play();
             StartCoroutine(EndAttack());
         }
     }

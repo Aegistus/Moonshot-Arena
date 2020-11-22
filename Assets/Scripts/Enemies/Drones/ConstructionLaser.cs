@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class ConstructionLaser : MonoBehaviour
 {
+    public ParticleSystem laserBurst;
+
     private LineRenderer line;
     private bool firingLaser = false;
     private bool reloading = false;
@@ -14,6 +16,7 @@ public class ConstructionLaser : MonoBehaviour
     {
         line = GetComponent<LineRenderer>();
         audioSource = GetComponent<AudioSource>();
+        laserBurst.Stop();
     }
 
     RaycastHit rayHit;
@@ -34,6 +37,7 @@ public class ConstructionLaser : MonoBehaviour
         firingLaser = false;
         line.enabled = false;
         audioSource.Stop();
+        laserBurst.Stop();
         StartCoroutine(Reload());
     }
 
@@ -57,10 +61,9 @@ public class ConstructionLaser : MonoBehaviour
         {
             firingLaser = true;
             line.enabled = true;
-            GameObject spark = PoolManager.Instance.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.ConstructionLaser, transform.position, transform.rotation, Vector3.one * .01f, 5f);
             AudioManager.instance.StartPlayingAtPosition("Laser Start", transform.position);
             audioSource.Play();
-            spark.transform.parent = transform;
+            laserBurst.Play();
             StartCoroutine(EndConstruct());
         }
     }

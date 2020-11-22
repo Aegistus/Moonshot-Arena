@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: ed0e65c2607aaf643ae821759e6f6aec
+  - enabled: 1
     path: Assets/Scenes/Emperor's Hall.unity
     guid: d978134d419434b4abcd6ff3abf9992b
+  - enabled: 1
+    path: Assets/Scenes/Biosphere.unity
+    guid: 78db0a6cbb670124298c2d88c813a5e6
   m_configObjects: {}

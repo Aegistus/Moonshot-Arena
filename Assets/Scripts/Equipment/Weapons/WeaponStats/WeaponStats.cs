@@ -12,6 +12,7 @@ public class WeaponStats : ScriptableObject
     public int maxAmmo = 10;
     public float bulletForce = 20f;
     public float kickBack = 5f;
+    public float recoil = 3f;
     public float roundsPerMinute = 60f;
     public LayerMask targetAbleLayers;
     public PoolManager.PoolTag muzzleFlashTag = PoolManager.PoolTag.MuzzleFlash;

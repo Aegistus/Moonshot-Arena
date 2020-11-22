@@ -15,18 +15,25 @@ public class PlayerGadgets : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (!PauseMenuUI.IsPaused)
         {
-            currentGadget.StartUse();
+            if (Input.GetMouseButtonDown(1))
+            {
+                currentGadget.StartUse();
+            }
+            if (Input.GetMouseButtonUp(1))
+            {
+                currentGadget.EndUse();
+            }
+            //if (Input.mouseScrollDelta.y < 0)
+            //{
+            //    GoToNextGadget();
+            //}
         }
-        if (Input.GetMouseButtonUp(1))
+        else
         {
             currentGadget.EndUse();
         }
-        //if (Input.mouseScrollDelta.y < 0)
-        //{
-        //    GoToNextGadget();
-        //}
     }
 
     public void GoToNextGadget()

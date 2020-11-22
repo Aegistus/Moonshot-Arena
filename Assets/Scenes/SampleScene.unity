@@ -615,6 +615,17 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &116201154 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+  m_PrefabInstance: {fileID: 1600768891488862242}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d199490a83bb2b844b9695cbf13b01ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &138275338
 Mesh:
   m_ObjectHideFlags: 0
@@ -16402,10 +16413,106 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_Text
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_CharacterLimit
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MouseSensitivityUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1600768891488862243}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MouseSensitivityUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeMouseSensitivity
+      objectReference: {fileID: 0}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_ContentType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_KeyboardType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_CharacterValidation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1600768891488862243}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MouseSensitivityUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeMouseSensitivity
+      objectReference: {fileID: 0}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.UI.InputField, UnityEngine.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 116201154, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 116201154}
     - target: {fileID: 1019358917, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
       propertyPath: levelCamera
       value: 
       objectReference: {fileID: 1089332125}
+    - target: {fileID: 1489794141, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809087601, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1600768891724473700, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -16496,6 +16603,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+--- !u!114 &1600768891488862243 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4266447897536718490, guid: 047fc45d6d1e5f247865700e8743b384, type: 3}
+  m_PrefabInstance: {fileID: 1600768891488862242}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d49648ce8652d4e87607f833004a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2125751826112569764
 PrefabInstance:
   m_ObjectHideFlags: 0

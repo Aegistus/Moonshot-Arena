@@ -10,11 +10,17 @@ public class PauseMenuUI : MonoBehaviour
 
     private PlayerController player;
 
-    private void Awake()
+    private void Start()
     {
         IsPaused = false;
         pauseMenu.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        RespawnManager.OnPlayerRespawn += GetRespawnedPlayer;
+    }
+
+    private void GetRespawnedPlayer(GameObject obj)
+    {
+        player = obj.GetComponent<PlayerController>();
     }
 
     private void Update()
@@ -33,14 +39,9 @@ public class PauseMenuUI : MonoBehaviour
     {
         IsPaused = false;
         pauseMenu.SetActive(false);
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         player.enabled = true;
-    }
-
-    public void OpenSettings()
-    {
-
     }
 
     public void ReturnToMainMenu()

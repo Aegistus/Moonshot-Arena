@@ -8,14 +8,13 @@ public class CameraController : MonoBehaviour
 
     private Transform camTransform;
     private float xRotation;
-    private Camera mainCam;
 
     private void Start()
     {
+        mouseSensitivity = MouseSensitivityUI.mouseSensitivity;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         camTransform = Camera.main.transform;
-        mainCam = Camera.main;
     }
 
     float mouseX;

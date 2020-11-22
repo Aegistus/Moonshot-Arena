@@ -256,3 +256,13 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: Rifle Shot
+    clip: {fileID: 8300000, guid: 6dd7024f00606b44eb5884197a66a893, type: 3}
+    volume: 0.33
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.11
+    minimunDistance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}

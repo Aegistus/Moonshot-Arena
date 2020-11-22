@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d52c3f08778a9f4285a4813c15ff307, type: 3}
   m_Name: LMG
   m_EditorClassIdentifier: 
-  droppedWeaponPrefab: {fileID: 1851194428122289875, guid: 14829d8f2c176b34b98c6e1c337e3931, type: 3}
+  droppedWeaponPrefab: {fileID: 8460652853962175417, guid: 06e327b95dfe04b45bd4ecfd1dc21b1a, type: 3}
   damage: 20
   resetTime: 0.1
   reloadTime: 5

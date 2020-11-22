@@ -33,7 +33,7 @@ public class Rifle : Gun
                 }
                 DoDamage(rayHit.collider.gameObject);
             }
-            AudioManager.instance.StartPlayingAtPosition("Gun Shot 01", transform.position);
+            AudioManager.instance.StartPlayingAtPosition("Rifle Shot", transform.position);
             GunFX();
             playerRB.velocity += -cam.transform.forward * stats.kickBack;
             reset = false;

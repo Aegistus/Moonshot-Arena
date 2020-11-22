@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d52c3f08778a9f4285a4813c15ff307, type: 3}
   m_Name: Rifle
   m_EditorClassIdentifier: 
-  droppedWeaponPrefab: {fileID: 0}
+  droppedWeaponPrefab: {fileID: 4957981264176318710, guid: 15222ee9f576baa4b81699ede557d4bb, type: 3}
   damage: 50
   resetTime: 0.4
   reloadTime: 3

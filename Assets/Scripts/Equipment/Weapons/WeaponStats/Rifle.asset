@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d52c3f08778a9f4285a4813c15ff307, type: 3}
+  m_Name: Rifle
+  m_EditorClassIdentifier: 
+  droppedWeaponPrefab: {fileID: 0}
+  damage: 50
+  resetTime: 0.4
+  reloadTime: 3
+  maxAmmo: 6
+  bulletForce: 20
+  kickBack: 5
+  recoil: 3
+  roundsPerMinute: 60
+  targetAbleLayers:
+    serializedVersion: 2
+    m_Bits: 2560
+  muzzleFlashTag: 1
+  bulletImpactTag: 0
+  bulletTrailTag: 2

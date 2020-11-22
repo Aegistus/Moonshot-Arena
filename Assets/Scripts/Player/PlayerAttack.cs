@@ -41,60 +41,63 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!PauseMenuUI.IsPaused)
         {
-            currentWeapon.StartAttack();
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            StartCoroutine(currentWeapon.EndAttack());
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            StartCoroutine(currentWeapon.Reload());
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SwitchToWeapon(1);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SwitchToWeapon(2);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            SwitchToWeapon(3);
-        }
-        if (Input.mouseScrollDelta.y > 0)
-        {
-            SwitchToWeapon(carriedWeapons.IndexOf(currentWeapon) + 1);
-        }
-        if (Input.mouseScrollDelta.y < 0)
-        {
-            SwitchToWeapon(carriedWeapons.IndexOf(currentWeapon) - 1);
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            holdTimer = maxHoldTimer;
-            swapping = true;
-        }
-        if (Input.GetKey(KeyCode.E) && swapping)
-        {
-            if (holdTimer > 0)
+            if (Input.GetMouseButtonDown(0))
             {
-                holdTimer -= Time.deltaTime;
+                currentWeapon.StartAttack();
             }
-            else
+            if (Input.GetMouseButtonUp(0))
             {
-                wantsToSwap = true;
+                StartCoroutine(currentWeapon.EndAttack());
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                StartCoroutine(currentWeapon.Reload());
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                SwitchToWeapon(1);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                SwitchToWeapon(2);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                SwitchToWeapon(3);
+            }
+            if (Input.mouseScrollDelta.y > 0)
+            {
+                SwitchToWeapon(carriedWeapons.IndexOf(currentWeapon) + 1);
+            }
+            if (Input.mouseScrollDelta.y < 0)
+            {
+                SwitchToWeapon(carriedWeapons.IndexOf(currentWeapon) - 1);
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                holdTimer = maxHoldTimer;
+                swapping = true;
+            }
+            if (Input.GetKey(KeyCode.E) && swapping)
+            {
+                if (holdTimer > 0)
+                {
+                    holdTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    wantsToSwap = true;
+                    swapping = false;
+                    holdTimer = 0;
+                }
+            }
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+                wantsToSwap = false;
                 swapping = false;
-                holdTimer = 0;
             }
-        }
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            wantsToSwap = false;
-            swapping = false;
         }
     }
 

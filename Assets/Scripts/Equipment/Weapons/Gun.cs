@@ -10,7 +10,7 @@ public abstract class Gun : Weapon
     [HideInInspector]
     public int loadedAmmo;
     [HideInInspector]
-    public int carriedAmmo = 100;
+    public int carriedAmmo;
     [HideInInspector]
     public bool reloading = false;
 
@@ -19,6 +19,7 @@ public abstract class Gun : Weapon
     protected virtual void Start()
     {
         loadedAmmo = stats.maxAmmo;
+        carriedAmmo = stats.startingAmmo;
         if (currentWeapon)
         {
             OnAmmoAmountChange?.Invoke(loadedAmmo, carriedAmmo);

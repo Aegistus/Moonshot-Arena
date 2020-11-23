@@ -60,8 +60,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cae6b951b3cbe24698670570101a3de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnTime: 60
-  healingAmount: 40
+  respawnTime: 30
+  healingAmount: 100
 --- !u!114 &-7304521280917255241
 MonoBehaviour:
   m_ObjectHideFlags: 0

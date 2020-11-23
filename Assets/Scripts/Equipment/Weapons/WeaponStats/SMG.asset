@@ -17,8 +17,10 @@ MonoBehaviour:
   resetTime: 0.1
   reloadTime: 2.5
   maxAmmo: 40
+  startingAmmo: 80
   bulletForce: 10
   kickBack: 2
+  recoil: 3
   roundsPerMinute: 60
   targetAbleLayers:
     serializedVersion: 2

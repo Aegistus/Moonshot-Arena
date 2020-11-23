@@ -16,7 +16,8 @@ MonoBehaviour:
   damage: 10
   resetTime: 0.05
   reloadTime: 0.5
-  maxAmmo: 4
+  maxAmmo: 8
+  startingAmmo: 16
   bulletForce: 30
   kickBack: 10
   recoil: 3

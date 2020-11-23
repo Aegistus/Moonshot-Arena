@@ -47,4 +47,4 @@ MonoBehaviour:
   - {fileID: 7334985371600920536, guid: d8749b87e257e874798418715c86eeb3, type: 3}
   - {fileID: 3733211168589189999, guid: 76b3c3ee1b9041942b318714d616d163, type: 3}
   - {fileID: 9212084374631831650, guid: 1257474769540ed4aa19a770baac2690, type: 3}
-  respawnTime: 30
+  respawnTime: 90

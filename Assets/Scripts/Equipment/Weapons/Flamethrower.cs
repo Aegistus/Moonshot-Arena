@@ -9,6 +9,10 @@ public class Flamethrower : Weapon
     public int damage = 10;
     public float damagePerSecond = 1f;
     public float triggerDelay = .2f;
+    [Header("Flame Spread")]
+    public float spreadRange = 15f;
+    public float randomOffsetRadius = 1f;
+    public LayerMask flameableLayers;
 
     private bool firing = false;
     private bool reloading = false;
@@ -102,7 +106,21 @@ public class Flamethrower : Weapon
     {
         yield return new WaitForSeconds(triggerDelay);
         flameCollider.enabled = true;
+        //StartCoroutine(SpreadFlame());
     }
+
+    //RaycastHit rayHit;
+    //private IEnumerator SpreadFlame()
+    //{
+    //    while (firing)
+    //    {
+    //        yield return new WaitForSeconds(Random.value);
+    //        if (Physics.Raycast(transform.position, transform.forward, out rayHit, spreadRange, flameableLayers, QueryTriggerInteraction.Ignore))
+    //        {
+    //            PoolManager.Instance.GetObjectFromPoolWithLifeTime(PoolManager.PoolTag.Flame, rayHit.point, Quaternion.identity, 4f);
+    //        }
+    //    }
+    //}
 
     public override void DisableWeapon()
     {

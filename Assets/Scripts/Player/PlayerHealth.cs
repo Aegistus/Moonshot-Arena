@@ -11,6 +11,7 @@ public class PlayerHealth : Health
     protected override void Awake()
     {
         maxHealth = 100;
+        SurvivalTimer.OnTimerFinish += Kill;
         base.Awake();
     }
 

@@ -25,6 +25,6 @@ MonoBehaviour:
   targetAbleLayers:
     serializedVersion: 2
     m_Bits: 2560
-  muzzleFlashTag: 1
+  muzzleFlashTag: 11
   bulletImpactTag: 0
   bulletTrailTag: 2

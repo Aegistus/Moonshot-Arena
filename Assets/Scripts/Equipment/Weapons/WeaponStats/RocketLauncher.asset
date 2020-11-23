@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d52c3f08778a9f4285a4813c15ff307, type: 3}
   m_Name: RocketLauncher
   m_EditorClassIdentifier: 
-  droppedWeaponPrefab: {fileID: 0}
+  droppedWeaponPrefab: {fileID: 4811639682697608101, guid: 4ebf6706d7eebe84594908e5f5e3efce, type: 3}
   damage: 50
   resetTime: 1
   reloadTime: 5

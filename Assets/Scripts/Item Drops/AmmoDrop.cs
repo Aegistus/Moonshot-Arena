@@ -25,6 +25,10 @@ public class AmmoDrop : ItemDrop
             {
                 weapon.AddAmmoToSupply(40);
             }
+            else if (weapon.GetType() == typeof(Rifle))
+            {
+                weapon.AddAmmoToSupply(12);
+            }
         }
         AudioManager.instance.StartPlaying("Pickup Ammo");
     }

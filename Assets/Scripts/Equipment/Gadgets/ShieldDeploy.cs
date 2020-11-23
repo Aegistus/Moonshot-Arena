@@ -23,7 +23,7 @@ public class ShieldDeploy : MonoBehaviour
         foreach (var panel in sidePanels)
         {
             panel.SetActive(true);
-            yield return new WaitForSeconds(.05f);
+            yield return new WaitForSeconds(.01f);
         }
     }
 }

@@ -32,8 +32,7 @@ public class PowerShield : MonoBehaviour
         yield return new WaitForSeconds(shieldTimeLength);
         if (currentShield != null)
         {
-            Health health = currentShield.GetComponent<Health>();
-            health.Kill();
+            Destroy(currentShield);
             currentShield = null;
         }
     }

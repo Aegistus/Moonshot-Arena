@@ -28,4 +28,9 @@ public class AmmoUI : MonoBehaviour
         }
         extraCount.text = extraAmmo + "";
     }
+
+    private void OnDestroy()
+    {
+        Gun.OnAmmoAmountChange -= UpdateAmmoDisplay;
+    }
 }

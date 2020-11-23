@@ -29,6 +29,7 @@ public class RestartUI : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        print("Reloading Scene");
     }
 
     private void OnDestroy()

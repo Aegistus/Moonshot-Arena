@@ -66,7 +66,10 @@ public class Flamethrower : Weapon
     {
         while (firing)
         {
-            health.Damage(damage);
+            if (health != null)
+            {
+                health.Damage(damage);
+            }
             yield return new WaitForSeconds(damagePerSecond);
         }
         damaging = false;

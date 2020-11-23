@@ -37,4 +37,10 @@ public class PlayerHealth : Health
         OnPlayerDeath?.Invoke();
         Destroy(gameObject);
     }
+
+    private void OnDestroy()
+    {
+        SurvivalTimer.OnTimerFinish -= Kill;
+
+    }
 }

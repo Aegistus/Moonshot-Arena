@@ -93,6 +93,7 @@ public class SMG : Gun
             rb = null;
             yield return new WaitForSeconds(stats.resetTime);
         }
+        StartCoroutine(EndAttack());
     }
 
     private void GunFX()

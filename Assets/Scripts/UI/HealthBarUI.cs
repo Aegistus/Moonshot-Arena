@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class HealthUI : MonoBehaviour
+public class HealthBarUI : MonoBehaviour
 {
-    public TextMeshProUGUI healthNumber;
+    public Transform healthBar;
 
     private void Awake()
     {
@@ -14,7 +13,7 @@ public class HealthUI : MonoBehaviour
 
     private void ChangeHealthDisplay(int health)
     {
-        healthNumber.text = health + "";
+        healthBar.localScale = new Vector3(health / 100f, 1, 1);
     }
 
     private void OnDestroy()

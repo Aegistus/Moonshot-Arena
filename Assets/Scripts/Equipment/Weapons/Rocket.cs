@@ -5,14 +5,20 @@ using UnityEngine;
 public class Rocket : MonoBehaviour
 {
     public float speed;
+    public int damage = 100;
 
     private void Update()
     {
         transform.position = transform.position + (transform.forward * speed * Time.deltaTime);
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
+        Health health = other.GetComponentInParent<Health>();
+        if (health != null)
+        {
+            health.Damage(damage);
+        }
         Explode();
     }
 

@@ -111,7 +111,8 @@ public class LMG : Gun
     private void OnDestroy()
     {
         AudioManager.instance.StopPlaying("Machine Gun Fire");
-        AudioManager.instance.StartPlaying("Machine Gun Fire");
+        AudioManager.instance.StartPlaying("Machine Gun Stop");
+        StopAllCoroutines();
     }
 
 }

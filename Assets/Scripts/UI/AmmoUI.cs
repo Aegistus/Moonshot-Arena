@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AmmoUI : MonoBehaviour
 {
-    public TextMeshProUGUI ammoCount;
-    public TextMeshProUGUI extraCount;
+    public Text extraCount;
+    public List<GameObject> nubs = new List<GameObject>();
 
     private void Start()
     {
@@ -15,7 +15,17 @@ public class AmmoUI : MonoBehaviour
 
     private void UpdateAmmoDisplay(int ammo, int extraAmmo)
     {
-        ammoCount.text = ammo + "";
+        int index = 0;
+        while (ammo > index)
+        {
+            nubs[index].SetActive(true);
+            index++;
+        }
+        while (index < nubs.Count)
+        {
+            nubs[index].SetActive(false);
+            index++;
+        }
         extraCount.text = extraAmmo + "";
     }
 }

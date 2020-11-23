@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   droppedWeaponPrefab: {fileID: 3510698919886977055, guid: 49b737ca4d1e45d4a9952ab5778732f8, type: 3}
   damage: 5
-  resetTime: 0.1
+  resetTime: 0.05
   reloadTime: 0.5
   maxAmmo: 4
   bulletForce: 30
   kickBack: 10
+  recoil: 3
   roundsPerMinute: 10
   targetAbleLayers:
     serializedVersion: 2

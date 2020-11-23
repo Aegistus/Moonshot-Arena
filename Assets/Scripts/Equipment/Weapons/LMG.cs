@@ -108,4 +108,10 @@ public class LMG : Gun
         pool.GetObjectFromPoolWithLifeTime(stats.bulletTrailTag, gunTip.position + gunTip.forward, gunTip.rotation, 4f);
     }
 
+    private void OnDestroy()
+    {
+        AudioManager.instance.StopPlaying("Machine Gun Fire");
+        AudioManager.instance.StartPlaying("Machine Gun Fire");
+    }
+
 }

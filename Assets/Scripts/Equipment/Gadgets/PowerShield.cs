@@ -23,7 +23,7 @@ public class PowerShield : MonoBehaviour
     {
         if (currentShield == null)
         {
-            currentShield = Instantiate(shieldPrefab, transform.position + transform.forward, Quaternion.identity);
+            currentShield = Instantiate(shieldPrefab, transform.position + transform.forward, transform.rotation);
         }
     }
 

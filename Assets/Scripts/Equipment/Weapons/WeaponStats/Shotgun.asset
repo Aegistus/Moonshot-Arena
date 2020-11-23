@@ -15,7 +15,7 @@ MonoBehaviour:
   droppedWeaponPrefab: {fileID: 3510698919886977055, guid: 49b737ca4d1e45d4a9952ab5778732f8, type: 3}
   damage: 10
   resetTime: 0.05
-  reloadTime: 0.5
+  reloadTime: 1
   maxAmmo: 8
   startingAmmo: 16
   bulletForce: 30

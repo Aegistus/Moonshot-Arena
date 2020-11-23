@@ -30,31 +30,42 @@ public class Shotgun : Gun
 
     public override IEnumerator Reload()
     {
-        if (!reloading && carriedAmmo > 0 && loadedAmmo < stats.maxAmmo)
+        if (!reloading)
         {
-            anim.enabled = false;
             reloading = true;
-            yield return new WaitForSeconds(stats.reloadTime);
-            int ammoToAdd = 1;
-            loadedAmmo += ammoToAdd;
-            carriedAmmo -= ammoToAdd;
-            LoadAmmo();
-            reloading = false;
-            transform.rotation = Quaternion.identity;
-            anim.enabled = true;
+            while (reloading && carriedAmmo > 0 && loadedAmmo < stats.maxAmmo)
+            {
+                anim.enabled = false;
+                yield return new WaitForSeconds(stats.reloadTime);
+                int ammoToAdd = 2;
+                loadedAmmo += ammoToAdd;
+                carriedAmmo -= ammoToAdd;
+                LoadAmmo();
+                transform.localRotation = Quaternion.identity;
+                anim.enabled = true;
+            }
         }
         else
         {
             print("no more ammo");
         }
+        reloading = false;
+        transform.localRotation = Quaternion.identity;
     }
 
     private RaycastHit rayHit;
     private List<Vector3> trajectories = new List<Vector3>();
     public override void StartAttack()
     {
-        if (reset && !reloading && loadedAmmo > 0)
+        if (reset && loadedAmmo > 0)
         {
+            if (reloading)
+            {
+                StopCoroutine(Reload());
+                reloading = false;
+                transform.localRotation = Quaternion.identity;
+                anim.enabled = true;
+            }
             trajectories.Clear();
             for (int i = 0; i < pelletCount; i++)
             {

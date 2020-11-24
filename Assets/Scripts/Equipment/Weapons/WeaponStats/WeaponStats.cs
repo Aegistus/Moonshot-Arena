@@ -6,6 +6,7 @@ using UnityEngine;
 public class WeaponStats : ScriptableObject
 {
     public GameObject droppedWeaponPrefab;
+    public Sprite crosshair;
     public int damage = 10;
     public float resetTime = .1f;
     public float reloadTime = 2f;

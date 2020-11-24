@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   droppedWeaponPrefab: {fileID: 6347982581993511115, guid: e01980ce4e6ceca4ebe278c75398a843, type: 3}
+  crosshair: {fileID: 21300000, guid: 3d509a0bd14198f48a6206be91c95cfc, type: 3}
   damage: 10
   resetTime: 0.1
   reloadTime: 1

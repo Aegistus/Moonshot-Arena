@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SMG
   m_EditorClassIdentifier: 
   droppedWeaponPrefab: {fileID: 812194359348649658, guid: d42f10a75887b9d429493bac9b72ad4d, type: 3}
+  crosshair: {fileID: 21300000, guid: 28b5d36388885a54aafda0f47701ef65, type: 3}
   damage: 5
   resetTime: 0.1
   reloadTime: 2.5

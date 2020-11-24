@@ -89,7 +89,6 @@ public class Shotgun : Gun
                 }
                 AudioManager.instance.StartPlayingAtPosition("Gun Shot 01", transform.position);
                 GunFX();
-                BulletTrails();
             }
             playerRB.velocity += -cam.transform.forward * stats.kickBack;
             anim.Play("Fire");
@@ -113,14 +112,6 @@ public class Shotgun : Gun
     {
         //anim.Play("Fire");
         pool.GetObjectFromPoolWithLifeTime(stats.muzzleFlashTag, gunTip.position, gunTip.rotation, 2f);
-        if (rayHit.point != null)
-        {
-            pool.GetObjectFromPoolWithLifeTime(stats.bulletImpactTag, rayHit.point, Quaternion.Euler(-90, 0, 0), 2f);
-        }
-    }
-
-    private void BulletTrails()
-    {
-        pool.GetObjectFromPoolWithLifeTime(stats.bulletTrailTag, gunTip.position + gunTip.forward, Quaternion.LookRotation(rayHit.point - gunTip.position + gunTip.forward), 4f);
+        pool.GetObjectFromPoolWithLifeTime(stats.bulletTrailTag, gunTip.position + gunTip.forward, gunTip.rotation, 4f);
     }
 }

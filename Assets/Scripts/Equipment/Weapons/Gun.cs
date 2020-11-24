@@ -94,5 +94,6 @@ public abstract class Gun : Weapon
         }
         OnAmmoAmountChange?.Invoke(loadedAmmo, carriedAmmo);
         currentWeapon = true;
+        CrosshairUI.instance.ChangeCrosshair(stats.crosshair);
     }
 }

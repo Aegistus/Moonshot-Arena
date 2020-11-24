@@ -43,10 +43,8 @@ public class Flamethrower : Weapon
     PlayerHealth health;
     private void OnTriggerEnter(Collider other)
     {
-        print("Flame Hit Something");
         if (other.gameObject.CompareTag("Player"))
         {
-            print("Flame hit player");
             health = other.GetComponent<PlayerHealth>();
             damageCoroutine = StartCoroutine(DoDamage());
         }
@@ -56,7 +54,6 @@ public class Flamethrower : Weapon
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            print("player exited");
             health = null;
             StopCoroutine(damageCoroutine);
         }
@@ -77,9 +74,8 @@ public class Flamethrower : Weapon
 
     public override IEnumerator EndAttack()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4.5f);
         firing = false;
-        //audioSource.Stop();
         fireBurst.Stop();
         flameCollider.enabled = false;
         StartCoroutine(Reload());
@@ -98,7 +94,7 @@ public class Flamethrower : Weapon
         {
             firing = true;
             //AudioManager.instance.StartPlayingAtPosition("Laser Start", transform.position);
-            //audioSource.Play();
+            audioSource.Play();
             fireBurst.Play();
             StartCoroutine(FlameTriggerDelay());
             StartCoroutine(EndAttack());

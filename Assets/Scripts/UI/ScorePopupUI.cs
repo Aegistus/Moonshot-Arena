@@ -43,4 +43,9 @@ public class ScorePopupUI : MonoBehaviour
         popup.gameObject.SetActive(false);
         popupShowing = false;
     }
+
+    private void OnDestroy()
+    {
+        ScoreManager.OnScoreChange -= ShowPopup;
+    }
 }

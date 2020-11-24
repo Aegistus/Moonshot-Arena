@@ -16,4 +16,9 @@ public class TotalScoreUI : MonoBehaviour
     {
         scoreText.text = "Score: " + obj;
     }
+
+    private void OnDestroy()
+    {
+        ScoreManager.OnScoreChange -= UpdateScoreText;
+    }
 }

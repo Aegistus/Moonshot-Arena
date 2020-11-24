@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class RestartUI : MonoBehaviour
 {
     public GameObject gameOverUI;
+    public Text scoreText;
 
     private GameObject levelCamera;
 
@@ -20,6 +22,7 @@ public class RestartUI : MonoBehaviour
 
     private void ActivateRespawnScreen()
     {
+        scoreText.text = "Final Score: " + ScoreManager.instance.GetScore();
         levelCamera.SetActive(true);
         gameOverUI.SetActive(true);
         Cursor.lockState = CursorLockMode.None;

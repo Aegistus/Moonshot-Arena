@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 298561061801505249}
   - component: {fileID: 298561061801505248}
   - component: {fileID: 1086461738161986520}
+  - component: {fileID: 5004303126765647469}
   m_Layer: 0
   m_Name: GameManagers
   m_TagString: Untagged
@@ -59,3 +60,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blueprints: []
+--- !u!114 &5004303126765647469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298561061801505251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da1106a6324fcd42b6d28ad21f4b3a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

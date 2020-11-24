@@ -13,7 +13,7 @@ public class RestartUI : MonoBehaviour
     private void Start()
     {
         levelCamera = GameObject.FindGameObjectWithTag("Level Camera");
-        levelCamera.SetActive(false);
+        levelCamera?.SetActive(false);
         PlayerHealth.OnPlayerDeath += ActivateRespawnScreen;
         gameOverUI.SetActive(false);
     }

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f1ca63a91b17724bbd99c8fa67e0180, type: 3}
+  m_Name: Hangar
+  m_EditorClassIdentifier: 
+  array:
+  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: e4716bef19b6aa1499640953aafe7a23, type: 2}
+  - {fileID: 2100000, guid: ad7b7ae7a690062438f1e7277cea13d8, type: 2}
+  - {fileID: 2100000, guid: 3c49534fa29e7be4798ce7e96eaa0255, type: 2}
+  - {fileID: 2100000, guid: 921330f0b062eb049af81b0005acff07, type: 2}
+  - {fileID: 2100000, guid: 66c95551011ee0949a824d214d8fc076, type: 2}
+  - {fileID: 2100000, guid: 55e02df7a822c3b43a5866e92f1969eb, type: 2}
+  - {fileID: 2100000, guid: ae7177f812c6bda46b9a8a655ff877b5, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}

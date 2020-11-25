@@ -59,7 +59,6 @@ public class Walking : PlayerState
     {
         if (Physics.Raycast(transform.position, Vector3.down, out rayHit, 1.5f, groundLayer))
         {
-            Debug.Log("Found ground");
             transform.position = rayHit.point + Vector3.up * 1f;
         }
     }

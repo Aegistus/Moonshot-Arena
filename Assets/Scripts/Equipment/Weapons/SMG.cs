@@ -110,7 +110,7 @@ public class SMG : Gun
     private void OnDestroy()
     {
         AudioManager.instance.StopPlaying("Machine Gun Fire");
-        AudioManager.instance.StartPlaying("Machine Gun Stop");
+        //AudioManager.instance.StartPlaying("Machine Gun Stop");
         StopAllCoroutines();
     }
 }

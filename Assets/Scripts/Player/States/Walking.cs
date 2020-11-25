@@ -50,17 +50,17 @@ public class Walking : PlayerState
             }
             newVelocity = newVelocity.normalized;
             movement.SetVelocity(newVelocity * moveSpeed);
-            //KeepGrounded();
         }
+        KeepGrounded();
     }
 
-    //RaycastHit rayHit;
-    //private void KeepGrounded()
-    //{
-    //    if (Physics.Raycast(transform.position, Vector3.down, out rayHit, 1.5f, groundLayer))
-    //    {
-    //        Debug.Log("Found ground");
-    //        transform.position = rayHit.point + Vector3.up * 1f;
-    //    }
-    //}
+    RaycastHit rayHit;
+    private void KeepGrounded()
+    {
+        if (Physics.Raycast(transform.position, Vector3.down, out rayHit, 1.5f, groundLayer))
+        {
+            Debug.Log("Found ground");
+            transform.position = rayHit.point + Vector3.up * 1f;
+        }
+    }
 }

@@ -9140,17 +9140,9 @@ MonoBehaviour:
   assetGuid: 
   m_Mesh: {fileID: 0}
   m_IsSelectable: 1
-  m_SelectedFaces: 1d000000
-  m_SelectedEdges:
-  - a: 116
-    b: 117
-  - a: 117
-    b: 118
-  - a: 118
-    b: 119
-  - a: 119
-    b: 116
-  m_SelectedVertices: 76000000740000007500000077000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!23 &7555866423555632457
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9613,7 +9605,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7555866424545335551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.73, y: 3.7, z: -0.45}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7555866423555632452}
@@ -9632,6 +9624,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a44a4846885c74a8e01a73beceaee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ground:
+    serializedVersion: 2
+    m_Bits: 256
+  droneModel: {fileID: 7555866423555632452}
 --- !u!114 &7555866424545335426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9694,7 +9690,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 0.85
-  m_BaseOffset: 5
+  m_BaseOffset: 3.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1001 &5707008771430343665

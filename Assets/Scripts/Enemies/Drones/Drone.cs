@@ -6,6 +6,9 @@ using UnityEngine.AI;
 
 public class Drone : MonoBehaviour
 {
+    public LayerMask ground;
+    public Transform droneModel;
+
     public bool AtDestination { get; private set; }
 
     private StateMachine stateMachine;
@@ -37,6 +40,7 @@ public class Drone : MonoBehaviour
         {
             AtDestination = false;
         }
+        DuckUnderObstacles();
     }
 
     public void SetDestination(Vector3 destination)
@@ -47,5 +51,13 @@ public class Drone : MonoBehaviour
     public void NavAgentSetActive(bool active)
     {
         navAgent.enabled = active;
+    }
+
+    private void DuckUnderObstacles()
+    {
+        if (Physics.Raycast(transform.position, transform.up, ground, 1))
+        {
+            droneModel.Translate(transform.up * Time.deltaTime);
+        }
     }
 }

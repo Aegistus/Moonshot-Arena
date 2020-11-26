@@ -8866,6 +8866,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a44a4846885c74a8e01a73beceaee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ground:
+    serializedVersion: 2
+    m_Bits: 256
+  droneModel: {fileID: 4112930923976591033}
 --- !u!114 &4112930924329366399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8928,7 +8932,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 0.85
-  m_BaseOffset: 5
+  m_BaseOffset: 3.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &4112930924566799971

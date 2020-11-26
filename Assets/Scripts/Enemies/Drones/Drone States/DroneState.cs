@@ -19,7 +19,7 @@ public abstract class DroneState : State
         drone = gameObject.GetComponent<Drone>();
         scanner = gameObject.GetComponentInChildren<FieldOfView>();
         attack = gameObject.GetComponent<DroneAttack>();
-        droneModel = gameObject.transform.GetChild(0);
+        droneModel = drone.droneModel;
         construction = ConstructionManager.instance;
         constructionLaser = gameObject.GetComponentInChildren<ConstructionLaser>();
     }

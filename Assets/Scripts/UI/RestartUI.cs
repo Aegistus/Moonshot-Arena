@@ -35,6 +35,11 @@ public class RestartUI : MonoBehaviour
         print("Reloading Scene");
     }
 
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
     private void OnDestroy()
     {
         PlayerHealth.OnPlayerDeath -= ActivateRespawnScreen;

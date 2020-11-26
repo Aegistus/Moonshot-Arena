@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Biosphere.unity
     guid: 78db0a6cbb670124298c2d88c813a5e6
+  - enabled: 1
+    path: Assets/Scenes/Hangar.unity
+    guid: e3813aaf41e3ee7429519d9f8cd0306a
   m_configObjects: {}

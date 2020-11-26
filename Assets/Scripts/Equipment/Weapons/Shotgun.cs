@@ -37,7 +37,15 @@ public class Shotgun : Gun
             {
                 anim.enabled = false;
                 yield return new WaitForSeconds(stats.reloadTime);
-                int ammoToAdd = 2;
+                int ammoToAdd = 0;
+                if (stats.maxAmmo - loadedAmmo == 1)
+                {
+                    ammoToAdd = 1;
+                }
+                else
+                {
+                    ammoToAdd = 2;
+                }
                 loadedAmmo += ammoToAdd;
                 carriedAmmo -= ammoToAdd;
                 LoadAmmo();
@@ -87,9 +95,9 @@ public class Shotgun : Gun
                     DoDamage(rayHit.collider.gameObject);
                     Debug.DrawRay(cam.ScreenPointToRay(trajectories[i]).origin, cam.ScreenPointToRay(trajectories[i]).direction, Color.red, 100000f);
                 }
-                AudioManager.instance.StartPlayingAtPosition("Gun Shot 01", transform.position);
                 GunFX();
             }
+            AudioManager.instance.StartPlayingAtPosition("Shotgun Shot", transform.position);
             playerRB.velocity += -cam.transform.forward * stats.kickBack;
             anim.Play("Fire");
             reset = false;

@@ -1786,6 +1786,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 6497964142272391418}
+    - target: {fileID: 6483112836999739214, guid: 608b985bfaedbdf4aa236b3d1d3737c0, type: 3}
+      propertyPath: reelSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6483112836999739215, guid: 608b985bfaedbdf4aa236b3d1d3737c0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.58

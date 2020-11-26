@@ -45,6 +45,7 @@ public class ConstructionLaser : MonoBehaviour
     {
         firingLaser = false;
         line.enabled = false;
+        laserBurst.Stop();
         audioSource.Stop();
     }
 

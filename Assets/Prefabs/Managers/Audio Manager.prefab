@@ -276,3 +276,13 @@ MonoBehaviour:
     loop: 1
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: Shotgun Shot
+    clip: {fileID: 8300000, guid: a764377339b869e459f5e53fb9258f73, type: 3}
+    volume: 0.33
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.11
+    minimunDistance: 0
+    loop: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}

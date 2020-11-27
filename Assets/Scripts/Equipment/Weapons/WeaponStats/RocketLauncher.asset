@@ -20,7 +20,7 @@ MonoBehaviour:
   maxAmmo: 3
   startingAmmo: 6
   bulletForce: 20
-  kickBack: 5
+  kickBack: 10
   recoil: 3
   roundsPerMinute: 60
   targetAbleLayers:

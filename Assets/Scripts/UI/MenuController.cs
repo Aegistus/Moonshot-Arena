@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SettingsMenuUI : MonoBehaviour
+public class MenuController : MonoBehaviour
 {
     public GameObject menu;
 
@@ -11,12 +11,12 @@ public class SettingsMenuUI : MonoBehaviour
         menu.SetActive(false);
     }
 
-    public void OpenSettingsMenu()
+    public void OpenMenu()
     {
         menu.SetActive(true);
     }
 
-    public void CloseSettingsMenu()
+    public void CloseMenu()
     {
         menu.SetActive(false);
     }

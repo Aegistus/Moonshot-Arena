@@ -7,7 +7,7 @@ public class SkullManager : MonoBehaviour
     public static SkullManager instance;
 
     public GameObject skullPrefab;
-    public int skullSpawnInterval = 30;
+    public int skullSpawnInterval = 45;
 
     private List<GameObject> skullSpawnPoints = new List<GameObject>();
     private Dictionary<Skull, GameObject> inUseSpawnPoints = new Dictionary<Skull, GameObject>();

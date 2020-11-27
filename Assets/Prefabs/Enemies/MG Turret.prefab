@@ -116,6 +116,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 50
   scoreValue: 30
+  model: {fileID: 0}
 --- !u!1 &989690757677195324
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +392,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: aef0b17f06e8d8347a682119ecb40c97, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1772,7 +1773,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 37e0bdedd38a52346a5de287603db04a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1842,7 +1843,7 @@ SpringJoint:
   m_ConnectedBody: {fileID: 989690757677195298}
   m_Anchor: {x: 0, y: 0.5000001, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 2.4399986, y: 0.03999901, z: 0.40000153}
+  m_ConnectedAnchor: {x: 2.44, y: 0.03999996, z: 0.40000033}
   serializedVersion: 2
   m_Spring: 10
   m_Damper: 0.2

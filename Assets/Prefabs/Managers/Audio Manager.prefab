@@ -286,3 +286,13 @@ MonoBehaviour:
     loop: 1
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: Rain Drop
+    clip: {fileID: 8300000, guid: a43e40066395e3547b5f005e94b3857f, type: 3}
+    volume: 1
+    volumeVariance: 0.444
+    pitch: 1
+    pitchVariance: 0.656
+    minimunDistance: 0
+    loop: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}

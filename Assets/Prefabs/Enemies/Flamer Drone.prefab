@@ -8898,6 +8898,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 50
   scoreValue: 30
+  droneModel: {fileID: 4112930923976591033}
 --- !u!114 &8633898267404419285
 MonoBehaviour:
   m_ObjectHideFlags: 0

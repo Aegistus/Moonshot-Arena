@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 using System;
 
 public class SurvivalTimer : MonoBehaviour
@@ -10,7 +10,7 @@ public class SurvivalTimer : MonoBehaviour
 
     public static event Action OnTimerFinish;
 
-    public TextMeshProUGUI timerText;
+    public Text timerText;
     [HideInInspector]
     public float timeLeft;
 

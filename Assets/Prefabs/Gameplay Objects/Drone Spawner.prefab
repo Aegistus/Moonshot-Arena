@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 194cb6211f8782548bb9ac374909e1c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startDelay: 5
   enemyPrefabs:
   - {fileID: 7555866424545335551, guid: 62082d452a557934c9c88cea8b0437e5, type: 3}
   - {fileID: 4112930924329366274, guid: 02fd8be78c935164183575bcf84ea1a4, type: 3}
@@ -1592,7 +1593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7914015480761365122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7914015479848245213}

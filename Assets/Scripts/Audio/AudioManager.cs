@@ -70,34 +70,10 @@ public class AudioManager : MonoBehaviour
 		}
 		
 		sound.source.volume = sound.volume * (1f + UnityEngine.Random.Range(-sound.volumeVariance / 2f, sound.volumeVariance / 2f));
-		sound.source.pitch = sound.pitch * (1f + UnityEngine.Random.Range(-sound.pitchVariance / 2f, sound.pitchVariance / 2f));
 		sound.source.minDistance = sound.minimunDistance;
 
 		AudioSource source = positionalSources.Dequeue();
-		source.transform.position = position;
-		source.clip = sound.clip;
-		source.Play();
-		positionalSources.Enqueue(source);
-	}
-
-	public void StartPlayingAtPosition(string soundName, Vector3 position, bool loop)
-	{
-		Sound sound = Array.Find(sounds, item => item.name == soundName);
-		if (sound == null)
-		{
-			Debug.LogWarning("Sound: " + soundName + " not found!");
-			return;
-		}
-
-		sound.source.volume = sound.volume * (1f + UnityEngine.Random.Range(-sound.volumeVariance / 2f, sound.volumeVariance / 2f));
-		sound.source.pitch = sound.pitch * (1f + UnityEngine.Random.Range(-sound.pitchVariance / 2f, sound.pitchVariance / 2f));
-		sound.source.minDistance = sound.minimunDistance;
-		if (loop)
-        {
-			sound.source.loop = true;
-        }
-
-		AudioSource source = positionalSources.Dequeue();
+		source.pitch = sound.pitch * (1f + UnityEngine.Random.Range(-sound.pitchVariance / 2f, sound.pitchVariance / 2f));
 		source.transform.position = position;
 		source.clip = sound.clip;
 		source.Play();

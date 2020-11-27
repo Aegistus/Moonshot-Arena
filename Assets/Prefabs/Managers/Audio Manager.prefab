@@ -51,7 +51,7 @@ MonoBehaviour:
     volume: 1
     volumeVariance: 0.1
     pitch: 1
-    pitchVariance: 0.57
+    pitchVariance: 0.1
     minimunDistance: 0
     loop: 0
     mixerGroup: {fileID: 0}
@@ -81,7 +81,7 @@ MonoBehaviour:
     volume: 1
     volumeVariance: 0.1
     pitch: 0.68
-    pitchVariance: 0.6
+    pitchVariance: 0
     minimunDistance: 0
     loop: 0
     mixerGroup: {fileID: 0}
@@ -290,8 +290,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a43e40066395e3547b5f005e94b3857f, type: 3}
     volume: 1
     volumeVariance: 0.444
-    pitch: 1
-    pitchVariance: 0.656
+    pitch: 2.05
+    pitchVariance: 0.225
     minimunDistance: 0
     loop: 1
     mixerGroup: {fileID: 0}

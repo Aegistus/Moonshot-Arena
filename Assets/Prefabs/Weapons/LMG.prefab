@@ -61,6 +61,7 @@ Transform:
   m_Children:
   - {fileID: 1846616822424099253}
   - {fileID: 1274299437}
+  - {fileID: 4736418361156665070}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -78,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 7e3dd8ca4e39651429f77d934a0bc794, type: 2}
   gunTip: {fileID: 1274299437}
+  ejectPoint: {fileID: 4736418361156665070}
   loadedAmmo: 0
   carriedAmmo: 100
   reloading: 0
@@ -526,6 +528,36 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43705788374927106, guid: 26886b01b9cd1ad4ba73d846ac61de6e, type: 2}
+--- !u!1 &1906754606310754828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4736418361156665070}
+  m_Layer: 0
+  m_Name: Eject Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4736418361156665070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906754606310754828}
+  m_LocalRotation: {x: 0, y: 0, z: 0.2588191, w: 0.9659258}
+  m_LocalPosition: {x: -0.02, y: 0.024, z: -0.164}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1851194428122289872}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30}
 --- !u!1 &2617347583406184682
 GameObject:
   m_ObjectHideFlags: 0

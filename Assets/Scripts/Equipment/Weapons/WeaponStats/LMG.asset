@@ -37,3 +37,4 @@ MonoBehaviour:
     noisePercent: 0.135
     dampingPercent: 0.136
     rotationPercent: 0
+  shellEject: 16

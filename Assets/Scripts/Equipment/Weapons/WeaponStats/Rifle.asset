@@ -25,7 +25,7 @@ MonoBehaviour:
   targetAbleLayers:
     serializedVersion: 2
     m_Bits: 2560
-  muzzleFlashTag: 1
+  muzzleFlashTag: 14
   bulletImpactTag: 0
   bulletTrailTag: 2
   recoil:
@@ -37,3 +37,4 @@ MonoBehaviour:
     noisePercent: 0.179
     dampingPercent: 0.154
     rotationPercent: 0
+  shellEject: 16

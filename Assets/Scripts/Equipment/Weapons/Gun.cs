@@ -6,6 +6,7 @@ public abstract class Gun : Weapon
 {
     public static event Action<int, int> OnAmmoAmountChange;
     public Transform gunTip;
+    public Transform ejectPoint;
 
     [HideInInspector]
     public int loadedAmmo;

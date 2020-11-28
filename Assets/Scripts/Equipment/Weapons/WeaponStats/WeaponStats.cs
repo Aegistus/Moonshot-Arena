@@ -20,4 +20,5 @@ public class WeaponStats : ScriptableObject
     public PoolManager.PoolTag bulletImpactTag = PoolManager.PoolTag.BulletImpact;
     public PoolManager.PoolTag bulletTrailTag = PoolManager.PoolTag.BulletTrail;
     public CameraShake.Properties recoil;
+    public PoolManager.PoolTag shellEject = PoolManager.PoolTag.SmallShellEject;
 }

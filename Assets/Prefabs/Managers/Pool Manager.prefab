@@ -83,3 +83,15 @@ MonoBehaviour:
   - tag: 12
     objectPrefab: {fileID: 5421258942198883830, guid: 307902da38db50c489f48ce19ebda256, type: 3}
     size: 40
+  - tag: 13
+    objectPrefab: {fileID: 1792092052645256, guid: 0e56aef02a6fcc6408400ea7c75e13a7, type: 3}
+    size: 20
+  - tag: 14
+    objectPrefab: {fileID: 1130945418854432, guid: 07277f9efe2374047bf57bdba847e02b, type: 3}
+    size: 20
+  - tag: 15
+    objectPrefab: {fileID: 1822961243351976, guid: 059c6bc0c88d9e44c98a815958888e74, type: 3}
+    size: 200
+  - tag: 16
+    objectPrefab: {fileID: 1559231698673136, guid: d549624c880a76748ad05456efbce0a1, type: 3}
+    size: 200

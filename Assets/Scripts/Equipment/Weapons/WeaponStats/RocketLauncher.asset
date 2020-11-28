@@ -16,7 +16,7 @@ MonoBehaviour:
   crosshair: {fileID: 21300000, guid: d4fe92c568f17094e91a4c2ebf2497fb, type: 3}
   damage: 50
   resetTime: 1
-  reloadTime: 5
+  reloadTime: 2.5
   maxAmmo: 3
   startingAmmo: 6
   bulletForce: 20

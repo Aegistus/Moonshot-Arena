@@ -30,10 +30,10 @@ MonoBehaviour:
   bulletTrailTag: 2
   recoil:
     angle: 90
-    strength: 0.2
+    strength: 0.3
     maxSpeed: 4
     minSpeed: 3
     duration: 0.4
     noisePercent: 0.176
-    dampingPercent: 0.184
+    dampingPercent: 0.379
     rotationPercent: 0

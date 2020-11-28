@@ -92,6 +92,7 @@ public class SMG : Gun
             UseAmmo();
             rb = null;
             ApplyRecoil();
+            anim.Play("Fire");
             yield return new WaitForSeconds(stats.resetTime);
         }
         StartCoroutine(EndAttack());

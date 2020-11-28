@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public LayerMask groundLayer;
+    public ParticleSystem slideParticles;
 
     public PlayerState CurrentState => (PlayerState)stateMachine.CurrentState;
     public Vector3 Velocity => rb.velocity;

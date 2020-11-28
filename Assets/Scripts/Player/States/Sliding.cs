@@ -8,6 +8,7 @@ public class Sliding : PlayerState
     //private Transform camTransform;
     private float slideDuck = .25f;
     private CapsuleCollider standingCollider;
+    private ParticleSystem slideParticles;
 
     public Sliding(GameObject gameObject) : base(gameObject)
     {
@@ -18,6 +19,8 @@ public class Sliding : PlayerState
         transitionsTo.Add(new Transition(typeof(Falling), Not(OnGround), Falling));
         //camTransform = Camera.main.transform;
         standingCollider = gameObject.GetComponent<CapsuleCollider>();
+        slideParticles = gameObject.GetComponent<PlayerController>().slideParticles;
+        slideParticles.Stop();
     }
 
     public override void AfterExecution()
@@ -25,6 +28,7 @@ public class Sliding : PlayerState
         //transform.localPosition = Vector3.zero;
         standingCollider.direction = 1;
         transform.Translate(0, slideDuck, 0, Space.Self);
+        slideParticles.Stop();
     }
 
     public override void BeforeExecution()
@@ -35,6 +39,7 @@ public class Sliding : PlayerState
         movement.AddVelocity(transform.forward * initialBoost);
         movement.AddVelocity(-transform.up);
         AudioManager.instance.StartPlaying("Slide");
+        slideParticles.Play();
     }
 
     public override void DuringExecution()

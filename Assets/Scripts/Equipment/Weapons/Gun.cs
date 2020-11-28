@@ -15,6 +15,7 @@ public abstract class Gun : Weapon
     public bool reloading = false;
 
     private bool currentWeapon = true;
+    private CameraShake camShake;
 
     protected virtual void Start()
     {
@@ -24,6 +25,7 @@ public abstract class Gun : Weapon
         {
             OnAmmoAmountChange?.Invoke(loadedAmmo, carriedAmmo);
         }
+        camShake = GetComponentInParent<CameraShake>();
     }
 
     protected virtual void Update()
@@ -95,5 +97,10 @@ public abstract class Gun : Weapon
         OnAmmoAmountChange?.Invoke(loadedAmmo, carriedAmmo);
         currentWeapon = true;
         CrosshairUI.instance.ChangeCrosshair(stats.crosshair);
+    }
+
+    public void ApplyRecoil()
+    {
+        camShake?.StartShake(stats.recoil);
     }
 }

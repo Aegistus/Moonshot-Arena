@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6362bab60b809a44ba6037d1001ad2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 10
+  thrust: 20
   cooldownTime: 2
   numOfCharges: 2
 --- !u!114 &6497964142272391409

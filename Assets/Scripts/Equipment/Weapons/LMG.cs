@@ -91,6 +91,7 @@ public class LMG : Gun
             firing = true;
             UseAmmo();
             rb = null;
+            ApplyRecoil();
             //transform.Rotate(stats.recoil, 0, 0);
             yield return new WaitForSeconds(stats.resetTime);
         }

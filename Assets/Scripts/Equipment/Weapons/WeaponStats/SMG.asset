@@ -21,7 +21,6 @@ MonoBehaviour:
   startingAmmo: 80
   bulletForce: 10
   kickBack: 0.1
-  recoil: 3
   roundsPerMinute: 60
   targetAbleLayers:
     serializedVersion: 2
@@ -29,3 +28,12 @@ MonoBehaviour:
   muzzleFlashTag: 1
   bulletImpactTag: 0
   bulletTrailTag: 2
+  recoil:
+    angle: 90
+    strength: 0.03
+    maxSpeed: 4
+    minSpeed: 3
+    duration: 0.1
+    noisePercent: 0.119
+    dampingPercent: 0.154
+    rotationPercent: 0

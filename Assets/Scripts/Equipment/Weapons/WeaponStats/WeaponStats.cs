@@ -14,10 +14,10 @@ public class WeaponStats : ScriptableObject
     public int startingAmmo = 40;
     public float bulletForce = 20f;
     public float kickBack = 5f;
-    public float recoil = 3f;
     public float roundsPerMinute = 60f;
     public LayerMask targetAbleLayers;
     public PoolManager.PoolTag muzzleFlashTag = PoolManager.PoolTag.MuzzleFlash;
     public PoolManager.PoolTag bulletImpactTag = PoolManager.PoolTag.BulletImpact;
     public PoolManager.PoolTag bulletTrailTag = PoolManager.PoolTag.BulletTrail;
+    public CameraShake.Properties recoil;
 }

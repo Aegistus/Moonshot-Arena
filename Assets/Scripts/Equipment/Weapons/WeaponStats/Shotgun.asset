@@ -14,14 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   droppedWeaponPrefab: {fileID: 3510698919886977055, guid: 49b737ca4d1e45d4a9952ab5778732f8, type: 3}
   crosshair: {fileID: 21300000, guid: 28422343308c34443b21b45eecb07c75, type: 3}
-  damage: 10
+  damage: 15
   resetTime: 0.05
   reloadTime: 0.5
   maxAmmo: 8
   startingAmmo: 16
   bulletForce: 30
   kickBack: 1
-  recoil: 3
   roundsPerMinute: 10
   targetAbleLayers:
     serializedVersion: 2
@@ -29,3 +28,12 @@ MonoBehaviour:
   muzzleFlashTag: 1
   bulletImpactTag: 0
   bulletTrailTag: 2
+  recoil:
+    angle: 90
+    strength: 0.1
+    maxSpeed: 4
+    minSpeed: 3
+    duration: 0.1
+    noisePercent: 0.119
+    dampingPercent: 0.119
+    rotationPercent: 0

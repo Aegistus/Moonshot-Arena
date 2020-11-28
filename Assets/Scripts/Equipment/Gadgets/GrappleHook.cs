@@ -75,7 +75,7 @@ public class GrappleHook : MonoBehaviour, IGadget
 
                 //Adjust these values to fit your game.
                 joint.damper = 7f;
-                joint.spring = 20f;
+                joint.spring = 25f;
                 joint.massScale = 4.5f;
 
                 joint.autoConfigureConnectedAnchor = false;

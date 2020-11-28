@@ -102,6 +102,7 @@ public class Shotgun : Gun
             anim.Play("Fire");
             reset = false;
             UseAmmo();
+            ApplyRecoil();
             StartCoroutine(Reset());
         }
         else if (loadedAmmo == 0)

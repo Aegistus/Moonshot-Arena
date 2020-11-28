@@ -31,6 +31,7 @@ public class RocketLauncher : Gun
             playerRB.velocity += -cam.transform.forward * stats.kickBack;
             reset = false;
             UseAmmo();
+            ApplyRecoil();
             StartCoroutine(Reset());
         }
         else if (loadedAmmo == 0)

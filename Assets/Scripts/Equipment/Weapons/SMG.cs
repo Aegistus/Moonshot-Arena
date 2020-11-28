@@ -91,6 +91,7 @@ public class SMG : Gun
             firing = true;
             UseAmmo();
             rb = null;
+            ApplyRecoil();
             yield return new WaitForSeconds(stats.resetTime);
         }
         StartCoroutine(EndAttack());

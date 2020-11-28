@@ -57,7 +57,7 @@ MonoBehaviour:
     angle: 30
     strength: 0.02
     maxSpeed: 1
-    minSpeed: 0.1
+    minSpeed: 0.7
     duration: 1
     noisePercent: 0.77
     dampingPercent: 0.835

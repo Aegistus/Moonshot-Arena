@@ -70,7 +70,7 @@ public class GrappleHook : MonoBehaviour, IGadget
             {
                 joint = player.gameObject.AddComponent<SpringJoint>();
                 //The distance grapple will try to keep from grapple point. 
-                joint.maxDistance = distanceFromPoint * 0.1f;
+                joint.maxDistance = 0.01f;
                 joint.minDistance = distanceFromPoint * 0.1f;
 
                 //Adjust these values to fit your game.

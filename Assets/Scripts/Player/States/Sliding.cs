@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Sliding : PlayerState
 {
-    private float initialBoost = 5f;
-    private Transform camTransform;
+    private float initialBoost = 10f;
+    //private Transform camTransform;
     private float slideDuck = .25f;
     private CapsuleCollider standingCollider;
 
@@ -24,6 +24,7 @@ public class Sliding : PlayerState
     {
         //transform.localPosition = Vector3.zero;
         standingCollider.direction = 1;
+        transform.Translate(0, slideDuck, 0, Space.Self);
     }
 
     public override void BeforeExecution()

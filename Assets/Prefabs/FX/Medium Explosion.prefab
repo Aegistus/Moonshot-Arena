@@ -58,7 +58,7 @@ MonoBehaviour:
     minSpeed: 0.7
     duration: 1
     noisePercent: 0.802
-    dampingPercent: 0.916
+    dampingPercent: 0.168
     rotationPercent: 0.184
 --- !u!198 &6098030867219234281
 ParticleSystem:

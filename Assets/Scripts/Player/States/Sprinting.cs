@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sprinting : PlayerState
 {
-    private float moveSpeed = 10f;
+    private float moveSpeed = 15f;
     private CameraFX camFX;
 
     public Sprinting(GameObject gameObject) : base(gameObject)

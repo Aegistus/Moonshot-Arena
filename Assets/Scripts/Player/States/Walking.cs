@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Walking : PlayerState
 {
-    private float moveSpeed = 5f;
+    private float moveSpeed = 7.5f;
 
     public Walking(GameObject gameObject) : base(gameObject)
     {

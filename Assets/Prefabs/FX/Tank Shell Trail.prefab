@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6368333485799515959}
   - component: {fileID: -2707358104890087546}
   - component: {fileID: -5959531596931506355}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tank Shell Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}

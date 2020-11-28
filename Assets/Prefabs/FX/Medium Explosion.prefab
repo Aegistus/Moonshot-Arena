@@ -48,9 +48,18 @@ MonoBehaviour:
   collisionLayers:
     serializedVersion: 2
     m_Bits: 2560
-  radius: 2
+  radius: 5
   force: 500
   damage: 40
+  shakeProperties:
+    angle: 30
+    strength: 0.02
+    maxSpeed: 1
+    minSpeed: 0.1
+    duration: 1
+    noisePercent: 0.802
+    dampingPercent: 0.916
+    rotationPercent: 0.184
 --- !u!198 &6098030867219234281
 ParticleSystem:
   m_ObjectHideFlags: 0

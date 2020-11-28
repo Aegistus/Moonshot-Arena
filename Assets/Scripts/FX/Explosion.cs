@@ -9,6 +9,8 @@ public class Explosion : MonoBehaviour, IEffect
     public float force = 5f;
     public int damage = 20;
 
+    public CameraShake.Properties shakeProperties;
+
     Health health;
     RaycastHit[] sphereHits;
     public void StartEffect()
@@ -25,6 +27,16 @@ public class Explosion : MonoBehaviour, IEffect
             if (hit.rigidbody != null)
             {
                 hit.rigidbody.AddExplosionForce(force, transform.position, radius);
+            }
+
+        }
+        sphereHits = Physics.SphereCastAll(transform.position, radius * 2, Vector3.one, radius, collisionLayers);
+        foreach (var hit in sphereHits)
+        {
+            CameraShake shake = hit.collider.GetComponentInChildren<CameraShake>();
+            if (shake != null)
+            {
+                shake.StartShake(shakeProperties);
             }
         }
     }

@@ -22641,14 +22641,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6382357131808758333, guid: 68288155c3b9a56488514879256ef602, type: 3}
-      propertyPath: ShapeModule.randomDirectionAmount
-      value: 0.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 6382357131808758333, guid: 68288155c3b9a56488514879256ef602, type: 3}
-      propertyPath: ShapeModule.sphericalDirectionAmount
-      value: 0.15
-      objectReference: {fileID: 0}
     - target: {fileID: 6497964142272391418, guid: 68288155c3b9a56488514879256ef602, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.2

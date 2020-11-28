@@ -6,6 +6,7 @@ public class Booster : MonoBehaviour
 {
     public static event Action<int> OnCooldownChange;
 
+    public ParticleSystem boostParticles;
     public float thrust = 10f;
     public float cooldownTime = 2f;
     [HideInInspector]
@@ -21,6 +22,7 @@ public class Booster : MonoBehaviour
         player = GetComponent<PlayerController>();
         camTransform = Camera.main.transform;
         camFX = Camera.main.GetComponentInParent<CameraFX>();
+        boostParticles.Stop();
     }
 
     private void Update()
@@ -92,6 +94,7 @@ public class Booster : MonoBehaviour
             player.AddVelocity(boostedVelocity);
             numOfCharges--;
             OnCooldownChange?.Invoke(numOfCharges);
+            boostParticles.Play();
             StartCoroutine(CameraReset());
             StartCoroutine(ThrusterCooldown());
         }

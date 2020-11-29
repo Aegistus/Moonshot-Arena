@@ -104,4 +104,14 @@ public abstract class Gun : Weapon
     {
         camShake?.StartShake(stats.recoil);
     }
+
+    public void InsertMagazineSound()
+    {
+        AudioManager.instance.StartPlayingAtPosition("Insert Magazine", transform.position);
+    }
+
+    public void RemoveMagazineSound()
+    {
+        AudioManager.instance.StartPlayingAtPosition("Remove Magazine", transform.position);
+    }
 }

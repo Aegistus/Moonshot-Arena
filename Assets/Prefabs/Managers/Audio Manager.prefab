@@ -296,3 +296,23 @@ MonoBehaviour:
     loop: 1
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: Remove Magazine
+    clip: {fileID: 8300000, guid: 550e9d5364546864d8432f36ae55b34c, type: 3}
+    volume: 1
+    volumeVariance: 0.444
+    pitch: 2.05
+    pitchVariance: 0.225
+    minimunDistance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Insert Magazine
+    clip: {fileID: 8300000, guid: 52057aa583f727b4a92a744c7ababab8, type: 3}
+    volume: 1
+    volumeVariance: 0.444
+    pitch: 2.05
+    pitchVariance: 0.225
+    minimunDistance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}

@@ -76,7 +76,9 @@ public class Pistol : Gun
         {
             anim.enabled = false;
             reloading = true;
+            AudioManager.instance.StartPlayingAtPosition("Remove Magazine", transform.position);
             yield return new WaitForSeconds(stats.reloadTime);
+            AudioManager.instance.StartPlayingAtPosition("Insert Magazine", transform.position);
             int ammoToAdd = carriedAmmo > stats.maxAmmo ? stats.maxAmmo - loadedAmmo : carriedAmmo;
             loadedAmmo += ammoToAdd;
             carriedAmmo -= ammoToAdd;

@@ -51,6 +51,7 @@ public class Shotgun : Gun
                 LoadAmmo();
                 transform.localRotation = Quaternion.identity;
                 anim.enabled = true;
+                InsertMagazineSound();
             }
         }
         else

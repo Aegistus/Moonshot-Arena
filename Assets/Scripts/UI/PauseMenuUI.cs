@@ -31,7 +31,14 @@ public class PauseMenuUI : MonoBehaviour
             IsPaused = true;
             pauseMenu.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
-            player.enabled = false;
+            if (player != null)
+            {
+                player.enabled = false;
+            }
+        }
+        if (IsPaused)
+        {
+            Cursor.visible = true;
         }
     }
 
@@ -40,7 +47,10 @@ public class PauseMenuUI : MonoBehaviour
         IsPaused = false;
         pauseMenu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
-        player.enabled = true;
+        if (player != null)
+        {
+            player.enabled = true;
+        }
     }
 
     public void ReturnToMainMenu()

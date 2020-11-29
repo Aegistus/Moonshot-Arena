@@ -68,6 +68,10 @@ public abstract class Gun : Weapon
 
     public void LoadAmmo()
     {
+        if (loadedAmmo > stats.maxAmmo)
+        {
+            loadedAmmo = stats.maxAmmo;
+        }
         OnAmmoAmountChange?.Invoke(loadedAmmo, carriedAmmo);
     }
 

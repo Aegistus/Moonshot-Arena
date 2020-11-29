@@ -22,7 +22,7 @@ public class Booster : MonoBehaviour
         player = GetComponent<PlayerController>();
         camTransform = Camera.main.transform;
         camFX = Camera.main.GetComponentInParent<CameraFX>();
-        boostParticles.Stop();
+        boostParticles.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -37,22 +37,22 @@ public class Booster : MonoBehaviour
                     if (Input.GetKey(KeyCode.W))
                     {
                         boostedVelocity += camTransform.forward;
-                        camFX.AddTargetFOV(10);
+                        camFX.AddTargetFOV(20);
                     }
                     if (Input.GetKey(KeyCode.S))
                     {
                         boostedVelocity += -camTransform.forward;
-                        camFX.AddTargetFOV(-10);
+                        camFX.AddTargetFOV(-20);
                     }
                     if (Input.GetKey(KeyCode.A))
                     {
                         boostedVelocity += -camTransform.right;
-                        camFX.AddTargetRotation(10f);
+                        camFX.AddTargetRotation(20f);
                     }
                     if (Input.GetKey(KeyCode.D))
                     {
                         boostedVelocity += camTransform.right;
-                        camFX.AddTargetRotation(-10f);
+                        camFX.AddTargetRotation(-20f);
                     }
                 }
                 if (Input.GetKeyDown(KeyCode.LeftControl))
@@ -61,7 +61,7 @@ public class Booster : MonoBehaviour
                     if (Input.GetKey(KeyCode.W))
                     {
                         boostedVelocity += camTransform.forward;
-                        camFX.AddTargetFOV(10);
+                        camFX.AddTargetFOV(20);
                     }
                 }
                 if (Input.GetKeyDown(KeyCode.Space))
@@ -70,7 +70,7 @@ public class Booster : MonoBehaviour
                     if (Input.GetKey(KeyCode.W))
                     {
                         boostedVelocity += camTransform.forward;
-                        camFX.AddTargetFOV(10);
+                        camFX.AddTargetFOV(20);
                     }
                 }
                 if (boostedVelocity != Vector3.zero)
@@ -94,7 +94,7 @@ public class Booster : MonoBehaviour
             player.AddVelocity(boostedVelocity);
             numOfCharges--;
             OnCooldownChange?.Invoke(numOfCharges);
-            boostParticles.Play();
+            boostParticles.gameObject.SetActive(true);
             StartCoroutine(CameraReset());
             StartCoroutine(ThrusterCooldown());
         }
@@ -111,6 +111,7 @@ public class Booster : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         camTransform.localRotation = Quaternion.Euler(new Vector3(camTransform.localRotation.eulerAngles.x, 0f, 0f));
+        boostParticles.gameObject.SetActive(false);
         camFX.ResetFOV();
         camFX.ResetRotation();
     }

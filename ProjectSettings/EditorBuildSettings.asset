@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hangar.unity
     guid: e3813aaf41e3ee7429519d9f8cd0306a
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Level.unity
+    guid: 26079f0c8ae5f85468d3162660de5e7e
   m_configObjects: {}

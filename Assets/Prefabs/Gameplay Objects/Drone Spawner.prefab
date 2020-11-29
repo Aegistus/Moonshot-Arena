@@ -51,7 +51,7 @@ MonoBehaviour:
   - {fileID: 7555866424545335551, guid: 62082d452a557934c9c88cea8b0437e5, type: 3}
   - {fileID: 4112930924329366274, guid: 02fd8be78c935164183575bcf84ea1a4, type: 3}
   spawnPoint: {fileID: 7914015480761365149}
-  respawnTime: 90
+  respawnTime: 45
 --- !u!1 &7914015479886664660
 GameObject:
   m_ObjectHideFlags: 0

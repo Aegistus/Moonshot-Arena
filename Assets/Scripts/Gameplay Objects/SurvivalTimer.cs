@@ -42,7 +42,7 @@ public class SurvivalTimer : MonoBehaviour
     {
         yield return new WaitForSeconds(startDelay);
         AudioManager.instance.StartPlaying("Timer Start");
-        StartTimer(20);
+        StartTimer(120);
     }
 
     public void StartTimer(float startingTime)

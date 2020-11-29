@@ -26,11 +26,11 @@ public class LMG : Gun
 
     public override IEnumerator EndAttack()
     {
-        anim.Play("Idle");
         if (firing == true)
         {
             AudioManager.instance.StopPlaying("Machine Gun Fire");
             AudioManager.instance.StartPlaying("Machine Gun Stop");
+            anim.Play("Idle");
         }
         firing = false;
         StopCoroutine(Shoot());

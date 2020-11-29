@@ -26,11 +26,11 @@ public class SMG : Gun
 
     public override IEnumerator EndAttack()
     {
-        anim.Play("Idle");
         if (firing == true)
         {
             AudioManager.instance.StopPlaying("Machine Gun Fire");
             AudioManager.instance.StartPlaying("Machine Gun Stop");
+            anim.Play("Idle");
         }
         firing = false;
         StopCoroutine(Shoot());
@@ -60,15 +60,18 @@ public class SMG : Gun
     RaycastHit rayHit;
     public override void StartAttack()
     {
-        if (!reloading && loadedAmmo > 0)
+        if (!reloading)
         {
-            firing = true;
-            StartCoroutine(Shoot());
-            AudioManager.instance.StartPlaying("Machine Gun Fire");
-        }
-        else if (loadedAmmo == 0)
-        {
-            AudioManager.instance.StartPlayingAtPosition("Gun Empty Click", transform.position);
+            if (loadedAmmo > 0)
+            {
+                firing = true;
+                StartCoroutine(Shoot());
+                AudioManager.instance.StartPlaying("Machine Gun Fire");
+            }
+            else if (loadedAmmo == 0)
+            {
+                AudioManager.instance.StartPlayingAtPosition("Gun Empty Click", transform.position);
+            }
         }
     }
 

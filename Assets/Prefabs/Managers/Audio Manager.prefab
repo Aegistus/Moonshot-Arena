@@ -316,3 +316,23 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: Timer Start
+    clip: {fileID: 8300000, guid: 9e464113a241af045a2d30b3bf276d8d, type: 3}
+    volume: 1
+    volumeVariance: 0.444
+    pitch: 2.05
+    pitchVariance: 0.225
+    minimunDistance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Timer Warning
+    clip: {fileID: 8300000, guid: 45dd760e7266b434688409fe32085836, type: 3}
+    volume: 1
+    volumeVariance: 0.444
+    pitch: 2.05
+    pitchVariance: 0
+    minimunDistance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}

@@ -19,6 +19,7 @@ public class SurvivalTimer : MonoBehaviour
 
     private bool lastFrameBeforeZero = true;
     private Color originalColor;
+    private AudioManager audioManager;
 
     private void Awake()
     {
@@ -35,13 +36,20 @@ public class SurvivalTimer : MonoBehaviour
 
     private void Start()
     {
+        audioManager = AudioManager.instance;
         StartCoroutine(StartDelay());
     }
 
     private IEnumerator StartDelay()
     {
-        yield return new WaitForSeconds(startDelay);
-        AudioManager.instance.StartPlaying("Timer Start");
+        yield return new WaitForSeconds(startDelay - 3);
+        for (int i = 0; i < 3; i++)
+        {
+            audioManager.StartPlaying("Timer Warning");
+            yield return new WaitForSeconds(1f);
+            yield return null;
+        }
+        audioManager.StartPlaying("Timer Start");
         StartTimer(120);
     }
 

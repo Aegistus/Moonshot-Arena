@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Text;
 
 public class SurvivalTimer : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class SurvivalTimer : MonoBehaviour
     private bool lastFrameBeforeZero = true;
     private Color originalColor;
     private AudioManager audioManager;
+    private StringBuilder stringBuilder = new StringBuilder();
 
     private void Awake()
     {
@@ -98,8 +100,25 @@ public class SurvivalTimer : MonoBehaviour
     }
 
     string format = "00";
+    int minutes;
+    int seconds;
     public string ConvertToMinutesAndSeconds(float time)
     {
-        return ((int)(time / 60)).ToString(format) + ":" + ((int)(time % 60)).ToString(format);
+        stringBuilder.Clear();
+        minutes = (int) time / 60;
+        if (minutes < 10)
+        {
+            stringBuilder.Append('0');
+        }
+        stringBuilder.Append(minutes);
+        //stringBuilder.Append(((int)(time / 60)).ToString(format));
+        stringBuilder.Append(":");
+        seconds = (int) time % 60;
+        if (seconds < 10)
+        {
+            stringBuilder.Append('0');
+        }
+        stringBuilder.Append(seconds);
+        return stringBuilder.ToString();
     }
 }

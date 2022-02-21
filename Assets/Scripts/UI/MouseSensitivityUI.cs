@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MouseSensitivityUI : MonoBehaviour
 {
-    public static float mouseSensitivity = 300f;
+    public static float mouseSensitivity = 200f;
 
     public void ChangeMouseSensitivity(InputField input)
     {
